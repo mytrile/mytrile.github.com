@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: rails | Dimitar Kostov ramblings]]></title>
-  <link href="http://fireinside.me/blog/categories/rails/atom.xml" rel="self"/>
-  <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T19:17:09+03:00</updated>
-  <id>http://fireinside.me/</id>
+  <link href="http://mytrile.github.com/blog/categories/rails/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-07T19:52:16+03:00</updated>
+  <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Testing after_commit in rspec]]></title>
-    <link href="http://fireinside.me/blog/2013/03/28/testing-after-commit-in-rspec/"/>
+    <link href="http://mytrile.github.com/blog/2013/03/28/testing-after-commit-in-rspec/"/>
     <updated>2013-03-28T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2013/03/28/testing-after-commit-in-rspec</id>
+    <id>http://mytrile.github.com/blog/2013/03/28/testing-after-commit-in-rspec</id>
     <content type="html"><![CDATA[<p>``` ruby mail_worker.rb</p>
 
 <h1>app/workers/mail_worker.rb</h1>
@@ -86,9 +86,9 @@ end
   
   <entry>
     <title type="html"><![CDATA[Better rails errors and live console]]></title>
-    <link href="http://fireinside.me/blog/2013/02/21/better-rails-errors-and-live-console/"/>
+    <link href="http://mytrile.github.com/blog/2013/02/21/better-rails-errors-and-live-console/"/>
     <updated>2013-02-21T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2013/02/21/better-rails-errors-and-live-console</id>
+    <id>http://mytrile.github.com/blog/2013/02/21/better-rails-errors-and-live-console</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/charliesome/better_errors" target="_blank"><img src="http://media.tumblr.com/3dcab8624b81f2fdaf50b1a122b2a379/tumblr_inline_mik9x4p11b1qz4rgp.png" /></a></p>
 
 ]]></content>
@@ -96,9 +96,9 @@ end
   
   <entry>
     <title type="html"><![CDATA[Easy setup for Postgres.app and Rails]]></title>
-    <link href="http://fireinside.me/blog/2013/02/08/easy-setup-for-postgres-app-and-rails/"/>
+    <link href="http://mytrile.github.com/blog/2013/02/08/easy-setup-for-postgres-app-and-rails/"/>
     <updated>2013-02-08T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2013/02/08/easy-setup-for-postgres-app-and-rails</id>
+    <id>http://mytrile.github.com/blog/2013/02/08/easy-setup-for-postgres-app-and-rails</id>
     <content type="html"><![CDATA[<p>This is how you setup <a href="http://postgresapp.com/" target="_blank">Postgress.app</a> with Rails</p>
 
 
@@ -128,9 +128,9 @@ development:
   
   <entry>
     <title type="html"><![CDATA[XTHML in HAML view in Rails 3]]></title>
-    <link href="http://fireinside.me/blog/2013/02/04/xthml-in-haml-view-in-rails-3/"/>
+    <link href="http://mytrile.github.com/blog/2013/02/04/xthml-in-haml-view-in-rails-3/"/>
     <updated>2013-02-04T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2013/02/04/xthml-in-haml-view-in-rails-3</id>
+    <id>http://mytrile.github.com/blog/2013/02/04/xthml-in-haml-view-in-rails-3</id>
     <content type="html"><![CDATA[<p><code>haml config/initializers/haml.rb
 Haml::Template.options[:format] = :xhtml
 </code></p>
@@ -147,9 +147,9 @@ Haml::Template.options[:format] = :xhtml
   
   <entry>
     <title type="html"><![CDATA[Passing arguments to rake task]]></title>
-    <link href="http://fireinside.me/blog/2012/12/11/passing-arguments-to-rake-task/"/>
+    <link href="http://mytrile.github.com/blog/2012/12/11/passing-arguments-to-rake-task/"/>
     <updated>2012-12-11T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2012/12/11/passing-arguments-to-rake-task</id>
+    <id>http://mytrile.github.com/blog/2012/12/11/passing-arguments-to-rake-task</id>
     <content type="html"><![CDATA[<p>``` ruby Rakefile
 namespace :log do
   desc 'Upload logfile to cloud-based server'

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: autotest | Dimitar Kostov ramblings]]></title>
-  <link href="http://fireinside.me/blog/categories/autotest/atom.xml" rel="self"/>
-  <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T19:17:09+03:00</updated>
-  <id>http://fireinside.me/</id>
+  <link href="http://mytrile.github.com/blog/categories/autotest/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-07T19:52:16+03:00</updated>
+  <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Autotest integration in vim]]></title>
-    <link href="http://fireinside.me/blog/2009/07/15/autotest-integration-in-vim/"/>
+    <link href="http://mytrile.github.com/blog/2009/07/15/autotest-integration-in-vim/"/>
     <updated>2009-07-15T00:00:00+03:00</updated>
-    <id>http://fireinside.me/blog/2009/07/15/autotest-integration-in-vim</id>
+    <id>http://mytrile.github.com/blog/2009/07/15/autotest-integration-in-vim</id>
     <content type="html"><![CDATA[<p>Inspired by Aaron Patterson <a href="http://tenderlovemaking.com/2009/05/18/autotest-and-vim-integration/">post</a>, modified for Ubuntu here is a script to bind a shortcut to open failing test.</p>
 
 
@@ -30,9 +30,9 @@
   
   <entry>
     <title type="html"><![CDATA[Autotest notifications in Ubuntu]]></title>
-    <link href="http://fireinside.me/blog/2009/07/07/autotest-notifications-in-ubuntu/"/>
+    <link href="http://mytrile.github.com/blog/2009/07/07/autotest-notifications-in-ubuntu/"/>
     <updated>2009-07-07T00:00:00+03:00</updated>
-    <id>http://fireinside.me/blog/2009/07/07/autotest-notifications-in-ubuntu</id>
+    <id>http://mytrile.github.com/blog/2009/07/07/autotest-notifications-in-ubuntu</id>
     <content type="html"><![CDATA[<p>If you're using Ubuntu to develop Ruby and use autotest, here is simple config file for growl-like notifications:</p>
 
 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: jquery | Dimitar Kostov ramblings]]></title>
-  <link href="http://fireinside.me/blog/categories/jquery/atom.xml" rel="self"/>
-  <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T19:17:09+03:00</updated>
-  <id>http://fireinside.me/</id>
+  <link href="http://mytrile.github.com/blog/categories/jquery/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-07T19:52:16+03:00</updated>
+  <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Active Admin toggle all function for batch actions]]></title>
-    <link href="http://fireinside.me/blog/2013/02/16/active-admin-toggle-all-function-for-batch-actions/"/>
+    <link href="http://mytrile.github.com/blog/2013/02/16/active-admin-toggle-all-function-for-batch-actions/"/>
     <updated>2013-02-16T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2013/02/16/active-admin-toggle-all-function-for-batch-actions</id>
+    <id>http://mytrile.github.com/blog/2013/02/16/active-admin-toggle-all-function-for-batch-actions</id>
     <content type="html"><![CDATA[<p>If you're running into a problem toggling all checkboxes in index page for batch action in Active Admin you should:</p>
 
 
@@ -39,9 +39,9 @@
   
   <entry>
     <title type="html"><![CDATA[How to submit a form by clicking on autocomplete result]]></title>
-    <link href="http://fireinside.me/blog/2012/11/08/how-to-submit-a-form-by-clicking-on-autocomplete-result/"/>
+    <link href="http://mytrile.github.com/blog/2012/11/08/how-to-submit-a-form-by-clicking-on-autocomplete-result/"/>
     <updated>2012-11-08T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2012/11/08/how-to-submit-a-form-by-clicking-on-autocomplete-result</id>
+    <id>http://mytrile.github.com/blog/2012/11/08/how-to-submit-a-form-by-clicking-on-autocomplete-result</id>
     <content type="html"><![CDATA[<p>``` coffeescript
 jQuery ->
   $('#input_field').autocomplete</p>
@@ -58,9 +58,9 @@ select: (event, ui) -&gt;
   
   <entry>
     <title type="html"><![CDATA[JQuery Lint - Catch incorrect JQuery use]]></title>
-    <link href="http://fireinside.me/blog/2010/02/25/jquery-lint-catch-incorrect-jquery-use/"/>
+    <link href="http://mytrile.github.com/blog/2010/02/25/jquery-lint-catch-incorrect-jquery-use/"/>
     <updated>2010-02-25T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2010/02/25/jquery-lint-catch-incorrect-jquery-use</id>
+    <id>http://mytrile.github.com/blog/2010/02/25/jquery-lint-catch-incorrect-jquery-use</id>
     <content type="html"><![CDATA[<p>I really hope you've heard about <a href="http://www.crockford.com/">Douglas Crockford's</a> <a href="http://www.jslint.com/">JSLint</a>, great tool for JavaScript code quality inspection. <a href="http://github.com/jamespadolsey/jQuery-Lint">JQuery Lint</a> uses common idea to report errors and any incorrect usage of jQuery.</p>
 
 

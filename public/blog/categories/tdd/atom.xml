@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: tdd | Dimitar Kostov ramblings]]></title>
-  <link href="http://fireinside.me/blog/categories/tdd/atom.xml" rel="self"/>
-  <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T19:17:09+03:00</updated>
-  <id>http://fireinside.me/</id>
+  <link href="http://mytrile.github.com/blog/categories/tdd/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-07T19:52:16+03:00</updated>
+  <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[JSpec - Powerfull JavaScript Testing]]></title>
-    <link href="http://fireinside.me/blog/2010/02/24/jspec-powerfull-javascript-testing/"/>
+    <link href="http://mytrile.github.com/blog/2010/02/24/jspec-powerfull-javascript-testing/"/>
     <updated>2010-02-24T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2010/02/24/jspec-powerfull-javascript-testing</id>
+    <id>http://mytrile.github.com/blog/2010/02/24/jspec-powerfull-javascript-testing</id>
     <content type="html"><![CDATA[<p>For those of you who think testing is a must, here is JavaScript testing framework which looks like a lot of RSpec.</p>
 
 

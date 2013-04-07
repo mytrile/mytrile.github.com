@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: postgres | Dimitar Kostov ramblings]]></title>
-  <link href="http://fireinside.me/blog/categories/postgres/atom.xml" rel="self"/>
-  <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T19:17:09+03:00</updated>
-  <id>http://fireinside.me/</id>
+  <link href="http://mytrile.github.com/blog/categories/postgres/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-07T19:52:16+03:00</updated>
+  <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Easy setup for Postgres.app and Rails]]></title>
-    <link href="http://fireinside.me/blog/2013/02/08/easy-setup-for-postgres-app-and-rails/"/>
+    <link href="http://mytrile.github.com/blog/2013/02/08/easy-setup-for-postgres-app-and-rails/"/>
     <updated>2013-02-08T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2013/02/08/easy-setup-for-postgres-app-and-rails</id>
+    <id>http://mytrile.github.com/blog/2013/02/08/easy-setup-for-postgres-app-and-rails</id>
     <content type="html"><![CDATA[<p>This is how you setup <a href="http://postgresapp.com/" target="_blank">Postgress.app</a> with Rails</p>
 
 

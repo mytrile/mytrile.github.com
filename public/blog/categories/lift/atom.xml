@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: lift | Dimitar Kostov ramblings]]></title>
-  <link href="http://fireinside.me/blog/categories/lift/atom.xml" rel="self"/>
-  <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T19:17:09+03:00</updated>
-  <id>http://fireinside.me/</id>
+  <link href="http://mytrile.github.com/blog/categories/lift/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-07T19:52:16+03:00</updated>
+  <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Designer Friendly Templates in Lift]]></title>
-    <link href="http://fireinside.me/blog/2011/01/21/designer-friendly-templates-in-lift/"/>
+    <link href="http://mytrile.github.com/blog/2011/01/21/designer-friendly-templates-in-lift/"/>
     <updated>2011-01-21T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2011/01/21/designer-friendly-templates-in-lift</id>
+    <id>http://mytrile.github.com/blog/2011/01/21/designer-friendly-templates-in-lift</id>
     <content type="html"><![CDATA[<p>Today I've read <a title="Lift" target="_blank" href="http://seventhings.liftweb.net/index">an article</a> about 7 reasons why "Lift is the most powerful, most secure web framework available today". One of the reasons got my attention - <a title="Designer friendly templates" target="_blank" href="http://seventhings.liftweb.net/templates">Designer Friendly Templates</a>. First thing in my mind was - What does "designer friendly template" has to do with security and power of web framework ? The second thought was after reading the argument for the previous statement:</p>
 
 

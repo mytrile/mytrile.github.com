@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: arguments | Dimitar Kostov ramblings]]></title>
-  <link href="http://fireinside.me/blog/categories/arguments/atom.xml" rel="self"/>
-  <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T19:17:09+03:00</updated>
-  <id>http://fireinside.me/</id>
+  <link href="http://mytrile.github.com/blog/categories/arguments/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-07T19:52:16+03:00</updated>
+  <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Passing arguments to rake task]]></title>
-    <link href="http://fireinside.me/blog/2012/12/11/passing-arguments-to-rake-task/"/>
+    <link href="http://mytrile.github.com/blog/2012/12/11/passing-arguments-to-rake-task/"/>
     <updated>2012-12-11T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2012/12/11/passing-arguments-to-rake-task</id>
+    <id>http://mytrile.github.com/blog/2012/12/11/passing-arguments-to-rake-task</id>
     <content type="html"><![CDATA[<p>``` ruby Rakefile
 namespace :log do
   desc 'Upload logfile to cloud-based server'

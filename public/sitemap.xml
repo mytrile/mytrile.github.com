@@ -1,285 +1,295 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://fireinside.me/blog/2008/07/19/learn-ruby-then-rails/</loc>
+        <loc>http://mytrile.github.com/blog/2008/07/19/learn-ruby-then-rails/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2008/08/03/gist-pastie-on-steroids/</loc>
+        <loc>http://mytrile.github.com/blog/2008/08/03/gist-pastie-on-steroids/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2008/09/10/extract-links-with-ruby/</loc>
+        <loc>http://mytrile.github.com/blog/2008/09/10/extract-links-with-ruby/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2009/03/24/tinyurl-in-40-lines/</loc>
+        <loc>http://mytrile.github.com/blog/2009/03/24/tinyurl-in-40-lines/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2009/05/25/get-links-from-tweets/</loc>
+        <loc>http://mytrile.github.com/blog/2009/05/25/get-links-from-tweets/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2009/07/07/autotest-notifications-in-ubuntu/</loc>
+        <loc>http://mytrile.github.com/blog/2009/07/07/autotest-notifications-in-ubuntu/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2009/07/15/autotest-integration-in-vim/</loc>
+        <loc>http://mytrile.github.com/blog/2009/07/15/autotest-integration-in-vim/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2009/09/01/tweetlist/</loc>
+        <loc>http://mytrile.github.com/blog/2009/09/01/tweetlist/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2009/10/01/i-know/</loc>
+        <loc>http://mytrile.github.com/blog/2009/10/01/i-know/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2009/12/08/clojure-and-emacs-on-ubuntu/</loc>
+        <loc>http://mytrile.github.com/blog/2009/12/08/clojure-and-emacs-on-ubuntu/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2010/01/03/technical-mission-statement-2010/</loc>
+        <loc>http://mytrile.github.com/blog/2010/01/03/technical-mission-statement-2010/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2010/01/13/websockets-eventmachine-simple-chat/</loc>
+        <loc>http://mytrile.github.com/blog/2010/01/13/websockets-eventmachine-simple-chat/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2010/02/13/fresh-cup-of-coffee/</loc>
+        <loc>http://mytrile.github.com/blog/2010/02/13/fresh-cup-of-coffee/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2010/02/22/mongo3-awesome-admin-interface/</loc>
+        <loc>http://mytrile.github.com/blog/2010/02/22/mongo3-awesome-admin-interface/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2010/02/24/jspec-powerfull-javascript-testing/</loc>
-        <lastmod>2013-04-07T17:01:47+03:00</lastmod>
-    </url>
-    <url>
-        <loc>http://fireinside.me/blog/2010/02/25/jquery-lint-catch-incorrect-jquery-use/</loc>
-        <lastmod>2013-04-07T17:01:47+03:00</lastmod>
-    </url>
-    <url>
-        <loc>http://fireinside.me/blog/2010/03/01/ring-rack-for-clojure/</loc>
-        <lastmod>2013-04-07T17:01:47+03:00</lastmod>
-    </url>
-    <url>
-        <loc>http://fireinside.me/blog/2010/03/04/express-sinatra-for-node-js/</loc>
-        <lastmod>2013-04-07T17:01:47+03:00</lastmod>
-    </url>
-    <url>
-        <loc>http://fireinside.me/blog/2010/03/11/oh-my-zsh/</loc>
-        <lastmod>2013-04-07T17:01:47+03:00</lastmod>
-    </url>
-    <url>
-        <loc>http://fireinside.me/blog/2010/05/22/ruby-vm-shootout/</loc>
-        <lastmod>2013-04-07T17:01:47+03:00</lastmod>
-    </url>
-    <url>
-        <loc>http://fireinside.me/blog/2010/07/30/irb-tools/</loc>
-        <lastmod>2013-04-07T17:01:47+03:00</lastmod>
-    </url>
-    <url>
-        <loc>http://fireinside.me/blog/2010/09/14/zeromq-introduction/</loc>
+        <loc>http://mytrile.github.com/blog/2010/02/24/jspec-powerfull-javascript-testing/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
         <loc>
-            http://fireinside.me/blog/2010/09/17/awesome-fast-and-extensible-window-manager/
+            http://mytrile.github.com/blog/2010/02/25/jquery-lint-catch-incorrect-jquery-use/
         </loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2010/09/19/explain-ruby-ruby-syntax-explained/</loc>
+        <loc>http://mytrile.github.com/blog/2010/03/01/ring-rack-for-clojure/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2010/09/20/zeromq-messaging-patterns/</loc>
+        <loc>http://mytrile.github.com/blog/2010/03/04/express-sinatra-for-node-js/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2011/01/21/designer-friendly-templates-in-lift/</loc>
+        <loc>http://mytrile.github.com/blog/2010/03/11/oh-my-zsh/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2011/01/26/kod-a-programmers-editor-for-os-x/</loc>
+        <loc>http://mytrile.github.com/blog/2010/05/22/ruby-vm-shootout/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2011/02/11/and-you-call-that-api/</loc>
+        <loc>http://mytrile.github.com/blog/2010/07/30/irb-tools/</loc>
+        <lastmod>2013-04-07T17:01:47+03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://mytrile.github.com/blog/2010/09/14/zeromq-introduction/</loc>
+        <lastmod>2013-04-07T17:01:47+03:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://mytrile.github.com/blog/2010/09/17/awesome-fast-and-extensible-window-manager/
+        </loc>
+        <lastmod>2013-04-07T17:01:47+03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://mytrile.github.com/blog/2010/09/19/explain-ruby-ruby-syntax-explained/</loc>
+        <lastmod>2013-04-07T17:01:47+03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://mytrile.github.com/blog/2010/09/20/zeromq-messaging-patterns/</loc>
+        <lastmod>2013-04-07T17:01:47+03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://mytrile.github.com/blog/2011/01/21/designer-friendly-templates-in-lift/</loc>
+        <lastmod>2013-04-07T17:01:47+03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://mytrile.github.com/blog/2011/01/26/kod-a-programmers-editor-for-os-x/</loc>
+        <lastmod>2013-04-07T17:01:47+03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://mytrile.github.com/blog/2011/02/11/and-you-call-that-api/</loc>
         <lastmod>2013-04-07T17:38:38+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2011/05/04/most-alternative-to-man/</loc>
+        <loc>http://mytrile.github.com/blog/2011/05/04/most-alternative-to-man/</loc>
         <lastmod>2013-04-07T17:38:45+03:00</lastmod>
     </url>
     <url>
         <loc>
-            http://fireinside.me/blog/2011/07/13/phantomjs-headless-webkit-with-javascript-api/
+            http://mytrile.github.com/blog/2011/07/13/phantomjs-headless-webkit-with-javascript-api/
         </loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2011/07/21/clojure-to-js-compiler/</loc>
+        <loc>http://mytrile.github.com/blog/2011/07/21/clojure-to-js-compiler/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2011/08/13/network-programming-with-go/</loc>
+        <loc>http://mytrile.github.com/blog/2011/08/13/network-programming-with-go/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
         <loc>
-            http://fireinside.me/blog/2011/08/17/pipeable-ruby-forget-about-grep-sed-awk-wc-use-pure-readable-ruby/
+            http://mytrile.github.com/blog/2011/08/17/pipeable-ruby-forget-about-grep-sed-awk-wc-use-pure-readable-ruby/
         </loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2011/08/17/the-principles-of-good-programming/</loc>
+        <loc>http://mytrile.github.com/blog/2011/08/17/the-principles-of-good-programming/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
         <loc>
-            http://fireinside.me/blog/2011/08/21/fantastic-presentation-by-aniero-on-eventmachine/
+            http://mytrile.github.com/blog/2011/08/21/fantastic-presentation-by-aniero-on-eventmachine/
         </loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2011/08/21/viiite-an-alternative-to-benchmark/</loc>
-        <lastmod>2013-04-07T17:01:47+03:00</lastmod>
-    </url>
-    <url>
-        <loc>http://fireinside.me/blog/2011/08/22/pakyow-interesting-new-ruby-web-framework/</loc>
+        <loc>http://mytrile.github.com/blog/2011/08/21/viiite-an-alternative-to-benchmark/</loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
         <loc>
-            http://fireinside.me/blog/2011/09/25/mvc-architecture-for-javascript-applications/
+            http://mytrile.github.com/blog/2011/08/22/pakyow-interesting-new-ruby-web-framework/
         </loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2011/10/06/</loc>
+        <loc>
+            http://mytrile.github.com/blog/2011/09/25/mvc-architecture-for-javascript-applications/
+        </loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2011/11/10/emacs-smooth-scrolling-using-the-keyboard/</loc>
+        <loc>http://mytrile.github.com/blog/2011/10/06/</loc>
+        <lastmod>2013-04-07T17:01:47+03:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://mytrile.github.com/blog/2011/11/10/emacs-smooth-scrolling-using-the-keyboard/
+        </loc>
         <lastmod>2013-04-07T17:16:55+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2011/11/10/emacs-smooth-scrolling-using-the-mouse/</loc>
-        <lastmod>2013-04-07T17:01:47+03:00</lastmod>
-    </url>
-    <url>
         <loc>
-            http://fireinside.me/blog/2011/11/27/cathode-cool-terminal-emulator-for-mac-os-x/
+            http://mytrile.github.com/blog/2011/11/10/emacs-smooth-scrolling-using-the-mouse/
         </loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2012/01/03/i-love-hello-world-benchmarks/</loc>
+        <loc>
+            http://mytrile.github.com/blog/2011/11/27/cathode-cool-terminal-emulator-for-mac-os-x/
+        </loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2012/08/08/unicode-in-irb/</loc>
+        <loc>http://mytrile.github.com/blog/2012/01/03/i-love-hello-world-benchmarks/</loc>
+        <lastmod>2013-04-07T17:01:47+03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://mytrile.github.com/blog/2012/08/08/unicode-in-irb/</loc>
         <lastmod>2013-04-07T17:33:44+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2012/08/09/capybara-webkit-on-mac-os-x/</loc>
+        <loc>http://mytrile.github.com/blog/2012/08/09/capybara-webkit-on-mac-os-x/</loc>
         <lastmod>2013-04-07T17:33:59+03:00</lastmod>
     </url>
     <url>
         <loc>
-            http://fireinside.me/blog/2012/08/14/start-a-pry-session-on-any-unhandled-exceptions/
+            http://mytrile.github.com/blog/2012/08/14/start-a-pry-session-on-any-unhandled-exceptions/
         </loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2012/10/25/preserve-new-lines-in-rails-i18n/</loc>
+        <loc>http://mytrile.github.com/blog/2012/10/25/preserve-new-lines-in-rails-i18n/</loc>
         <lastmod>2013-04-07T17:37:35+03:00</lastmod>
     </url>
     <url>
         <loc>
-            http://fireinside.me/blog/2012/11/08/how-to-submit-a-form-by-clicking-on-autocomplete-result/
+            http://mytrile.github.com/blog/2012/11/08/how-to-submit-a-form-by-clicking-on-autocomplete-result/
         </loc>
         <lastmod>2013-04-07T17:36:45+03:00</lastmod>
     </url>
     <url>
         <loc>
-            http://fireinside.me/blog/2012/11/09/cookie-based-authentication-strategy-in-devise/
+            http://mytrile.github.com/blog/2012/11/09/cookie-based-authentication-strategy-in-devise/
         </loc>
         <lastmod>2013-04-07T17:35:47+03:00</lastmod>
     </url>
     <url>
         <loc>
-            http://fireinside.me/blog/2012/12/04/ignore-upload-directory-while-using-capistrano/
+            http://mytrile.github.com/blog/2012/12/04/ignore-upload-directory-while-using-capistrano/
         </loc>
         <lastmod>2013-04-07T17:32:49+03:00</lastmod>
     </url>
     <url>
         <loc>
-            http://fireinside.me/blog/2012/12/07/setting-signed-cookie-directly-on-the-rack-response-object/
+            http://mytrile.github.com/blog/2012/12/07/setting-signed-cookie-directly-on-the-rack-response-object/
         </loc>
         <lastmod>2013-04-07T17:31:28+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2012/12/11/passing-arguments-to-rake-task/</loc>
+        <loc>http://mytrile.github.com/blog/2012/12/11/passing-arguments-to-rake-task/</loc>
         <lastmod>2013-04-07T17:30:36+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2013/01/22/converting-video-clip-to-gif/</loc>
+        <loc>http://mytrile.github.com/blog/2013/01/22/converting-video-clip-to-gif/</loc>
         <lastmod>2013-04-07T17:28:30+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2013/02/04/xthml-in-haml-view-in-rails-3/</loc>
+        <loc>http://mytrile.github.com/blog/2013/02/04/xthml-in-haml-view-in-rails-3/</loc>
         <lastmod>2013-04-07T17:27:36+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2013/02/08/easy-setup-for-postgres-app-and-rails/</loc>
+        <loc>
+            http://mytrile.github.com/blog/2013/02/08/easy-setup-for-postgres-app-and-rails/
+        </loc>
         <lastmod>2013-04-07T17:24:07+03:00</lastmod>
     </url>
     <url>
         <loc>
-            http://fireinside.me/blog/2013/02/16/active-admin-toggle-all-function-for-batch-actions/
+            http://mytrile.github.com/blog/2013/02/16/active-admin-toggle-all-function-for-batch-actions/
         </loc>
         <lastmod>2013-04-07T17:01:47+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2013/02/21/better-rails-errors-and-live-console/</loc>
+        <loc>http://mytrile.github.com/blog/2013/02/21/better-rails-errors-and-live-console/</loc>
         <lastmod>2013-04-07T17:14:36+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2013/03/28/testing-after-commit-in-rspec/</loc>
+        <loc>http://mytrile.github.com/blog/2013/03/28/testing-after-commit-in-rspec/</loc>
         <lastmod>2013-04-07T17:12:55+03:00</lastmod>
     </url>
     <url>
         <loc>
-            http://fireinside.me/blog/2013/03/31/hopchat-custom-color-theme-for-limechat-irc-client/
+            http://mytrile.github.com/blog/2013/03/31/hopchat-custom-color-theme-for-limechat-irc-client/
         </loc>
         <lastmod>2013-04-07T17:07:28+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/2013/04/07/janky/</loc>
+        <loc>http://mytrile.github.com/blog/2013/04/07/janky/</loc>
         <lastmod>2013-04-07T19:17:09+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/about/</loc>
+        <loc>http://mytrile.github.com/about/</loc>
         <lastmod>2013-04-07T17:45:46+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/blog/archives/</loc>
+        <loc>http://mytrile.github.com/blog/archives/</loc>
         <lastmod>2013-04-07T19:17:09+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/</loc>
+        <loc>http://mytrile.github.com/</loc>
         <lastmod>2013-04-07T19:17:09+03:00</lastmod>
     </url>
     <url>
-        <loc>http://fireinside.me/robots.txt</loc>
+        <loc>http://mytrile.github.com/robots.txt</loc>
         <lastmod>2013-04-07T16:57:36+03:00</lastmod>
     </url>
 </urlset>

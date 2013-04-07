@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: emacs | Dimitar Kostov ramblings]]></title>
-  <link href="http://fireinside.me/blog/categories/emacs/atom.xml" rel="self"/>
-  <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T19:17:09+03:00</updated>
-  <id>http://fireinside.me/</id>
+  <link href="http://mytrile.github.com/blog/categories/emacs/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-07T19:52:16+03:00</updated>
+  <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Emacs smooth scrolling using the mouse]]></title>
-    <link href="http://fireinside.me/blog/2011/11/10/emacs-smooth-scrolling-using-the-mouse/"/>
+    <link href="http://mytrile.github.com/blog/2011/11/10/emacs-smooth-scrolling-using-the-mouse/"/>
     <updated>2011-11-10T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2011/11/10/emacs-smooth-scrolling-using-the-mouse</id>
+    <id>http://mytrile.github.com/blog/2011/11/10/emacs-smooth-scrolling-using-the-mouse</id>
     <content type="html"><![CDATA[<p><pre>(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))</pre>&#13;
 <pre>(setq mouse-wheel-progressive-speed nil)</pre> </p>
 
@@ -26,9 +26,9 @@
   
   <entry>
     <title type="html"><![CDATA[Emacs smooth scrolling using the keyboard]]></title>
-    <link href="http://fireinside.me/blog/2011/11/10/emacs-smooth-scrolling-using-the-keyboard/"/>
+    <link href="http://mytrile.github.com/blog/2011/11/10/emacs-smooth-scrolling-using-the-keyboard/"/>
     <updated>2011-11-10T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2011/11/10/emacs-smooth-scrolling-using-the-keyboard</id>
+    <id>http://mytrile.github.com/blog/2011/11/10/emacs-smooth-scrolling-using-the-keyboard</id>
     <content type="html"><![CDATA[<p> </p>
 
 ]]></content>
@@ -36,9 +36,9 @@
   
   <entry>
     <title type="html"><![CDATA[Clojure and Emacs on Ubuntu]]></title>
-    <link href="http://fireinside.me/blog/2009/12/08/clojure-and-emacs-on-ubuntu/"/>
+    <link href="http://mytrile.github.com/blog/2009/12/08/clojure-and-emacs-on-ubuntu/"/>
     <updated>2009-12-08T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2009/12/08/clojure-and-emacs-on-ubuntu</id>
+    <id>http://mytrile.github.com/blog/2009/12/08/clojure-and-emacs-on-ubuntu</id>
     <content type="html"><![CDATA[<p>&#13;
 <script src="http://gist.github.com/251590.js"></script></p>
 

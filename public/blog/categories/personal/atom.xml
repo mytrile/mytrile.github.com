@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: personal | Dimitar Kostov ramblings]]></title>
-  <link href="http://fireinside.me/blog/categories/personal/atom.xml" rel="self"/>
-  <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T19:17:09+03:00</updated>
-  <id>http://fireinside.me/</id>
+  <link href="http://mytrile.github.com/blog/categories/personal/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-07T19:52:16+03:00</updated>
+  <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Technical Mission Statement 2010]]></title>
-    <link href="http://fireinside.me/blog/2010/01/03/technical-mission-statement-2010/"/>
+    <link href="http://mytrile.github.com/blog/2010/01/03/technical-mission-statement-2010/"/>
     <updated>2010-01-03T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2010/01/03/technical-mission-statement-2010</id>
+    <id>http://mytrile.github.com/blog/2010/01/03/technical-mission-statement-2010</id>
     <content type="html"><![CDATA[<p>In a technical dimension I expect to get comfortable with:</p>
 
 
@@ -37,9 +37,9 @@
   
   <entry>
     <title type="html"><![CDATA[I Know]]></title>
-    <link href="http://fireinside.me/blog/2009/10/01/i-know/"/>
+    <link href="http://mytrile.github.com/blog/2009/10/01/i-know/"/>
     <updated>2009-10-01T00:00:00+03:00</updated>
-    <id>http://fireinside.me/blog/2009/10/01/i-know</id>
+    <id>http://mytrile.github.com/blog/2009/10/01/i-know</id>
     <content type="html"><![CDATA[<p><img src="http://media.tumblr.com/tumblr_l8oazwyUoh1qcx25j.jpg" /></p>
 
 

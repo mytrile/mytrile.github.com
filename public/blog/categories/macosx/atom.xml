@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: macosx | Dimitar Kostov ramblings]]></title>
-  <link href="http://fireinside.me/blog/categories/macosx/atom.xml" rel="self"/>
-  <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T19:17:09+03:00</updated>
-  <id>http://fireinside.me/</id>
+  <link href="http://mytrile.github.com/blog/categories/macosx/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-07T19:52:16+03:00</updated>
+  <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Cathode - cool terminal emulator for Mac OS X]]></title>
-    <link href="http://fireinside.me/blog/2011/11/27/cathode-cool-terminal-emulator-for-mac-os-x/"/>
+    <link href="http://mytrile.github.com/blog/2011/11/27/cathode-cool-terminal-emulator-for-mac-os-x/"/>
     <updated>2011-11-27T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2011/11/27/cathode-cool-terminal-emulator-for-mac-os-x</id>
+    <id>http://mytrile.github.com/blog/2011/11/27/cathode-cool-terminal-emulator-for-mac-os-x</id>
     <content type="html"><![CDATA[<p><img align="middle" height="313" src="http://i.imgur.com/4fzvG.jpg" width="500" /></p>
 
 

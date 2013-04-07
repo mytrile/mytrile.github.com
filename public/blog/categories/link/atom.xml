@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: link | Dimitar Kostov ramblings]]></title>
-  <link href="http://fireinside.me/blog/categories/link/atom.xml" rel="self"/>
-  <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T19:17:09+03:00</updated>
-  <id>http://fireinside.me/</id>
+  <link href="http://mytrile.github.com/blog/categories/link/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-07T19:52:16+03:00</updated>
+  <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Explain Ruby - Ruby syntax explained]]></title>
-    <link href="http://fireinside.me/blog/2010/09/19/explain-ruby-ruby-syntax-explained/"/>
+    <link href="http://mytrile.github.com/blog/2010/09/19/explain-ruby-ruby-syntax-explained/"/>
     <updated>2010-09-19T00:00:00+03:00</updated>
-    <id>http://fireinside.me/blog/2010/09/19/explain-ruby-ruby-syntax-explained</id>
+    <id>http://mytrile.github.com/blog/2010/09/19/explain-ruby-ruby-syntax-explained</id>
     <content type="html"><![CDATA[<blockquote>&#13;
 <p><span>Paste Ruby code or a URL to get Ruby syntax explained.</span></p>&#13;
 <p><span><em>Explain Ruby</em> will not be able to explain what the code in question <em>does</em>, i.e. the original author's intent, but it will help newcomers to Ruby to learn how to read code by teaching them programming constructs of the Ruby programming language.</span></p>&#13;

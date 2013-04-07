@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: test | Dimitar Kostov ramblings]]></title>
-  <link href="http://fireinside.me/blog/categories/test/atom.xml" rel="self"/>
-  <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T19:17:09+03:00</updated>
-  <id>http://fireinside.me/</id>
+  <link href="http://mytrile.github.com/blog/categories/test/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-07T19:52:16+03:00</updated>
+  <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Testing after_commit in rspec]]></title>
-    <link href="http://fireinside.me/blog/2013/03/28/testing-after-commit-in-rspec/"/>
+    <link href="http://mytrile.github.com/blog/2013/03/28/testing-after-commit-in-rspec/"/>
     <updated>2013-03-28T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2013/03/28/testing-after-commit-in-rspec</id>
+    <id>http://mytrile.github.com/blog/2013/03/28/testing-after-commit-in-rspec</id>
     <content type="html"><![CDATA[<p>``` ruby mail_worker.rb</p>
 
 <h1>app/workers/mail_worker.rb</h1>

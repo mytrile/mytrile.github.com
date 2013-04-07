@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: rubinius | Dimitar Kostov ramblings]]></title>
-  <link href="http://fireinside.me/blog/categories/rubinius/atom.xml" rel="self"/>
-  <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T19:17:09+03:00</updated>
-  <id>http://fireinside.me/</id>
+  <link href="http://mytrile.github.com/blog/categories/rubinius/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-07T19:52:16+03:00</updated>
+  <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ruby VM Shootout]]></title>
-    <link href="http://fireinside.me/blog/2010/05/22/ruby-vm-shootout/"/>
+    <link href="http://mytrile.github.com/blog/2010/05/22/ruby-vm-shootout/"/>
     <updated>2010-05-22T00:00:00+03:00</updated>
-    <id>http://fireinside.me/blog/2010/05/22/ruby-vm-shootout</id>
+    <id>http://mytrile.github.com/blog/2010/05/22/ruby-vm-shootout</id>
     <content type="html"><![CDATA[<p>After releasing version 1.0 of <a href="http://rubini.us/">Rubinius</a> and <a href="http://jruby.org/">JRuby</a> hitting 1.5, I decided to test these great VMs against ruby 1.8.7 and the latest 1.9.2 to see how they perform. This benchmark uses Antonio Cangiano's <a href="http://github.com/acangiano/ruby-benchmark-suite">ruby-benchmark-suite</a>. I've posted part of the results as image, you can find all <a href="http://mitkokostov.info/resources/results.pdf">results as pdf</a>.  Tested versions of ruby, using <a href="http://rvm.beginrescueend.com/">RVM</a></p>
 
 

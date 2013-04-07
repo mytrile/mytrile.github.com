@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: devise | Dimitar Kostov ramblings]]></title>
-  <link href="http://fireinside.me/blog/categories/devise/atom.xml" rel="self"/>
-  <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T19:17:09+03:00</updated>
-  <id>http://fireinside.me/</id>
+  <link href="http://mytrile.github.com/blog/categories/devise/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-07T19:52:16+03:00</updated>
+  <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Cookie based authentication strategy in Devise]]></title>
-    <link href="http://fireinside.me/blog/2012/11/09/cookie-based-authentication-strategy-in-devise/"/>
+    <link href="http://mytrile.github.com/blog/2012/11/09/cookie-based-authentication-strategy-in-devise/"/>
     <updated>2012-11-09T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2012/11/09/cookie-based-authentication-strategy-in-devise</id>
+    <id>http://mytrile.github.com/blog/2012/11/09/cookie-based-authentication-strategy-in-devise</id>
     <content type="html"><![CDATA[<p>This method assumes that you have token authentication strategy enabled and will use the token for the user for cookie authentication</p>
 
 

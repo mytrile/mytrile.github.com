@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: haml | Dimitar Kostov ramblings]]></title>
-  <link href="http://fireinside.me/blog/categories/haml/atom.xml" rel="self"/>
-  <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T19:17:09+03:00</updated>
-  <id>http://fireinside.me/</id>
+  <link href="http://mytrile.github.com/blog/categories/haml/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-07T19:52:16+03:00</updated>
+  <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[XTHML in HAML view in Rails 3]]></title>
-    <link href="http://fireinside.me/blog/2013/02/04/xthml-in-haml-view-in-rails-3/"/>
+    <link href="http://mytrile.github.com/blog/2013/02/04/xthml-in-haml-view-in-rails-3/"/>
     <updated>2013-02-04T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2013/02/04/xthml-in-haml-view-in-rails-3</id>
+    <id>http://mytrile.github.com/blog/2013/02/04/xthml-in-haml-view-in-rails-3</id>
     <content type="html"><![CDATA[<p><code>haml config/initializers/haml.rb
 Haml::Template.options[:format] = :xhtml
 </code></p>

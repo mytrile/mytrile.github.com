@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: orly | Dimitar Kostov ramblings]]></title>
-  <link href="http://fireinside.me/blog/categories/orly/atom.xml" rel="self"/>
-  <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T19:17:09+03:00</updated>
-  <id>http://fireinside.me/</id>
+  <link href="http://mytrile.github.com/blog/categories/orly/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-07T19:52:16+03:00</updated>
+  <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Kod - a programmers' editor for OS X]]></title>
-    <link href="http://fireinside.me/blog/2011/01/26/kod-a-programmers-editor-for-os-x/"/>
+    <link href="http://mytrile.github.com/blog/2011/01/26/kod-a-programmers-editor-for-os-x/"/>
     <updated>2011-01-26T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2011/01/26/kod-a-programmers-editor-for-os-x</id>
+    <id>http://mytrile.github.com/blog/2011/01/26/kod-a-programmers-editor-for-os-x</id>
     <content type="html"><![CDATA[<p>Today I've heard about <a title="Kod" target="_blank" href="http://kodapp.com/">Kod</a> - "programmers" editor based on Chromium with support for Node.js scripting. You can read all over the place how cools it is and some other shit about this editor. I decided to try it out, but when I downloaded it that's what happened:</p>
 
 

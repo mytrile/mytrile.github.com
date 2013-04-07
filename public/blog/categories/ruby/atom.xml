@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: ruby | Dimitar Kostov ramblings]]></title>
-  <link href="http://fireinside.me/blog/categories/ruby/atom.xml" rel="self"/>
-  <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T19:17:09+03:00</updated>
-  <id>http://fireinside.me/</id>
+  <link href="http://mytrile.github.com/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-07T19:52:16+03:00</updated>
+  <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Janky setup: Jenkins, Hubot, HipChat and Ruby]]></title>
-    <link href="http://fireinside.me/blog/2013/04/07/janky/"/>
+    <link href="http://mytrile.github.com/blog/2013/04/07/janky/"/>
     <updated>2013-04-07T19:07:00+03:00</updated>
-    <id>http://fireinside.me/blog/2013/04/07/janky</id>
+    <id>http://mytrile.github.com/blog/2013/04/07/janky</id>
     <content type="html"><![CDATA[<h2>Prerequisites</h2>
 
 <ul>
@@ -182,9 +182,9 @@ $ heroku ps:scale web=1
   
   <entry>
     <title type="html"><![CDATA[Passing arguments to rake task]]></title>
-    <link href="http://fireinside.me/blog/2012/12/11/passing-arguments-to-rake-task/"/>
+    <link href="http://mytrile.github.com/blog/2012/12/11/passing-arguments-to-rake-task/"/>
     <updated>2012-12-11T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2012/12/11/passing-arguments-to-rake-task</id>
+    <id>http://mytrile.github.com/blog/2012/12/11/passing-arguments-to-rake-task</id>
     <content type="html"><![CDATA[<p>``` ruby Rakefile
 namespace :log do
   desc 'Upload logfile to cloud-based server'
@@ -211,9 +211,9 @@ $ rake log:upload\[development.log\]
   
   <entry>
     <title type="html"><![CDATA[Ignore upload directory while using Capistrano]]></title>
-    <link href="http://fireinside.me/blog/2012/12/04/ignore-upload-directory-while-using-capistrano/"/>
+    <link href="http://mytrile.github.com/blog/2012/12/04/ignore-upload-directory-while-using-capistrano/"/>
     <updated>2012-12-04T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2012/12/04/ignore-upload-directory-while-using-capistrano</id>
+    <id>http://mytrile.github.com/blog/2012/12/04/ignore-upload-directory-while-using-capistrano</id>
     <content type="html"><![CDATA[<pre>
 $ git rm -r --cached public/uploads
 $ cap deploy:setup
@@ -228,9 +228,9 @@ set :shared_children, shared_children + %w{public/uploads}
   
   <entry>
     <title type="html"><![CDATA[Start a Pry session on any unhandled exceptions]]></title>
-    <link href="http://fireinside.me/blog/2012/08/14/start-a-pry-session-on-any-unhandled-exceptions/"/>
+    <link href="http://mytrile.github.com/blog/2012/08/14/start-a-pry-session-on-any-unhandled-exceptions/"/>
     <updated>2012-08-14T00:00:00+03:00</updated>
-    <id>http://fireinside.me/blog/2012/08/14/start-a-pry-session-on-any-unhandled-exceptions</id>
+    <id>http://mytrile.github.com/blog/2012/08/14/start-a-pry-session-on-any-unhandled-exceptions</id>
     <content type="html"><![CDATA[<p> </p>
 
 ]]></content>
@@ -238,9 +238,9 @@ set :shared_children, shared_children + %w{public/uploads}
   
   <entry>
     <title type="html"><![CDATA[Unicode in irb]]></title>
-    <link href="http://fireinside.me/blog/2012/08/08/unicode-in-irb/"/>
+    <link href="http://mytrile.github.com/blog/2012/08/08/unicode-in-irb/"/>
     <updated>2012-08-08T00:00:00+03:00</updated>
-    <id>http://fireinside.me/blog/2012/08/08/unicode-in-irb</id>
+    <id>http://mytrile.github.com/blog/2012/08/08/unicode-in-irb</id>
     <content type="html"><![CDATA[<p>If you're having problems with unicode characters in IRB from ruby compiled with rbenv, do this:</p>
 
 

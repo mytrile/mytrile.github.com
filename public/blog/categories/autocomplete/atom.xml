@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: autocomplete | Dimitar Kostov ramblings]]></title>
-  <link href="http://fireinside.me/blog/categories/autocomplete/atom.xml" rel="self"/>
-  <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T19:17:09+03:00</updated>
-  <id>http://fireinside.me/</id>
+  <link href="http://mytrile.github.com/blog/categories/autocomplete/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-07T19:52:16+03:00</updated>
+  <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[How to submit a form by clicking on autocomplete result]]></title>
-    <link href="http://fireinside.me/blog/2012/11/08/how-to-submit-a-form-by-clicking-on-autocomplete-result/"/>
+    <link href="http://mytrile.github.com/blog/2012/11/08/how-to-submit-a-form-by-clicking-on-autocomplete-result/"/>
     <updated>2012-11-08T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2012/11/08/how-to-submit-a-form-by-clicking-on-autocomplete-result</id>
+    <id>http://mytrile.github.com/blog/2012/11/08/how-to-submit-a-form-by-clicking-on-autocomplete-result</id>
     <content type="html"><![CDATA[<p>``` coffeescript
 jQuery ->
   $('#input_field').autocomplete</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: oh-my-zsh | Dimitar Kostov ramblings]]></title>
-  <link href="http://fireinside.me/blog/categories/oh-my-zsh/atom.xml" rel="self"/>
-  <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T19:17:09+03:00</updated>
-  <id>http://fireinside.me/</id>
+  <link href="http://mytrile.github.com/blog/categories/oh-my-zsh/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-07T19:52:16+03:00</updated>
+  <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Oh my zsh !]]></title>
-    <link href="http://fireinside.me/blog/2010/03/11/oh-my-zsh/"/>
+    <link href="http://mytrile.github.com/blog/2010/03/11/oh-my-zsh/"/>
     <updated>2010-03-11T00:00:00+02:00</updated>
-    <id>http://fireinside.me/blog/2010/03/11/oh-my-zsh</id>
+    <id>http://mytrile.github.com/blog/2010/03/11/oh-my-zsh</id>
     <content type="html"><![CDATA[<p>If your're looking for a framework for managing zsh configuration, <a href="http://github.com/robbyrussell/oh-my-zsh">oh-my-zsh</a> is your thing. It supports auto update, auto completion, git integration, very cool <a href="http://wiki.github.com/robbyrussell/oh-my-zsh/themes">themes</a> and more. You can install it with cloning the repo or via simple command:</p>
 
 
