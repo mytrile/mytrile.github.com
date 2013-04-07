@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ci | Dimitar Kostov ramblings]]></title>
+  <link href="http://fireinside.me/blog/categories/ci/atom.xml" rel="self"/>
+  <link href="http://fireinside.me/"/>
+  <updated>2013-04-07T19:17:09+03:00</updated>
+  <id>http://fireinside.me/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Janky setup: Jenkins, Hubot, HipChat and Ruby]]></title>
+    <link href="http://fireinside.me/blog/2013/04/07/janky/"/>
+    <updated>2013-04-07T19:07:00+03:00</updated>
+    <id>http://fireinside.me/blog/2013/04/07/janky</id>
+    <content type="html"><![CDATA[<h2>Prerequisites</h2>
+
+<ul>
+<li>Linux/Mac OSX</li>
+<li><a href="http://heroku.com">Heroku</a> account</li>
+<li><a href="https://www.hipchat.com/">HipChat</a> account</li>
+<li>Hosting provider for Jenkins like <a href="https://www.digitalocean.com">DigitalOcean</a></li>
+<li><a href="http://nodejs.org/">Nodejs</a> for Hubot</li>
+<li><a href="https://toolbelt.heroku.com/">Heroku Toolbelt</a></li>
+</ul>
+
+
+<h2>Jenkins installation and setup</h2>
+
+<p>First of all, you need box to deploy Jenkins server. I would recommend <a href="http://digitalocean.com">DigitalOcean</a>, because they provide awesome service at really low cost. Here we go:</p>
+
+<pre><code>$ ssh root@111.222.333.444
+~# wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | apt-key add -
+~# sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ &gt; /etc/apt/sources.list.d/jenkins.list'
+~# apt-get update
+~# apt-get install jenkins
+</code></pre>
+
+<p>Change newly created jenkins user password:</p>
+
+<pre><code>~# passwd jenkins
+</code></pre>
+
+<p>Add jenkins to the sudoers (not necessary):</p>
+
+<pre><code>~# visdudo
+
+jenkins ALL=(ALL:ALL) ALL
+</code></pre>
+
+<p>Allow jenkins to connect through ssh and disable root login</p>
+
+<pre><code>~# nano /etc/ssh/sshd_config
+
+AllowUsers jenkins
+PermitRootLogin no
+
+~# reload ssh
+</code></pre>
+
+<p>Upload your ssh key for login without password:</p>
+
+<pre><code>$ scp ~/.ssh/id_rsa.pub jenkins@111.222.333.444:/var/lib/jenkins/.ssh/authorized_keys
+</code></pre>
+
+<p>Navigate to your server on port 8080 and install necessary plugins:</p>
+
+<ol>
+<li>Click on 'Manage Jenkins'</li>
+<li>Click on 'Manage Plugins'</li>
+<li>Click on 'Available' tab</li>
+<li>Check 'rbenv' and 'Notification Plugin' and click 'Install without restart'</li>
+</ol>
+
+
+<p>Install rbenv and ruby-build:</p>
+
+<pre><code>$ sudo apt-get -y install build-essential zlib1g-dev libssl-dev\
+libreadline-dev libyaml-dev libcurl4-openssl-dev curl git-core python-software-properties
+$ git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
+$ git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' &gt;&gt; ~/.bash_profile
+$ echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.bash_profile
+$ exec $SHELL -l
+$ rbenv install 2.0.0-p0
+$ rbenv global 2.0.0-p0
+$ rbenv rehash
+$ gem install bundler
+</code></pre>
+
+<h2>Janky installation and setup</h2>
+
+<pre><code>$ git clone git://gist.github.com/1497335 janky
+$ cd janky
+$ heroku create --stack cedar
+$ heroku rename our-janky-server
+  Add require "janky/chat_service/hipchat" to config/environment.rb file before the Janky.setup(ENV)
+$ echo 'gem "hipchat", "~&gt;0.4"' &gt;&gt; Gemfile
+$ bundle install
+$ git add Gemfile.lock
+$ git commit Gemfile.lock -m "lock bundle"
+$ git push heroku master
+$ heroku config:add JANKY_BASE_URL="http://our-janky-server.herokuapp.com/"
+$ heroku config:add JANKY_BUILDER_DEFAULT="Jenkins URL"
+$ heroku config:add JANKY_CONFIG_DIR="/app/config"
+$ heroku config:add JANKY_HUBOT_USER="hubot"
+$ heroku config:add JANKY_HUBOT_PASSWORD="hubot"
+$ heroku config:add JANKY_GITHUB_USER="mytrile"
+$ heroku config:add JANKY_GITHUB_PASSWORD="password"
+$ heroku config:add JANKY_GITHUB_HOOK_SECRET="..."
+$ heroku config:add JANKY_CHAT_DEFAULT_ROOM="room"
+$ heroku config:add JANKY_CHAT=hipchat
+$ heroku config:add JANKY_CHAT_HIPCHAT_TOKEN="..."
+
+$ heroku run rake db:migrate
+$ heroku ps:scale web=1
+</code></pre>
+
+<h2>Hubot installation and setup</h2>
+
+<pre><code>$ wget https://github.com/github/hubot/archive/master.zip
+$ unzip master.zip
+$ cd hubot-master
+$ npm install
+$ make package
+$ cd hubot
+$ wget -O scripts/janky.coffee https://raw.github.com/github/hubot-scripts/master/src/scripts/janky.coffee
+</code></pre>
+
+<p><em>Note: Remove redis-brain.coffee from hubot-script.json if you don't to setup redis</em></p>
+
+<p>Add hubot-hipchat dependecy to package.json:</p>
+
+<pre><code>"dependencies": {
+  "hubot-hipchat": "&gt;= 2.4.5",
+  ...
+}
+</code></pre>
+
+<p>Edit the Procfile:</p>
+
+<pre><code>web: bin/hubot --adapter hipchat -n Hubot
+</code></pre>
+
+<p>Deploy Hubot:</p>
+
+<pre><code>$ git init
+$ git add .
+$ git commit -m 'initial commit'
+$ heroku create
+$ heroku rename our-company-hubot
+$ heroku config:add HEROKU_URL=http://our-company-hubot.herokuapp.com
+</code></pre>
+
+<p>Create account for your HipChat bot and configure it:</p>
+
+<pre><code>$ heroku config:add HUBOT_HIPCHAT_JID="12345_678901@chat.hipchat.com"
+$ heroku config:add HUBOT_HIPCHAT_PASSWORD="mypassword"
+$ heroku config:add HUBOT_HIPCHAT_TOKEN="…"
+$ heroku config:add HUBOT_JANKY_URL="http://hubot:hubot@our-janky-server.herokuapp.com/_hubot"
+$ heroku ps:scale web=1
+</code></pre>
+
+<p><em>Note: HUBOT_HIPCHAT_TOKEN should be the admin token, not the bot user token</em></p>
+
+<h2>Usage</h2>
+
+<p>We're almost there. The last to do is to tweak Jenkins after the initial setup. In the HipChat room where your bot is:</p>
+
+<pre><code>&gt; hubot ci setup username/repo
+&gt; hubot ci build repo
+</code></pre>
+
+<p>There should be new job in your Jenkins server that can be configured accordingly your application.</p>
+]]></content>
+  </entry>
+  
+</feed>

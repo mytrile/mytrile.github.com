@@ -1,0 +1,156 @@
+---
+layout: post
+title: "Janky setup: Jenkins, Hubot, HipChat and Ruby"
+date: 2013-04-07 19:07
+comments: true
+categories:
+  - janky
+  - jenkins
+  - hubot
+  - hipchat
+  - ruby
+  - testing
+  - ci
+---
+
+##Prerequisites
+
+* Linux/Mac OSX
+* [Heroku](http://heroku.com) account
+* [HipChat](https://www.hipchat.com/) account
+* Hosting provider for Jenkins like [DigitalOcean](https://www.digitalocean.com)
+* [Nodejs](http://nodejs.org/) for Hubot
+* [Heroku Toolbelt](https://toolbelt.heroku.com/)
+
+##Jenkins installation and setup
+
+First of all, you need box to deploy Jenkins server. I would recommend [DigitalOcean](http://digitalocean.com), because they provide awesome service at really low cost. Here we go:
+
+
+    $ ssh root@111.222.333.444
+    ~# wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | apt-key add -
+    ~# sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+    ~# apt-get update
+    ~# apt-get install jenkins
+
+Change newly created jenkins user password:
+
+    ~# passwd jenkins
+
+Add jenkins to the sudoers (not necessary):
+
+    ~# visdudo
+
+    jenkins ALL=(ALL:ALL) ALL
+
+Allow jenkins to connect through ssh and disable root login
+
+    ~# nano /etc/ssh/sshd_config
+
+    AllowUsers jenkins
+    PermitRootLogin no
+
+    ~# reload ssh
+
+Upload your ssh key for login without password:
+
+    $ scp ~/.ssh/id_rsa.pub jenkins@111.222.333.444:/var/lib/jenkins/.ssh/authorized_keys
+
+Navigate to your server on port 8080 and install necessary plugins:
+
+1. Click on 'Manage Jenkins'
+2. Click on 'Manage Plugins'
+3. Click on 'Available' tab
+4. Check 'rbenv' and 'Notification Plugin' and click 'Install without restart'
+
+Install rbenv and ruby-build:
+
+    $ sudo apt-get -y install build-essential zlib1g-dev libssl-dev\
+    libreadline-dev libyaml-dev libcurl4-openssl-dev curl git-core python-software-properties
+    $ git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
+    $ git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+    $ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+    $ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+    $ exec $SHELL -l
+    $ rbenv install 2.0.0-p0
+    $ rbenv global 2.0.0-p0
+    $ rbenv rehash
+    $ gem install bundler
+
+## Janky installation and setup
+
+    $ git clone git://gist.github.com/1497335 janky
+    $ cd janky
+    $ heroku create --stack cedar
+    $ heroku rename our-janky-server
+      Add require "janky/chat_service/hipchat" to config/environment.rb file before the Janky.setup(ENV)
+    $ echo 'gem "hipchat", "~>0.4"' >> Gemfile
+    $ bundle install
+    $ git add Gemfile.lock
+    $ git commit Gemfile.lock -m "lock bundle"
+    $ git push heroku master
+    $ heroku config:add JANKY_BASE_URL="http://our-janky-server.herokuapp.com/"
+    $ heroku config:add JANKY_BUILDER_DEFAULT="Jenkins URL"
+    $ heroku config:add JANKY_CONFIG_DIR="/app/config"
+    $ heroku config:add JANKY_HUBOT_USER="hubot"
+    $ heroku config:add JANKY_HUBOT_PASSWORD="hubot"
+    $ heroku config:add JANKY_GITHUB_USER="mytrile"
+    $ heroku config:add JANKY_GITHUB_PASSWORD="password"
+    $ heroku config:add JANKY_GITHUB_HOOK_SECRET="..."
+    $ heroku config:add JANKY_CHAT_DEFAULT_ROOM="room"
+    $ heroku config:add JANKY_CHAT=hipchat
+    $ heroku config:add JANKY_CHAT_HIPCHAT_TOKEN="..."
+
+    $ heroku run rake db:migrate
+    $ heroku ps:scale web=1
+## Hubot installation and setup
+    $ wget https://github.com/github/hubot/archive/master.zip
+    $ unzip master.zip
+    $ cd hubot-master
+    $ npm install
+    $ make package
+    $ cd hubot
+    $ wget -O scripts/janky.coffee https://raw.github.com/github/hubot-scripts/master/src/scripts/janky.coffee
+
+*Note: Remove redis-brain.coffee from hubot-script.json if you don't to setup redis*
+
+Add hubot-hipchat dependecy to package.json:
+
+    "dependencies": {
+      "hubot-hipchat": ">= 2.4.5",
+      ...
+    }
+
+Edit the Procfile:
+
+    web: bin/hubot --adapter hipchat -n Hubot
+
+Deploy Hubot:
+
+    $ git init
+    $ git add .
+    $ git commit -m 'initial commit'
+    $ heroku create
+    $ heroku rename our-company-hubot
+    $ heroku config:add HEROKU_URL=http://our-company-hubot.herokuapp.com
+
+Create account for your HipChat bot and configure it:
+
+    $ heroku config:add HUBOT_HIPCHAT_JID="12345_678901@chat.hipchat.com"
+    $ heroku config:add HUBOT_HIPCHAT_PASSWORD="mypassword"
+    $ heroku config:add HUBOT_HIPCHAT_TOKEN="…"
+    $ heroku config:add HUBOT_JANKY_URL="http://hubot:hubot@our-janky-server.herokuapp.com/_hubot"
+    $ heroku ps:scale web=1
+
+*Note: HUBOT_HIPCHAT_TOKEN should be the admin token, not the bot user token*
+
+## Usage
+
+We're almost there. The last to do is to tweak Jenkins after the initial setup. In the HipChat room where your bot is:
+
+    > hubot ci setup username/repo
+    > hubot ci build repo
+
+There should be new job in your Jenkins server that can be configured accordingly your application.
+
+

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: rails | Dimitar Kostov ramblings]]></title>
   <link href="http://fireinside.me/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://fireinside.me/"/>
-  <updated>2013-04-07T18:50:29+03:00</updated>
+  <updated>2013-04-07T19:17:09+03:00</updated>
   <id>http://fireinside.me/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
@@ -109,9 +109,9 @@ username=# CREATE DATABASE myapp_development;
 username=# \q</pre>
 
 
-<p>{% codeblock .zshrc %}
-export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"</pre>
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>.zshrc </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"&lt;/pre></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><code> yml database.yml
 development:
