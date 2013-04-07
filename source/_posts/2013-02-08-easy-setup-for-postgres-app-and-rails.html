@@ -1,0 +1,33 @@
+---
+title: Easy setup for Postgres.app and Rails
+date: 2013-02-08
+comments: true
+layout: post
+categories:
+  - mac
+  - postgres
+  - rails
+
+ref_url:
+---
+
+<p>This is how you setup <a href="http://postgresapp.com/" target="_blank">Postgress.app</a> with Rails</p>
+
+<pre>~ psql
+username=# CREATE DATABASE myapp_development;
+username=# \q</pre>
+
+{% codeblock .zshrc %}
+export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"</pre>
+{% endcodeblock %}
+
+```  yml database.yml
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: myapp_development
+  pool: 5
+  host: localhost
+  username: username
+  password:
+```

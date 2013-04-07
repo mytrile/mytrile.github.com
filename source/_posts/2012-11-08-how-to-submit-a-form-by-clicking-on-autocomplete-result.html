@@ -1,0 +1,21 @@
+---
+title: How to submit a form by clicking on autocomplete result
+date: 2012-11-08
+comments: true
+layout: post
+categories:
+  - rails
+  - jquery
+  - autocomplete
+
+ref_url:
+---
+
+``` coffeescript
+jQuery ->
+  $('#input_field').autocomplete
+    source: $('#input_field').data('autocomplete-source')
+    select: (event, ui) ->
+      $("#input_field").val(ui.item.value)
+      $('#form').submit()
+```

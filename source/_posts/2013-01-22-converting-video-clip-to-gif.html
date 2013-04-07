@@ -1,0 +1,17 @@
+---
+title: Converting video clip to gif
+date: 2013-01-22
+comments: true
+layout: post
+categories:
+  - gif
+
+ref_url:
+---
+
+<pre>
+# Borrowed from http://schneems.com/post/41104255619/use-gifs-in-your-pull-request-for-good-not-evil
+
+$ ffmpeg -i ScreenFlow.mov -pix_fmt rgb24 output.gif
+$ convert -layers Optimize output.gif output_optimized.gif
+</pre>

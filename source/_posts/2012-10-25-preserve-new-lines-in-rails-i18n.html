@@ -1,0 +1,29 @@
+---
+title: Preserve new lines in Rails i18n
+date: 2012-10-25
+comments: true
+layout: post
+categories:
+  - rails
+  - i18n
+  - yaml
+
+ref_url:
+---
+
+``` yml
+user:
+  mailer:
+    footer: |
+      Best regards,
+      Your Company.
+```
+
+``` haml
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8"}
+  %body
+    = simple_format I18n.t('user.mailer.footer')
+```

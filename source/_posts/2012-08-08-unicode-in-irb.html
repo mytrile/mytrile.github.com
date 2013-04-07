@@ -1,0 +1,19 @@
+---
+title: Unicode in irb
+date: 2012-08-08
+comments: true
+layout: post
+categories:
+  - mac
+  - ruby
+  - irb
+
+ref_url:
+---
+
+<p>If you're having problems with unicode characters in IRB from ruby compiled with rbenv, do this:</p>
+
+<pre>$ brew install readline
+$ export CPPFLAGS=-I/usr/local/Cellar/readline/6.2.4/include
+$ export LDFLAGS=-L/usr/local/Cellar/readline/6.2.4/lib/
+$ rbenv install 1.9.3-p194</pre>

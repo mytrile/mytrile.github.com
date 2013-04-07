@@ -1,0 +1,65 @@
+---
+title: Testing after_commit in rspec
+date: 2013-03-28
+comments: true
+layout: post
+categories:
+  - rails
+  - rspec
+  - after_commit
+  - test
+  - sidekiq
+
+ref_url:
+---
+
+``` ruby mail_worker.rb
+# app/workers/mail_worker.rb
+
+class MailWorker
+  include Sidekiq::Worker
+
+  def perform(id)
+    # send mail
+  end
+end
+```
+
+``` ruby spec_helper.rb
+# spec/spec_helper.rb
+
+RSpec.configure do |config|
+  config.use_transactional_fixtures = false
+
+  # rest of the configuration
+end
+
+```
+
+``` ruby user.rb
+# app/models/user.rb
+
+class User < ActiveRecord::Base
+  after_commit :send_welcome_mail, on: create
+
+  private
+
+  def send_welcome_mail
+    MailWorker.perform_async(self.id)
+  end
+end
+```
+
+``` ruby user_spec.rb
+# spec/models/user_spec.rb
+
+require 'spec_helper'
+
+describe AffiliateProgram do
+  let(:user) { FactoryGirl.create(:user) }
+
+  it "should queue sending mail for user" do
+    expect { user.run_callbacks(:commit) }.to change { AffiliateProgramOfferWorker.jobs.count }.by(1)
+  end
+end
+```

@@ -1,0 +1,56 @@
+---
+title: Cookie based authentication strategy in Devise
+date: 2012-11-09
+comments: true
+layout: post
+categories:
+  - rails
+  - devise
+
+ref_url:
+---
+
+<p>This method assumes that you have token authentication strategy enabled and will use the token for the user for cookie authentication</p>&#13;
+
+``` ruby lib/devise/cookie_token_auth_strategy.rb
+Warden::Strategies.add(:token_cookie_strategy) do
+  def valid?
+    token_from_cookie
+  end
+
+  def authenticate!
+    if token_from_cookie.present? && (user = User.find_for_token_authentication(:auth_token => token_from_cookie)).present?
+      delete_token_from_cookie
+      success!(user)
+    else
+      fail!("Could not log in")
+    end
+  end
+
+  def token_from_cookie
+    cookies[:authentication_token]
+  end
+
+  def delete_token_from_cookie
+    cookies.delete(:authentication_token)
+  end
+
+end
+```
+
+``` ruby config/initializers/devise.rb
+Devise.setup do |config|
+  config.warden do |manager|
+    manager.default_strategies(:scope => :user).unshift :token_cookie_strategy
+  end
+end
+```
+
+``` ruby config/application.rb
+module YourApp
+  class Application < Rails::Application
+    config.autoload_paths += %W(#{config.root}/lib/devise)
+    # rest of the file
+  end
+end
+```
