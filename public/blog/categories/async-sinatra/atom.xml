@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: async-sinatra | Dimitar Kostov ramblings]]></title>
+  <link href="http://fireinside.me/blog/categories/async-sinatra/atom.xml" rel="self"/>
+  <link href="http://fireinside.me/"/>
+  <updated>2013-04-07T18:05:04+03:00</updated>
+  <id>http://fireinside.me/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[I love "Hello, World" benchmarks]]></title>
+    <link href="http://fireinside.me/blog/2012/01/03/i-love-hello-world-benchmarks/"/>
+    <updated>2012-01-03T00:00:00+02:00</updated>
+    <id>http://fireinside.me/blog/2012/01/03/i-love-hello-world-benchmarks</id>
+    <content type="html"><![CDATA[<p>I love "Hello, World" benchmarks. They are stupid and meaningless. I love it when someone shows how fast is his web server on the local machine. </p>
+
+
+<p>&#13;</p>
+
+<p>Let's see a comparison between node.js, async-sinatra and aleph all running apps on heroku free plan.</p>
+
+
+<p>&#13;</p>
+
+<p>Node.js</p>
+
+
+<p>&#13;</p>
+
+<p>============================================<br />Time taken for tests:   11.359 seconds<br /><strong>Requests per second:   704.26 [#/sec] (mean)</strong><br />Time per request:        141.993 [ms] (mean)<strong><br /></strong>Time per request:        1.420 [ms] (mean, across all concurrent requests)</p>
+
+
+<p>&#13;</p>
+
+<p>async-sinatra</p>
+
+
+<p>&#13;</p>
+
+<p>============================================<br />Time taken for tests:   12.223 seconds<br /><strong>Requests per second:    654.50 [#/sec] (mean)</strong><br />Time per request:       152.789 [ms] (mean)<strong><br /></strong>Time per request:       1.528 [ms] (mean, across all concurrent requests)</p>
+
+
+<p>&#13;</p>
+
+<p>Aleph</p>
+
+
+<p>&#13;</p>
+
+<p>============================================<br />Time taken for tests:   11.202 seconds<br /><strong>Requests per second:    714.13 [#/sec] (mean)</strong><br />Time per request:       140.030 [ms] (mean)<strong><br /></strong>Time per request:       1.400 [ms] (mean, across all concurrent requests)</p>
+
+
+<p>&#13;</p>
+
+<p><img src="http://media.tumblr.com/tumblr_lx7th8FK6z1qcx25j.png" /></p>
+
+
+<p></p>
+]]></content>
+  </entry>
+  
+</feed>

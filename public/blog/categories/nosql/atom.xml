@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: nosql | Dimitar Kostov ramblings]]></title>
+  <link href="http://fireinside.me/blog/categories/nosql/atom.xml" rel="self"/>
+  <link href="http://fireinside.me/"/>
+  <updated>2013-04-07T18:05:04+03:00</updated>
+  <id>http://fireinside.me/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Mongo3 - Awesome admin interface]]></title>
+    <link href="http://fireinside.me/blog/2010/02/22/mongo3-awesome-admin-interface/"/>
+    <updated>2010-02-22T00:00:00+02:00</updated>
+    <id>http://fireinside.me/blog/2010/02/22/mongo3-awesome-admin-interface</id>
+    <content type="html"><![CDATA[<p>MongoDB is great implementation of NoSQL idea. But right now it's lacking admin interface except the javascript based console. <a href="http://github.com/derailed/mongo3">Mongo3</a> is here for the rescue:</p>
+
+
+<p>&#13;</p>
+
+<p><img src="http://media.tumblr.com/tumblr_l8oayf2X6d1qcx25j.png" /></p>
+
+
+<p>&#13;</p>
+
+<p>As you can see Mongo3 allows you to manage your mongoDB clusters using a web based admin console. It's written in Ruby using Sinatra.</p>
+
+
+<p>&#13;</p>
+
+<p>Running Mongo3 in 3 steps:</p>
+
+
+<p>&#13;</p>
+
+<ol><li>Get the gem <code>sudo gem install mongo3</code></li>&#13;
+<li>Create .mongo3 file in your home dir with config details<br /><script src="http://gist.github.com/310914.js"></script></li>&#13;
+<li>Fire it up <code>mongo3</code></li>&#13;
+</ol>
+
+
+<p>PS: Another project to look is <a href="http://github.com/ahe/mongo_admin">mongo_admin</a></p>
+
+
+<p></p>
+]]></content>
+  </entry>
+  
+</feed>

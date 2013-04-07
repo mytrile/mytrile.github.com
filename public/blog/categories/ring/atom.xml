@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ring | Dimitar Kostov ramblings]]></title>
+  <link href="http://fireinside.me/blog/categories/ring/atom.xml" rel="self"/>
+  <link href="http://fireinside.me/"/>
+  <updated>2013-04-07T18:05:04+03:00</updated>
+  <id>http://fireinside.me/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ring - Rack for Clojure]]></title>
+    <link href="http://fireinside.me/blog/2010/03/01/ring-rack-for-clojure/"/>
+    <updated>2010-03-01T00:00:00+02:00</updated>
+    <id>http://fireinside.me/blog/2010/03/01/ring-rack-for-clojure</id>
+    <content type="html"><![CDATA[<p>If you're looking for something similar to Ruby's Rack or Python's <span class="caps">WSGI</span>, but for Clojure, take a look at <a href="http://github.com/mmcgrana/ring">Ring</a>. The simple unified <span class="caps">API</span> allows easily constructing web applications with modular architecture. At this moment two adapaters are supported: Jetty and Apache HttpCore webserver.</p>
+
+
+<p>&#13;</p>
+
+<script src="http://gist.github.com/318162.js"></script>
+
+]]></content>
+  </entry>
+  
+</feed>

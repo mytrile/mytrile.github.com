@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: coffeescript | Dimitar Kostov ramblings]]></title>
+  <link href="http://fireinside.me/blog/categories/coffeescript/atom.xml" rel="self"/>
+  <link href="http://fireinside.me/"/>
+  <updated>2013-04-07T18:05:04+03:00</updated>
+  <id>http://fireinside.me/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Fresh cup of coffee]]></title>
+    <link href="http://fireinside.me/blog/2010/02/13/fresh-cup-of-coffee/"/>
+    <updated>2010-02-13T00:00:00+02:00</updated>
+    <id>http://fireinside.me/blog/2010/02/13/fresh-cup-of-coffee</id>
+    <content type="html"><![CDATA[<p>JavaScript: The platform of the future? With <a href="http://nodejs.org/">Node.js</a> on the hotspot everyone is looking back to using JavaScript as server-side language. And while Node.js is pretty awesome, I really don’t think c-like languages are expressive. <a href="http://github.com/jashkenas/coffee-script">CoffeeScript</a> is a Ruby inspired language that compiles to JavaScript. It has great syntax and cool features like interactive mode. Definately project to watch.</p>
+
+
+<p>&#13;</p>
+
+<script src="http://gist.github.com/303498.js?file=node.coffee"></script>
+
+]]></content>
+  </entry>
+  
+</feed>

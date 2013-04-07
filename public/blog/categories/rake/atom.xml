@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: rake | Dimitar Kostov ramblings]]></title>
+  <link href="http://fireinside.me/blog/categories/rake/atom.xml" rel="self"/>
+  <link href="http://fireinside.me/"/>
+  <updated>2013-04-07T18:05:04+03:00</updated>
+  <id>http://fireinside.me/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Passing arguments to rake task]]></title>
+    <link href="http://fireinside.me/blog/2012/12/11/passing-arguments-to-rake-task/"/>
+    <updated>2012-12-11T00:00:00+02:00</updated>
+    <id>http://fireinside.me/blog/2012/12/11/passing-arguments-to-rake-task</id>
+    <content type="html"><![CDATA[<p>``` ruby Rakefile
+namespace :log do
+  desc 'Upload logfile to cloud-based server'
+  task :upload, [:filename] => [:environment] do |t, args|</p>
+
+<pre><code># upload logic
+# args[:filename] is the passed argument
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<pre>
+$ rake log:upload[development.log]
+
+# If the shell complains just escape the brackets
+
+$ rake log:upload\[development.log\]
+</pre>
+
+]]></content>
+  </entry>
+  
+</feed>

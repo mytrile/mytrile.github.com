@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: javascript | Dimitar Kostov ramblings]]></title>
+  <link href="http://fireinside.me/blog/categories/javascript/atom.xml" rel="self"/>
+  <link href="http://fireinside.me/"/>
+  <updated>2013-04-07T18:05:04+03:00</updated>
+  <id>http://fireinside.me/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[MVC Architecture for JavaScript Applications]]></title>
+    <link href="http://fireinside.me/blog/2011/09/25/mvc-architecture-for-javascript-applications/"/>
+    <updated>2011-09-25T00:00:00+03:00</updated>
+    <id>http://fireinside.me/blog/2011/09/25/mvc-architecture-for-javascript-applications</id>
+    <content type="html"><![CDATA[<p> </p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Clojure to JS compiler]]></title>
+    <link href="http://fireinside.me/blog/2011/07/21/clojure-to-js-compiler/"/>
+    <updated>2011-07-21T00:00:00+03:00</updated>
+    <id>http://fireinside.me/blog/2011/07/21/clojure-to-js-compiler</id>
+    <content type="html"><![CDATA[<p> </p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[PhantomJS - Headless WebKit with JavaScript API]]></title>
+    <link href="http://fireinside.me/blog/2011/07/13/phantomjs-headless-webkit-with-javascript-api/"/>
+    <updated>2011-07-13T00:00:00+03:00</updated>
+    <id>http://fireinside.me/blog/2011/07/13/phantomjs-headless-webkit-with-javascript-api</id>
+    <content type="html"><![CDATA[<p> </p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Express - Sinatra for Node.js]]></title>
+    <link href="http://fireinside.me/blog/2010/03/04/express-sinatra-for-node-js/"/>
+    <updated>2010-03-04T00:00:00+02:00</updated>
+    <id>http://fireinside.me/blog/2010/03/04/express-sinatra-for-node-js</id>
+    <content type="html"><![CDATA[<p>Almost from the first release <a href="http://www.sinatrarb.com/">Sinatra</a> has inspired lots of mini web frameworks in many programming languages with its simplicity. And if you're in the hype for Node.js like me, <a href="http://github.com/visionmedia/express">Express</a> may be the choice for creating simple service oriented web apps using JavaScript. Here is the "Hello World" example using Express:</p>
+
+
+<p>&#13;</p>
+
+<script src="http://gist.github.com/321542.js"></script>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JQuery Lint - Catch incorrect JQuery use]]></title>
+    <link href="http://fireinside.me/blog/2010/02/25/jquery-lint-catch-incorrect-jquery-use/"/>
+    <updated>2010-02-25T00:00:00+02:00</updated>
+    <id>http://fireinside.me/blog/2010/02/25/jquery-lint-catch-incorrect-jquery-use</id>
+    <content type="html"><![CDATA[<p>I really hope you've heard about <a href="http://www.crockford.com/">Douglas Crockford's</a> <a href="http://www.jslint.com/">JSLint</a>, great tool for JavaScript code quality inspection. <a href="http://github.com/jamespadolsey/jQuery-Lint">JQuery Lint</a> uses common idea to report errors and any incorrect usage of jQuery.</p>
+
+
+<p>&#13;</p>
+
+<p>Screenshot from Firebug's console:</p>
+
+
+<p>&#13;</p>
+
+<p><img src="http://media.tumblr.com/tumblr_l8oawoTbQa1qcx25j.png" /></p>
+
+
+<p></p>
+]]></content>
+  </entry>
+  
+</feed>

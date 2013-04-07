@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: xhtml | Dimitar Kostov ramblings]]></title>
+  <link href="http://fireinside.me/blog/categories/xhtml/atom.xml" rel="self"/>
+  <link href="http://fireinside.me/"/>
+  <updated>2013-04-07T18:05:04+03:00</updated>
+  <id>http://fireinside.me/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[XTHML in HAML view in Rails 3]]></title>
+    <link href="http://fireinside.me/blog/2013/02/04/xthml-in-haml-view-in-rails-3/"/>
+    <updated>2013-02-04T00:00:00+02:00</updated>
+    <id>http://fireinside.me/blog/2013/02/04/xthml-in-haml-view-in-rails-3</id>
+    <content type="html"><![CDATA[<p><code>haml config/initializers/haml.rb
+Haml::Template.options[:format] = :xhtml
+</code></p>
+
+<p>``` haml some_view.html.haml
+!!! XML
+!!!</p>
+
+<p>-# &lt;?xml version='1.0' encoding='utf-8' ?>
+-# &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

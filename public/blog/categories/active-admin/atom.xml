@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: active_admin | Dimitar Kostov ramblings]]></title>
+  <link href="http://fireinside.me/blog/categories/active-admin/atom.xml" rel="self"/>
+  <link href="http://fireinside.me/"/>
+  <updated>2013-04-07T18:05:04+03:00</updated>
+  <id>http://fireinside.me/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Active Admin toggle all function for batch actions]]></title>
+    <link href="http://fireinside.me/blog/2013/02/16/active-admin-toggle-all-function-for-batch-actions/"/>
+    <updated>2013-02-16T00:00:00+02:00</updated>
+    <id>http://fireinside.me/blog/2013/02/16/active-admin-toggle-all-function-for-batch-actions</id>
+    <content type="html"><![CDATA[<p>If you're running into a problem toggling all checkboxes in index page for batch action in Active Admin you should:</p>
+
+
+<p></p>
+
+
+<p>1. Download <a href="https://github.com/jquery/jquery-migrate/" target="_blank">jquery-migrate</a></p>
+
+
+<p>2. Added it as asset and require it in active_admin.js manifest file</p>
+
+
+<blockquote>
+<p>//= require jquery-migrate</p>
+</blockquote>
+
+]]></content>
+  </entry>
+  
+</feed>

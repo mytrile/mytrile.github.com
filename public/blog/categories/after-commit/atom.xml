@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: after_commit | Dimitar Kostov ramblings]]></title>
+  <link href="http://fireinside.me/blog/categories/after-commit/atom.xml" rel="self"/>
+  <link href="http://fireinside.me/"/>
+  <updated>2013-04-07T18:05:04+03:00</updated>
+  <id>http://fireinside.me/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Testing after_commit in rspec]]></title>
+    <link href="http://fireinside.me/blog/2013/03/28/testing-after-commit-in-rspec/"/>
+    <updated>2013-03-28T00:00:00+02:00</updated>
+    <id>http://fireinside.me/blog/2013/03/28/testing-after-commit-in-rspec</id>
+    <content type="html"><![CDATA[<p>``` ruby mail_worker.rb</p>
+
+<h1>app/workers/mail_worker.rb</h1>
+
+<p>class MailWorker
+  include Sidekiq::Worker</p>
+
+<p>  def perform(id)</p>
+
+<pre><code># send mail
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>``` ruby spec_helper.rb</p>
+
+<h1>spec/spec_helper.rb</h1>
+
+<p>RSpec.configure do |config|
+  config.use_transactional_fixtures = false</p>
+
+<p>  # rest of the configuration
+end</p>
+
+<p>```</p>
+
+<p>``` ruby user.rb</p>
+
+<h1>app/models/user.rb</h1>
+
+<p>class User &lt; ActiveRecord::Base
+  after_commit :send_welcome_mail, on: create</p>
+
+<p>  private</p>
+
+<p>  def send_welcome_mail</p>
+
+<pre><code>MailWorker.perform_async(self.id)
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>``` ruby user_spec.rb</p>
+
+<h1>spec/models/user_spec.rb</h1>
+
+<p>require 'spec_helper'</p>
+
+<p>describe AffiliateProgram do
+  let(:user) { FactoryGirl.create(:user) }</p>
+
+<p>  it "should queue sending mail for user" do</p>
+
+<pre><code>expect { user.run_callbacks(:commit) }.to change { AffiliateProgramOfferWorker.jobs.count }.by(1)
+</code></pre>
+
+<p>  end
+end
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

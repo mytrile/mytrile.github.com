@@ -1,0 +1,1041 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Dimitar Kostov ramblings</title>
+  <meta name="author" content="Dimitar Kostov">
+
+  
+  <meta name="description" content="
+">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://fireinside.me/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Dimitar Kostov ramblings" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Dimitar Kostov ramblings</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:fireinside.me" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/31/hopchat-custom-color-theme-for-limechat-irc-client/">HopChat - Custom color theme for Limechat IRC client</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-31T00:00:00+02:00" pubdate data-updated="true">Mar 31<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://mytrile.github.com/limechat-hopchat" title="HopChat - custom color theme for Limechat IRC client" target="_blank"><img src="http://media.tumblr.com/730976927df4d4d6428cc17166202bae/tumblr_inline_mkkpv1Nj1F1qz4rgp.png" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/28/testing-after-commit-in-rspec/">Testing after_commit in rspec</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-28T00:00:00+02:00" pubdate data-updated="true">Mar 28<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><figcaption><span>mail_worker.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># app/workers/mail_worker.rb</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">MailWorker</span>
+</span><span class='line'>  <span class="kp">include</span> <span class="ss">Sidekiq</span><span class="p">:</span><span class="ss">:Worker</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">perform</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+</span><span class='line'>    <span class="c1"># send mail</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+<figure class='code'><figcaption><span>spec_helper.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># spec/spec_helper.rb</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">RSpec</span><span class="o">.</span><span class="n">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">use_transactional_fixtures</span> <span class="o">=</span> <span class="kp">false</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1"># rest of the configuration</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+<figure class='code'><figcaption><span>user.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># app/models/user.rb</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'>  <span class="n">after_commit</span> <span class="ss">:send_welcome_mail</span><span class="p">,</span> <span class="ss">on</span><span class="p">:</span> <span class="n">create</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kp">private</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">send_welcome_mail</span>
+</span><span class='line'>    <span class="no">MailWorker</span><span class="o">.</span><span class="n">perform_async</span><span class="p">(</span><span class="nb">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+<figure class='code'><figcaption><span>user_spec.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># spec/models/user_spec.rb</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;spec_helper&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">describe</span> <span class="no">AffiliateProgram</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">let</span><span class="p">(</span><span class="ss">:user</span><span class="p">)</span> <span class="p">{</span> <span class="no">FactoryGirl</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:user</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">it</span> <span class="s2">&quot;should queue sending mail for user&quot;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">expect</span> <span class="p">{</span> <span class="n">user</span><span class="o">.</span><span class="n">run_callbacks</span><span class="p">(</span><span class="ss">:commit</span><span class="p">)</span> <span class="p">}</span><span class="o">.</span><span class="n">to</span> <span class="n">change</span> <span class="p">{</span> <span class="no">AffiliateProgramOfferWorker</span><span class="o">.</span><span class="n">jobs</span><span class="o">.</span><span class="n">count</span> <span class="p">}</span><span class="o">.</span><span class="n">by</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/21/better-rails-errors-and-live-console/">Better rails errors and live console</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-21T00:00:00+02:00" pubdate data-updated="true">Feb 21<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://github.com/charliesome/better_errors" target="_blank"><img src="http://media.tumblr.com/3dcab8624b81f2fdaf50b1a122b2a379/tumblr_inline_mik9x4p11b1qz4rgp.png" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/16/active-admin-toggle-all-function-for-batch-actions/">Active Admin toggle all function for batch actions</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-16T00:00:00+02:00" pubdate data-updated="true">Feb 16<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you&#8217;re running into a problem toggling all checkboxes in index page for batch action in Active Admin you should:</p>
+<p></p>
+<p>1. Download <a href="https://github.com/jquery/jquery-migrate/" target="_blank">jquery-migrate</a></p>
+<p>2. Added it as asset and require it in active_admin.js manifest file</p>
+<blockquote>
+<p>//= require jquery-migrate</p>
+</blockquote>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/08/easy-setup-for-postgres-app-and-rails/">Easy setup for Postgres.app and Rails</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-08T00:00:00+02:00" pubdate data-updated="true">Feb 8<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is how you setup <a href="http://postgresapp.com/" target="_blank">Postgress.app</a> with Rails</p>
+
+<pre>~ psql
+username=# CREATE DATABASE myapp_development;
+username=# \q</pre>
+
+<figure class='code'><figcaption><span>.zshrc </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"&lt;/pre></span></code></pre></td></tr></table></div></figure>
+
+<figure class='code'><figcaption><span>database.yml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">development</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">adapter</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">postgresql</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">encoding</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">unicode</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">database</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">myapp_development</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">pool</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">5</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">host</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">localhost</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">username</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">username</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">password</span><span class="p-Indicator">:</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/04/xthml-in-haml-view-in-rails-3/">XTHML in HAML view in Rails 3</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-04T00:00:00+02:00" pubdate data-updated="true">Feb 4<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><figcaption><span>config/initializers/haml.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='haml'><span class='line'>Haml::Template.options[:format] = :xhtml
+</span></code></pre></td></tr></table></div></figure>
+
+<figure class='code'><figcaption><span>some_view.html.haml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='haml'><span class='line'><span class="nn">!!! XML</span>
+</span><span class='line'><span class="nn">!!!</span>
+</span><span class='line'>
+</span><span class='line'><span class="cp">-# &lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39; ?&gt;</span>
+</span><span class='line'><span class="cp">-# &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/22/converting-video-clip-to-gif/">Converting video clip to gif</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-22T00:00:00+02:00" pubdate data-updated="true">Jan 22<span>nd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><pre>
+# Borrowed from http://schneems.com/post/41104255619/use-gifs-in-your-pull-request-for-good-not-evil
+
+$ ffmpeg -i ScreenFlow.mov -pix_fmt rgb24 output.gif
+$ convert -layers Optimize output.gif output_optimized.gif
+</pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/12/11/passing-arguments-to-rake-task/">Passing arguments to rake task</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-11T00:00:00+02:00" pubdate data-updated="true">Dec 11<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><figcaption><span>Rakefile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">namespace</span> <span class="ss">:log</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">desc</span> <span class="s1">&#39;Upload logfile to cloud-based server&#39;</span>
+</span><span class='line'>  <span class="n">task</span> <span class="ss">:upload</span><span class="p">,</span> <span class="o">[</span><span class="ss">:filename</span><span class="o">]</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:environment</span><span class="o">]</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">|</span>
+</span><span class='line'>    <span class="c1"># upload logic</span>
+</span><span class='line'>    <span class="c1"># args[:filename] is the passed argument</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+<pre>
+$ rake log:upload[development.log]
+
+# If the shell complains just escape the brackets
+
+$ rake log:upload\[development.log\]
+</pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/12/07/setting-signed-cookie-directly-on-the-rack-response-object/">Setting signed cookie directly on the rack response object</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-07T00:00:00+02:00" pubdate data-updated="true">Dec 7<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">request</span><span class="o">.</span><span class="n">cookie_jar</span><span class="o">.</span><span class="n">signed</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;value&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/12/04/ignore-upload-directory-while-using-capistrano/">Ignore upload directory while using Capistrano</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-04T00:00:00+02:00" pubdate data-updated="true">Dec 4<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><pre>
+$ git rm -r --cached public/uploads
+$ cap deploy:setup
+</pre>
+
+<figure class='code'><figcaption><span>config/deploy.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">set</span> <span class="ss">:shared_children</span><span class="p">,</span> <span class="n">shared_children</span> <span class="o">+</span> <span class="sx">%w{public/uploads}</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/11/09/cookie-based-authentication-strategy-in-devise/">Cookie based authentication strategy in Devise</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-09T00:00:00+02:00" pubdate data-updated="true">Nov 9<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This method assumes that you have token authentication strategy enabled and will use the token for the user for cookie authentication</p>&#13;
+
+<figure class='code'><figcaption><span>lib/devise/cookie_token_auth_strategy.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="ss">Warden</span><span class="p">:</span><span class="ss">:Strategies</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="ss">:token_cookie_strategy</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">valid?</span>
+</span><span class='line'>    <span class="n">token_from_cookie</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">authenticate!</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">token_from_cookie</span><span class="o">.</span><span class="n">present?</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">find_for_token_authentication</span><span class="p">(</span><span class="ss">:auth_token</span> <span class="o">=&gt;</span> <span class="n">token_from_cookie</span><span class="p">))</span><span class="o">.</span><span class="n">present?</span>
+</span><span class='line'>      <span class="n">delete_token_from_cookie</span>
+</span><span class='line'>      <span class="n">success!</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">else</span>
+</span><span class='line'>      <span class="nb">fail</span><span class="o">!</span><span class="p">(</span><span class="s2">&quot;Could not log in&quot;</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">token_from_cookie</span>
+</span><span class='line'>    <span class="n">cookies</span><span class="o">[</span><span class="ss">:authentication_token</span><span class="o">]</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">delete_token_from_cookie</span>
+</span><span class='line'>    <span class="n">cookies</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="ss">:authentication_token</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+<figure class='code'><figcaption><span>config/initializers/devise.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Devise</span><span class="o">.</span><span class="n">setup</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">warden</span> <span class="k">do</span> <span class="o">|</span><span class="n">manager</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">manager</span><span class="o">.</span><span class="n">default_strategies</span><span class="p">(</span><span class="ss">:scope</span> <span class="o">=&gt;</span> <span class="ss">:user</span><span class="p">)</span><span class="o">.</span><span class="n">unshift</span> <span class="ss">:token_cookie_strategy</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+<figure class='code'><figcaption><span>config/application.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">module</span> <span class="nn">YourApp</span>
+</span><span class='line'>  <span class="k">class</span> <span class="nc">Application</span> <span class="o">&lt;</span> <span class="ss">Rails</span><span class="p">:</span><span class="ss">:Application</span>
+</span><span class='line'>    <span class="n">config</span><span class="o">.</span><span class="n">autoload_paths</span> <span class="o">+=</span> <span class="sx">%W(</span><span class="si">#{</span><span class="n">config</span><span class="o">.</span><span class="n">root</span><span class="si">}</span><span class="sx">/lib/devise)</span>
+</span><span class='line'>    <span class="c1"># rest of the file</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/11/08/how-to-submit-a-form-by-clicking-on-autocomplete-result/">How to submit a form by clicking on autocomplete result</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-08T00:00:00+02:00" pubdate data-updated="true">Nov 8<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nx">jQuery</span> <span class="nf">-&gt;</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="s">&#39;#input_field&#39;</span><span class="p">).</span><span class="nx">autocomplete</span>
+</span><span class='line'>    <span class="nv">source: </span><span class="nx">$</span><span class="p">(</span><span class="s">&#39;#input_field&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s">&#39;autocomplete-source&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="nv">select: </span><span class="nf">(event, ui) -&gt;</span>
+</span><span class='line'>      <span class="nx">$</span><span class="p">(</span><span class="s">&quot;</span><span class="err">#</span><span class="s">input_field&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">ui</span><span class="p">.</span><span class="nx">item</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+</span><span class='line'>      <span class="nx">$</span><span class="p">(</span><span class="s">&#39;#form&#39;</span><span class="p">).</span><span class="nx">submit</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/25/preserve-new-lines-in-rails-i18n/">Preserve new lines in Rails i18n</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-25T00:00:00+03:00" pubdate data-updated="true">Oct 25<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">user</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">mailer</span><span class="p-Indicator">:</span>
+</span><span class='line'>    <span class="l-Scalar-Plain">footer</span><span class="p-Indicator">:</span> <span class="p-Indicator">|</span>
+</span><span class='line'>      <span class="no">Best regards,</span>
+</span><span class='line'>      <span class="no">Your Company.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='haml'><span class='line'><span class="nn">!!!</span>
+</span><span class='line'><span class="nt">%html</span>
+</span><span class='line'>  <span class="nt">%head</span>
+</span><span class='line'>    <span class="nt">%meta</span><span class="p">{</span><span class="ss">:content</span> <span class="o">=&gt;</span> <span class="s2">&quot;text/html; charset=UTF-8&quot;</span><span class="p">}</span>
+</span><span class='line'>  <span class="nt">%body</span>
+</span><span class='line'>    <span class="p">=</span> <span class="n">simple_format</span> <span class="no">I18n</span><span class="o">.</span><span class="n">t</span><span class="p">(</span><span class="s1">&#39;user.mailer.footer&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/14/start-a-pry-session-on-any-unhandled-exceptions/">Start a Pry session on any unhandled exceptions</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-14T00:00:00+03:00" pubdate data-updated="true">Aug 14<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p> </p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/09/capybara-webkit-on-mac-os-x/">capybara-webkit on Mac OS X</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-09T00:00:00+03:00" pubdate data-updated="true">Aug 9<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you&#8217;re having problems compiling capybara-webkit gem in Rails, just install qt via <a href="http://mxcl.github.com/homebrew/" target="_blank">Homebrew</a>:</p>
+
+<pre>$ brew install qt</pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/31/hopchat-custom-color-theme-for-limechat-irc-client/">HopChat - Custom color theme for Limechat IRC client</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/28/testing-after-commit-in-rspec/">Testing after_commit in rspec</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/21/better-rails-errors-and-live-console/">Better rails errors and live console</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/16/active-admin-toggle-all-function-for-batch-actions/">Active Admin toggle all function for batch actions</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/08/easy-setup-for-postgres-app-and-rails/">Easy setup for Postgres.app and Rails</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/04/xthml-in-haml-view-in-rails-3/">XTHML in HAML view in Rails 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/22/converting-video-clip-to-gif/">Converting video clip to gif</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/11/passing-arguments-to-rake-task/">Passing arguments to rake task</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/07/setting-signed-cookie-directly-on-the-rack-response-object/">Setting signed cookie directly on the rack response object</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/04/ignore-upload-directory-while-using-capistrano/">Ignore upload directory while using Capistrano</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/mytrile">@mytrile</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'mytrile',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>My Pinboard</h1>
+  <ul id="pinboard_linkroll">Fetching linkroll&#8230;</ul>
+  <p><a href="http://pinboard.in/u:mytrile">My Pinboard Bookmarks &raquo;</a></p>
+</section>
+<script type="text/javascript">
+  var linkroll = 'pinboard_linkroll'; //id target for pinboard list
+  var pinboard_user = "mytrile"; //id target for pinboard list
+  var pinboard_count = 3; //id target for pinboard list
+  (function(){
+    var pinboardInit = document.createElement('script');
+    pinboardInit.type = 'text/javascript';
+    pinboardInit.async = true;
+    pinboardInit.src = '/javascripts/pinboard.js';
+    document.getElementsByTagName('head')[0].appendChild(pinboardInit);
+  })();
+</script>
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Dimitar Kostov -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+  - <span class="credit">Theme by <a href="http://www.gehaxelt.in">Gehaxelt</a></span>
+  <span class="credit">and <a href="http://www.it-solutions-neef.de">IT Solutions Neef</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'fireinsideme';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

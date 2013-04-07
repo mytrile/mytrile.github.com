@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: man | Dimitar Kostov ramblings]]></title>
+  <link href="http://fireinside.me/blog/categories/man/atom.xml" rel="self"/>
+  <link href="http://fireinside.me/"/>
+  <updated>2013-04-07T18:05:04+03:00</updated>
+  <id>http://fireinside.me/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[most - alternative to man]]></title>
+    <link href="http://fireinside.me/blog/2011/05/04/most-alternative-to-man/"/>
+    <updated>2011-05-04T00:00:00+03:00</updated>
+    <id>http://fireinside.me/blog/2011/05/04/most-alternative-to-man</id>
+    <content type="html"><![CDATA[<p>I'm checking man pages regularly, so I feel at home when using <a title="most" target="_blank" href="http://www.jedsoft.org/most/">most</a>.</p>
+
+
+<blockquote>
+<p>$ sudo apt-get install most<br />$ export MANPAGER="/usr/bin/most -s"<br />$ man test </p>
+</blockquote>
+
+
+<p><img align="middle" src="http://media.tumblr.com/tumblr_lknxz4oAo11qcx25j.png" /></p>
+
+]]></content>
+  </entry>
+  
+</feed>

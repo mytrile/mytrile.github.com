@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: irb | Dimitar Kostov ramblings]]></title>
+  <link href="http://fireinside.me/blog/categories/irb/atom.xml" rel="self"/>
+  <link href="http://fireinside.me/"/>
+  <updated>2013-04-07T18:05:04+03:00</updated>
+  <id>http://fireinside.me/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Unicode in irb]]></title>
+    <link href="http://fireinside.me/blog/2012/08/08/unicode-in-irb/"/>
+    <updated>2012-08-08T00:00:00+03:00</updated>
+    <id>http://fireinside.me/blog/2012/08/08/unicode-in-irb</id>
+    <content type="html"><![CDATA[<p>If you're having problems with unicode characters in IRB from ruby compiled with rbenv, do this:</p>
+
+
+
+
+<pre>$ brew install readline
+$ export CPPFLAGS=-I/usr/local/Cellar/readline/6.2.4/include
+$ export LDFLAGS=-L/usr/local/Cellar/readline/6.2.4/lib/
+$ rbenv install 1.9.3-p194</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[IRB tools]]></title>
+    <link href="http://fireinside.me/blog/2010/07/30/irb-tools/"/>
+    <updated>2010-07-30T00:00:00+03:00</updated>
+    <id>http://fireinside.me/blog/2010/07/30/irb-tools</id>
+    <content type="html"><![CDATA[<p>If you're playing with IRB often like me, you should try <a title="awesome print" target="_blank" href="http://github.com/michaeldv/awesome_print">awesome_print</a> and <a title="interactive editor" target="_blank" href="http://github.com/jberkel/interactive_editor">interactive_editor</a>. The first one gives you pp on steroids - a beautiful coloured printing in IRB.The second one gives you the power to invoke your favourite editor (vim, emacs, TextMate), write code and when you exit, your code is evaluated and ready to be used in IRB.</p>
+
+
+<p>&#13;</p>
+
+<p>&#13;
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,115,0" height="345" width="560">&#13;
+<param name="movie" value="http://screenr.com/Content/assets/screenr_1116090935.swf" /><param name="flashvars" value="i=92127" /><param name="allowFullScreen" value="true" /><embed src="http://screenr.com/Content/assets/screenr_1116090935.swf" flashvars="i=92127" allowfullscreen="true" pluginspage="http://www.macromedia.com/go/getflashplayer" height="345" width="560"></embed></object>&#13;
+</p>
+
+
+<p></p>
+]]></content>
+  </entry>
+  
+</feed>

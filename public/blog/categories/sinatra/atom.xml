@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: sinatra | Dimitar Kostov ramblings]]></title>
+  <link href="http://fireinside.me/blog/categories/sinatra/atom.xml" rel="self"/>
+  <link href="http://fireinside.me/"/>
+  <updated>2013-04-07T18:05:04+03:00</updated>
+  <id>http://fireinside.me/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Express - Sinatra for Node.js]]></title>
+    <link href="http://fireinside.me/blog/2010/03/04/express-sinatra-for-node-js/"/>
+    <updated>2010-03-04T00:00:00+02:00</updated>
+    <id>http://fireinside.me/blog/2010/03/04/express-sinatra-for-node-js</id>
+    <content type="html"><![CDATA[<p>Almost from the first release <a href="http://www.sinatrarb.com/">Sinatra</a> has inspired lots of mini web frameworks in many programming languages with its simplicity. And if you're in the hype for Node.js like me, <a href="http://github.com/visionmedia/express">Express</a> may be the choice for creating simple service oriented web apps using JavaScript. Here is the "Hello World" example using Express:</p>
+
+
+<p>&#13;</p>
+
+<script src="http://gist.github.com/321542.js"></script>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mongo3 - Awesome admin interface]]></title>
+    <link href="http://fireinside.me/blog/2010/02/22/mongo3-awesome-admin-interface/"/>
+    <updated>2010-02-22T00:00:00+02:00</updated>
+    <id>http://fireinside.me/blog/2010/02/22/mongo3-awesome-admin-interface</id>
+    <content type="html"><![CDATA[<p>MongoDB is great implementation of NoSQL idea. But right now it's lacking admin interface except the javascript based console. <a href="http://github.com/derailed/mongo3">Mongo3</a> is here for the rescue:</p>
+
+
+<p>&#13;</p>
+
+<p><img src="http://media.tumblr.com/tumblr_l8oayf2X6d1qcx25j.png" /></p>
+
+
+<p>&#13;</p>
+
+<p>As you can see Mongo3 allows you to manage your mongoDB clusters using a web based admin console. It's written in Ruby using Sinatra.</p>
+
+
+<p>&#13;</p>
+
+<p>Running Mongo3 in 3 steps:</p>
+
+
+<p>&#13;</p>
+
+<ol><li>Get the gem <code>sudo gem install mongo3</code></li>&#13;
+<li>Create .mongo3 file in your home dir with config details<br /><script src="http://gist.github.com/310914.js"></script></li>&#13;
+<li>Fire it up <code>mongo3</code></li>&#13;
+</ol>
+
+
+<p>PS: Another project to look is <a href="http://github.com/ahe/mongo_admin">mongo_admin</a></p>
+
+
+<p></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tweetlist]]></title>
+    <link href="http://fireinside.me/blog/2009/09/01/tweetlist/"/>
+    <updated>2009-09-01T00:00:00+03:00</updated>
+    <id>http://fireinside.me/blog/2009/09/01/tweetlist</id>
+    <content type="html"><![CDATA[<p><a href="http://tweetlist.heroku.com">Tweetlist</a> is on of those 30 minutes <span class="caps">DIY</span> things. It's a simple url shortening service for combining multiple links into one url ready to be tweeted.</p>
+
+
+<p>&#13;</p>
+
+<p><a title="Tweetlist" target="_blank" href="http://tweetlist.heroku.com"><img src="http://media.tumblr.com/tumblr_l8ob12q4G41qcx25j.jpg" /></a></p>
+
+
+<p></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[TinyURL in 40 lines]]></title>
+    <link href="http://fireinside.me/blog/2009/03/24/tinyurl-in-40-lines/"/>
+    <updated>2009-03-24T00:00:00+02:00</updated>
+    <id>http://fireinside.me/blog/2009/03/24/tinyurl-in-40-lines</id>
+    <content type="html"><![CDATA[<p><a title="rsize.me" target="_blank" href="http://rsize.me"><img src="http://media.tumblr.com/tumblr_lj6evkcvRn1qcx25j.png" /></a></p>
+
+
+<p></p>
+]]></content>
+  </entry>
+  
+</feed>

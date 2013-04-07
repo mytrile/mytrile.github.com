@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: i18n | Dimitar Kostov ramblings]]></title>
+  <link href="http://fireinside.me/blog/categories/i18n/atom.xml" rel="self"/>
+  <link href="http://fireinside.me/"/>
+  <updated>2013-04-07T18:05:04+03:00</updated>
+  <id>http://fireinside.me/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Preserve new lines in Rails i18n]]></title>
+    <link href="http://fireinside.me/blog/2012/10/25/preserve-new-lines-in-rails-i18n/"/>
+    <updated>2012-10-25T00:00:00+03:00</updated>
+    <id>http://fireinside.me/blog/2012/10/25/preserve-new-lines-in-rails-i18n</id>
+    <content type="html"><![CDATA[<p>``` yml
+user:
+  mailer:</p>
+
+<pre><code>footer: |
+  Best regards,
+  Your Company.
+</code></pre>
+
+<p>```</p>
+
+<p>``` haml
+!!!
+%html
+  %head</p>
+
+<pre><code>%meta{:content =&gt; "text/html; charset=UTF-8"}
+</code></pre>
+
+<p>  %body</p>
+
+<pre><code>= simple_format I18n.t('user.mailer.footer')
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+</feed>

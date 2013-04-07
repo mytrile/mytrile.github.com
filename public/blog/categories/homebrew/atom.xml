@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: homebrew | Dimitar Kostov ramblings]]></title>
+  <link href="http://fireinside.me/blog/categories/homebrew/atom.xml" rel="self"/>
+  <link href="http://fireinside.me/"/>
+  <updated>2013-04-07T18:05:04+03:00</updated>
+  <id>http://fireinside.me/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[capybara-webkit on Mac OS X]]></title>
+    <link href="http://fireinside.me/blog/2012/08/09/capybara-webkit-on-mac-os-x/"/>
+    <updated>2012-08-09T00:00:00+03:00</updated>
+    <id>http://fireinside.me/blog/2012/08/09/capybara-webkit-on-mac-os-x</id>
+    <content type="html"><![CDATA[<p>If you're having problems compiling capybara-webkit gem in Rails, just install qt via <a href="http://mxcl.github.com/homebrew/" target="_blank">Homebrew</a>:</p>
+
+
+
+
+<pre>$ brew install qt</pre>
+
+]]></content>
+  </entry>
+  
+</feed>

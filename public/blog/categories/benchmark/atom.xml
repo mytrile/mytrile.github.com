@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: benchmark | Dimitar Kostov ramblings]]></title>
+  <link href="http://fireinside.me/blog/categories/benchmark/atom.xml" rel="self"/>
+  <link href="http://fireinside.me/"/>
+  <updated>2013-04-07T18:05:04+03:00</updated>
+  <id>http://fireinside.me/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Viiite - An alternative to Benchmark]]></title>
+    <link href="http://fireinside.me/blog/2011/08/21/viiite-an-alternative-to-benchmark/"/>
+    <updated>2011-08-21T00:00:00+03:00</updated>
+    <id>http://fireinside.me/blog/2011/08/21/viiite-an-alternative-to-benchmark</id>
+    <content type="html"><![CDATA[<p> </p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby VM Shootout]]></title>
+    <link href="http://fireinside.me/blog/2010/05/22/ruby-vm-shootout/"/>
+    <updated>2010-05-22T00:00:00+03:00</updated>
+    <id>http://fireinside.me/blog/2010/05/22/ruby-vm-shootout</id>
+    <content type="html"><![CDATA[<p>After releasing version 1.0 of <a href="http://rubini.us/">Rubinius</a> and <a href="http://jruby.org/">JRuby</a> hitting 1.5, I decided to test these great VMs against ruby 1.8.7 and the latest 1.9.2 to see how they perform. This benchmark uses Antonio Cangiano's <a href="http://github.com/acangiano/ruby-benchmark-suite">ruby-benchmark-suite</a>. I've posted part of the results as image, you can find all <a href="http://mitkokostov.info/resources/results.pdf">results as pdf</a>.  Tested versions of ruby, using <a href="http://rvm.beginrescueend.com/">RVM</a></p>
+
+
+<p>&#13;</p>
+
+<p>are:</p>
+
+
+<p>&#13;</p>
+
+<ul><li>Rubinius 1.0.0 (1.8.7 release 2010-05-14 JI) [i686-pc-linux-gnu] </li>&#13;
+<li>jruby 1.5.0 (ruby 1.8.7 patchlevel 249) (2010-05-12 6769999) [i386-java]</li>&#13;
+<li>ruby 1.9.2dev (2010-05-20 revision 27928) [i686-linux]</li>&#13;
+<li>ruby 1.8.7 (2010-01-10 patchlevel 249) [i686-linux]</li>&#13;
+</ul>
+
+
+<p>My software:</p>
+
+
+<p>&#13;</p>
+
+<ul><li>Ubuntu 10.04 ( linux kernel 2.6.32-22 on i686) </li>&#13;
+<li>Java VM - OpenJDK Client VM 1.6.9 18</li>&#13;
+<li> File System - ext4</li>&#13;
+</ul>
+
+
+<p>My hardware:</p>
+
+
+<p>&#13;</p>
+
+<ul><li>Intel Dual-Core T2080 @ 1.73GHz</li>&#13;
+<li>RAM - 2x512MB</li>&#13;
+</ul>
+
+
+<p>My comment: I don't understand how VM works and how they are implemented, but looking at the results I can say that Rubinius and future 1.9.2 show real progress and great perspective. </p>
+
+
+<p>&#13;</p>
+
+<p><img src="http://media.tumblr.com/tumblr_l8oar95nTK1qcx25j.png" height="596" width="500" /></p>
+
+
+<p>&#13;</p>
+
+<p>As a disclaimer I will quote <a href="http://antoniocangiano.com/">Antonio Cangiano</a> :<br /> "Synthetic benchmarks cannot predict how fast your programs will be with one implementation or another. They provide an (entertaining) educated guess, but you shouldn’t draw overly definitive conclusions from them. Furthermore, the Ruby Benchmark Suite has many tests that don’t provide much insight when it comes to comparing implementations. They are there for legacy reasons and will probably be removed in the future. For the time being, take them with a grain of salt."</p>
+
+
+<p></p>
+]]></content>
+  </entry>
+  
+</feed>
