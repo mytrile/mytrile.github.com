@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | Dimitar Kostov ramblings]]></title>
   <link href="http://mytrile.github.com/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://mytrile.github.com/"/>
-  <updated>2013-04-07T20:08:44+03:00</updated>
+  <updated>2013-04-09T14:49:10+03:00</updated>
   <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Fixing Ruby build in Sublime Text 2]]></title>
+    <link href="http://mytrile.github.com/blog/2013/04/09/fixing-ruby-build-in-sublime-texteditor-2/"/>
+    <updated>2013-04-09T14:35:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2013/04/09/fixing-ruby-build-in-sublime-texteditor-2</id>
+    <content type="html"><![CDATA[<p>If youre getting this error while trying to run ruby script, just replace the loop in <em>Packages/Default/exec.py</em> on line 44 with the snippet below:</p>
+
+<pre>UnicodeDecodeError: 'ascii' codec can't decode byte 0xe2 in position 60 ...</pre>
+
+
+<p>``` python Packages/Default/exec.py:44
+for k, v in proc_env.iteritems():
+  path_vars = os.path.expandvars(v)
+  if isinstance(path_vars, unicode):</p>
+
+<pre><code>  path_vars = path_vars.encode(sys.getfilesystemencoding())
+</code></pre>
+
+<p>  proc_env[k] = path_vars
+```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Janky setup: Jenkins, Hubot, HipChat and Ruby]]></title>
@@ -232,24 +255,6 @@ set :shared_children, shared_children + %w{public/uploads}
     <updated>2012-08-14T00:00:00+03:00</updated>
     <id>http://mytrile.github.com/blog/2012/08/14/start-a-pry-session-on-any-unhandled-exceptions</id>
     <content type="html"><![CDATA[<p> </p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Unicode in irb]]></title>
-    <link href="http://mytrile.github.com/blog/2012/08/08/unicode-in-irb/"/>
-    <updated>2012-08-08T00:00:00+03:00</updated>
-    <id>http://mytrile.github.com/blog/2012/08/08/unicode-in-irb</id>
-    <content type="html"><![CDATA[<p>If you're having problems with unicode characters in IRB from ruby compiled with rbenv, do this:</p>
-
-
-
-
-<pre>$ brew install readline
-$ export CPPFLAGS=-I/usr/local/Cellar/readline/6.2.4/include
-$ export LDFLAGS=-L/usr/local/Cellar/readline/6.2.4/lib/
-$ rbenv install 1.9.3-p194</pre>
 
 ]]></content>
   </entry>

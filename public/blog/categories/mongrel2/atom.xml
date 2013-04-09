@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: mongrel2 | Dimitar Kostov ramblings]]></title>
+  <link href="http://mytrile.github.com/blog/categories/mongrel2/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-09T14:49:10+03:00</updated>
+  <id>http://mytrile.github.com/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Introduction to ZeroMQ]]></title>
+    <link href="http://mytrile.github.com/blog/2010/09/14/zeromq-introduction/"/>
+    <updated>2010-09-14T00:00:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2010/09/14/zeromq-introduction</id>
+    <content type="html"><![CDATA[<h3>Intro</h3>
+
+
+<p>&#13;</p>
+
+<p>Last week I was looking at <a title="ZeroMQ" target="_blank" href="http://www.zeromq.org/">ZeroMQ</a> mostly because of <a title="Mogrel2" target="_blank" href="http://mongrel2.org">Mongrel2</a>. Reading the documentation, turoials and examples I decided to write series about ZeroMQ only because I want to clear out some things for me. I always said that I write crappy blog posts, because I want to remember stuff I've used/found interesting. Another reason is that I have to dig in the object of the post. The series will include different things about ZeroMQ: transport, infrastructural and messaging pattern choices. But before we start ...</p>
+
+
+<p>&#13;</p>
+
+<h3>A few things about the series:</h3>
+
+
+<p>&#13;</p>
+
+<ul><li>I'm not professional programmer</li>&#13;
+<li>I really like UNIX stuff, but I haven't had time to dig in</li>&#13;
+<li>I'll be using Ruby for the examples, because I'm familiar with it and the code can be read and understood by anyone (hopefully)</li>&#13;
+<li>This series are shallow and I want to show the basic usage of ZeroMQ</li>&#13;
+<li>Any suggestions are welcomed :)</li>&#13;
+</ul>
+
+
+<h3>So here we go</h3>
+
+
+<p>&#13;</p>
+
+<p>When I try to write some network application code, I have to choose between low-level API ( <a title="Berkeley Sockets" target="_blank" href="http://en.wikipedia.org/wiki/Berkeley_sockets">Berkeley Sockets</a> ) or some kind of high-level messaging protocol like <a title="AMQP" target="_blank" href="http://www.amqp.org/confluence/display/AMQP/Advanced+Message+Queuing+Protocol">AMQP</a>(and implementation of that protocol like <a title="RabbitMQ" target="_blank" href="http://www.rabbitmq.com/">RabbitMQ </a>messaging system). Being low-level sockets are hard to use and there is a lot of stuff I have to handle by myself(buffering, error handling, etc.). On the other hand AMQP gives me great power, but I lose some scalability and flexibility. And in the middle is ZeroMQ.</p>
+
+
+<p>&#13;</p>
+
+<p>The best explanation of ZeroMQ I found comes from <a title="Zed Shaw" target="_blank" href="http://sheddingbikes.com/">Zed Shaw</a>:</p>
+
+
+<p>&#13;</p>
+
+<blockquote>&#13;
+<p><span>What ZeroMQ ends up being is "sockets the way programmers think sockets work". </span></p>&#13;
+</blockquote>
+
+
+<p>&#13;</p>
+
+<p>ZeroMQ is minimalistic, powerful, scalable, fast and transport agnostic networking library which gives me the ease of using "human-face" sockets. There are bindings for <span>20+ languages including C, C++, Java, .NET, Ruby, Python</span> etc. It's transport agnosticism enables me to use <a title="ZeroMQ TCP API" target="_blank" href="http://api.zeromq.org/zmq_tcp.html">TCP</a>, <a title="ZeroMQ IPC API" target="_blank" href="http://api.zeromq.org/zmq_ipc.html">IPC</a>, <a title="ZeroMQ INPROC API" target="_blank" href="http://api.zeromq.org/zmq_inproc.html">INPROC</a> and <a title="ZeroMQ PGM API" target="_blank" href="http://api.zeromq.org/zmq_pgm.html">PGM</a> very easy. Being message-oriented ZeroMQ handles all the work for me (like load balancing messages) and leaves to me the choice of message pattern (<a title="REQUEST/REPLY pattern" target="_blank" href="http://api.zeromq.org/zmq_socket.html#_request_reply_pattern">REQUEST/REPLY</a>, <a title="PUBLISH/SUBSCRIBE pattern" target="_blank" href="http://api.zeromq.org/zmq_socket.html#_publish_subscribe_pattern">PUBLISH/SUBSCRIBE</a>, <a title="Pipeline pattern" target="_blank" href="http://api.zeromq.org/zmq_socket.html#_pipeline_pattern">Pipeline</a>, <a title="PAIR pattern" target="_blank" href="http://api.zeromq.org/zmq_socket.html#_exclusive_pair_pattern">PAIR</a>).</p>
+
+
+<p>&#13;</p>
+
+<h3>The series</h3>
+
+
+<p>&#13;</p>
+
+<p>I know there are a l1ot of buzzwords, but I'll try to explain them in the series:</p>
+
+
+<p>&#13;</p>
+
+<ul><li><a title="ZeroMQ: Messaging patterns" target="_self" href="http://fireinside.me/post/3551747763/zeromq-messaging-patterns">Infrastructure and messaging patterns</a></li>&#13;
+<li>Basic chat application</li>&#13;
+<li>Bindings and libraries using ZeroMQ</li>&#13;
+<li>Real world apps</li>&#13;
+<li>Links to guides, tutorials and articles</li>&#13;
+</ul>
+
+
+<h3>Installing ZeroMQ and zmq gem</h3>
+
+
+<p>&#13;</p>
+
+<p>The instructions how to get and compile ZeroMQ are on <a title="ZeroMQ Download" target="_blank" href="http://www.zeromq.com/page:get-the-software">their web site</a>.</p>
+
+
+<p>&#13;</p>
+
+<p>In the examples I'm using zmq gem:</p>
+
+
+<p>&#13;</p>
+
+<blockquote>&#13;
+<p>[sudo] gem install zmq</p>&#13;
+</blockquote>
+
+
+<p>&#13;</p>
+
+<h3>Feedback</h3>
+
+
+<p>&#13;</p>
+
+<p>Feel free to smack me in the face at mitko.kostov[at]gmail.com if you find some rubbish statement.</p>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -4,7 +4,7 @@
   <title><![CDATA[Dimitar Kostov ramblings]]></title>
   <link href="http://mytrile.github.com/atom.xml" rel="self"/>
   <link href="http://mytrile.github.com/"/>
-  <updated>2013-04-07T20:08:44+03:00</updated>
+  <updated>2013-04-09T14:49:10+03:00</updated>
   <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Fixing Ruby build in Sublime Text 2]]></title>
+    <link href="http://mytrile.github.com/blog/2013/04/09/fixing-ruby-build-in-sublime-texteditor-2/"/>
+    <updated>2013-04-09T14:35:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2013/04/09/fixing-ruby-build-in-sublime-texteditor-2</id>
+    <content type="html"><![CDATA[<p>If youre getting this error while trying to run ruby script, just replace the loop in <em>Packages/Default/exec.py</em> on line 44 with the snippet below:</p>
+
+<pre>UnicodeDecodeError: 'ascii' codec can't decode byte 0xe2 in position 60 ...</pre>
+
+
+
+
+<figure class='code'><figcaption><span>Packages/Default/exec.py:44</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">proc_env</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+</span><span class='line'>  <span class="n">path_vars</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expandvars</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path_vars</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">):</span>
+</span><span class='line'>      <span class="n">path_vars</span> <span class="o">=</span> <span class="n">path_vars</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getfilesystemencoding</span><span class="p">())</span>
+</span><span class='line'>  <span class="n">proc_env</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">path_vars</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Janky setup: Jenkins, Hubot, HipChat and Ruby]]></title>
@@ -628,16 +655,6 @@ $ rbenv install 1.9.3-p194</pre>
     <updated>2011-11-27T00:00:00+02:00</updated>
     <id>http://mytrile.github.com/blog/2011/11/27/cathode-cool-terminal-emulator-for-mac-os-x</id>
     <content type="html"><![CDATA[<p><img align="middle" height="313" src="http://i.imgur.com/4fzvG.jpg" width="500" /></p> 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Emacs smooth scrolling using the mouse]]></title>
-    <link href="http://mytrile.github.com/blog/2011/11/10/emacs-smooth-scrolling-using-the-mouse/"/>
-    <updated>2011-11-10T00:00:00+02:00</updated>
-    <id>http://mytrile.github.com/blog/2011/11/10/emacs-smooth-scrolling-using-the-mouse</id>
-    <content type="html"><![CDATA[<p><pre>(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))</pre>&#13;
-<pre>(setq mouse-wheel-progressive-speed nil)</pre> </p>
 ]]></content>
   </entry>
   

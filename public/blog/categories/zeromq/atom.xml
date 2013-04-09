@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: zeromq | Dimitar Kostov ramblings]]></title>
+  <link href="http://mytrile.github.com/blog/categories/zeromq/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-09T14:49:10+03:00</updated>
+  <id>http://mytrile.github.com/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Messaging patterns in ZeroMQ]]></title>
+    <link href="http://mytrile.github.com/blog/2010/09/20/zeromq-messaging-patterns/"/>
+    <updated>2010-09-20T00:00:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2010/09/20/zeromq-messaging-patterns</id>
+    <content type="html"><![CDATA[<p><a href="http://fireinside.me/post/3551687394/zeromq-intro" title="ZeroMQ: Introduction" target="_self">In the previous post</a> I've outlined what to expect from ZeroMQ. In this is post I'll focus on infrastructure and messaging patterns options ZeroMQ gives us to play with.</p>
+
+
+<p>&#13;</p>
+
+<h3>Infrastructure</h3>
+
+
+<p>&#13;</p>
+
+<p>ZeroMQ gives us the choice of how to organize your "network". In the simple case it's a "server" who binds to a socket and a "client" who connects to the "server". The "client" sends a message and the "server" receives it.</p>
+
+
+<p>&#13;</p>
+
+<p><img align="middle" src="http://media.tumblr.com/tumblr_l8zr4dBhvj1qcx25j.png" /></p>
+
+
+<p>&#13;</p>
+
+<p>&#13;
+<script src="http://gist.github.com/586681.js"> </script></p>
+
+
+<p>&#13;</p>
+
+<p>It's possible to bind a socket to an address and at the same time to connect to other end point. This means that we can use it as a forwarder:</p>
+
+
+<p>&#13;</p>
+
+<p><img src="http://media.tumblr.com/tumblr_l8zrmgo87a1qcx25j.png" /></p>
+
+
+<p>&#13;</p>
+
+<p>&#13;
+<script src="http://gist.github.com/586688.js"> </script></p>
+
+
+<p>&#13;</p>
+
+<p>Those examples use pipeline messaging pattern and it's to time to explain how to handle the message flow.</p>
+
+
+<p>&#13;</p>
+
+<h3>Messaging patterns</h3>
+
+
+<p>&#13;</p>
+
+<p>ZeroMQ supports four messaging patterns:</p>
+
+
+<p>&#13;</p>
+
+<ol><li><strong><a href="http://api.zeromq.org/zmq_socket.html#_pipeline_pattern" title="Pipeline pattern" target="_blank">Pipeline</a></strong> - used for distributing data to nodes arranged in a pipeline</li>&#13;
+<li><strong><a href="http://api.zeromq.org/zmq_socket.html#_request_reply_pattern" title="Request-reply pattern" target="_blank">Request-Reply</a></strong> - used for sending requests from a client to one or more instances of a service, and receiving subsequent replies to each request sent</li>&#13;
+<li><strong><a href="http://api.zeromq.org/zmq_socket.html#_publish_subscribe_pattern" title="Publish-subscribe pattern" target="_blank">Publish-Subscribe</a></strong> - used for sending requests from a client to one or more instances of a service, and receiving subsequent replies to each request sent</li>&#13;
+<li><strong><a href="http://api.zeromq.org/zmq_socket.html#_exclusive_pair_pattern" title="Exclusive Pair pattern" target="_blank">Exclusive Pair</a></strong> - advanced pattern used for communicating exclusively between two peers</li>&#13;
+</ol>
+
+
+<hr /><p><strong>Pipeline</strong></p>&#13;
+
+
+<p>We can see the usage of pipeline pattern in the previous example. ZMQ::UPSTREAM(ZMQ::PULL) socket only gets data, ZMQ::DOWNSTREAM(ZMQ::PUSH) socket pushes date.</p>
+
+
+<p>&#13;</p>
+
+<p>In more complicated manner, a pipeline stage can connect to multiple nodes. If so data is automatically load-balanced among all connected nodes.</p>
+
+
+<p>&#13;</p>
+
+<p><img src="http://media.tumblr.com/tumblr_l9054rwV851qcx25j.png" /></p>
+
+
+<p>&#13;</p>
+
+<p><strong><em>NOTICE:</em></strong> ZMQ::DOWNSTREAM/ZMQ::UPSTREAM are deprecated. The new names of the socket types are ZMQ::PUSH/ZMQ::PULL. Right now the names are not updated in zmq ruby gem, but in ffi version everything is working correctly.</p>
+
+
+<p>&#13;</p>
+
+<hr /><p><strong>Request-Reply</strong></p>&#13;
+
+
+<p>  Making request</p>
+
+
+<p>&#13;</p>
+
+<ol><li>create ZMQ::REQ socket and connect to server</li>&#13;
+<li>send a message using <strong>send</strong> method</li>&#13;
+<li>capture reply with <strong>recv</strong> method</li>&#13;
+</ol>
+
+
+<p>  Accepting request and sending reply</p>
+
+
+<p>&#13;</p>
+
+<ol><li>create ZMQ::REP socket and bind on specific address/port</li>&#13;
+<li>receive message with <strong>recv</strong> method</li>&#13;
+<li>send a reply with <strong>send</strong> method</li>&#13;
+</ol>
+
+
+<p>It's also possible to make more than one request per socket. Just use <strong>connect</strong> on different addresses/ports.</p>
+
+
+<p>&#13;</p>
+
+<p><img src="http://media.tumblr.com/tumblr_l906sjM1qX1qcx25j.png" /></p>
+
+
+<p>&#13;</p>
+
+<p>In the following example we're sending 10 numbers as 10 separate requests, the server get the request(the number), multiply it and then send it back to the client.</p>
+
+
+<p>&#13;</p>
+
+<script src="http://gist.github.com/586931.js"> </script>
+
+
+<hr /><p><strong>Publish-Subscribe</strong></p>&#13;
+
+
+<p>It's the well know pattern. And this is how it works in ZeroMQ</p>
+
+
+<p>&#13;</p>
+
+<p>Publisher</p>
+
+
+<p>&#13;</p>
+
+<ol><li>Create a ZMQ::PUB socket and bind it on address/port</li>&#13;
+<li>Publish data using <strong>send</strong></li>&#13;
+</ol>
+
+
+<p>Subscriber</p>
+
+
+<p>&#13;</p>
+
+<ol><li>Create a ZMQ::SUB socket and connect it to the publisher</li>&#13;
+<li>Set the filter of the received messages</li>&#13;
+<li>Receive messages with <strong>recv</strong></li>&#13;
+</ol>
+
+
+<p><img src="http://media.tumblr.com/tumblr_l90944r4tL1qcx25j.png" /></p>
+
+
+<p>&#13;</p>
+
+<p>Let assume that we have news for the revenue of Microsoft, Apple, Google and Oracle. Our publisher will broadcast news for all of these companies, but our subscriber is interested only in Google's revenue:</p>
+
+
+<p>&#13;</p>
+
+<script src="http://gist.github.com/586964.js"> </script>
+
+
+<p>Using setsockopt method we set the filter to get only news about Google. If we don't provide filter, the subscriber wont' get any news. If we set the filter to empty string, the subscriber will get all the news form the publisher.</p>
+
+
+<p>&#13;</p>
+
+<hr /><p><strong>Exclusive Pair</strong></p>&#13;
+
+
+<p>Simple enough<strong> - </strong>bidirectional communication, no routing or filtering. Looks like regular socket. ZMQ::PAIR socket can only be connected to a single peer.</p>
+
+
+<p>&#13;</p>
+
+<hr /><p><strong>Wrapping up</strong></p>&#13;
+
+
+<p>In the next chapter I'll use the knowledge of this one to write a simple Hello World app in Ruby - a chat server. Stay tuned.</p>
+
+
+<p>&#13;</p>
+
+<p>PS: Feel free to write me at mitko.kostov[at]gmail.com if you find some rubbish statement.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Introduction to ZeroMQ]]></title>
+    <link href="http://mytrile.github.com/blog/2010/09/14/zeromq-introduction/"/>
+    <updated>2010-09-14T00:00:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2010/09/14/zeromq-introduction</id>
+    <content type="html"><![CDATA[<h3>Intro</h3>
+
+
+<p>&#13;</p>
+
+<p>Last week I was looking at <a title="ZeroMQ" target="_blank" href="http://www.zeromq.org/">ZeroMQ</a> mostly because of <a title="Mogrel2" target="_blank" href="http://mongrel2.org">Mongrel2</a>. Reading the documentation, turoials and examples I decided to write series about ZeroMQ only because I want to clear out some things for me. I always said that I write crappy blog posts, because I want to remember stuff I've used/found interesting. Another reason is that I have to dig in the object of the post. The series will include different things about ZeroMQ: transport, infrastructural and messaging pattern choices. But before we start ...</p>
+
+
+<p>&#13;</p>
+
+<h3>A few things about the series:</h3>
+
+
+<p>&#13;</p>
+
+<ul><li>I'm not professional programmer</li>&#13;
+<li>I really like UNIX stuff, but I haven't had time to dig in</li>&#13;
+<li>I'll be using Ruby for the examples, because I'm familiar with it and the code can be read and understood by anyone (hopefully)</li>&#13;
+<li>This series are shallow and I want to show the basic usage of ZeroMQ</li>&#13;
+<li>Any suggestions are welcomed :)</li>&#13;
+</ul>
+
+
+<h3>So here we go</h3>
+
+
+<p>&#13;</p>
+
+<p>When I try to write some network application code, I have to choose between low-level API ( <a title="Berkeley Sockets" target="_blank" href="http://en.wikipedia.org/wiki/Berkeley_sockets">Berkeley Sockets</a> ) or some kind of high-level messaging protocol like <a title="AMQP" target="_blank" href="http://www.amqp.org/confluence/display/AMQP/Advanced+Message+Queuing+Protocol">AMQP</a>(and implementation of that protocol like <a title="RabbitMQ" target="_blank" href="http://www.rabbitmq.com/">RabbitMQ </a>messaging system). Being low-level sockets are hard to use and there is a lot of stuff I have to handle by myself(buffering, error handling, etc.). On the other hand AMQP gives me great power, but I lose some scalability and flexibility. And in the middle is ZeroMQ.</p>
+
+
+<p>&#13;</p>
+
+<p>The best explanation of ZeroMQ I found comes from <a title="Zed Shaw" target="_blank" href="http://sheddingbikes.com/">Zed Shaw</a>:</p>
+
+
+<p>&#13;</p>
+
+<blockquote>&#13;
+<p><span>What ZeroMQ ends up being is "sockets the way programmers think sockets work". </span></p>&#13;
+</blockquote>
+
+
+<p>&#13;</p>
+
+<p>ZeroMQ is minimalistic, powerful, scalable, fast and transport agnostic networking library which gives me the ease of using "human-face" sockets. There are bindings for <span>20+ languages including C, C++, Java, .NET, Ruby, Python</span> etc. It's transport agnosticism enables me to use <a title="ZeroMQ TCP API" target="_blank" href="http://api.zeromq.org/zmq_tcp.html">TCP</a>, <a title="ZeroMQ IPC API" target="_blank" href="http://api.zeromq.org/zmq_ipc.html">IPC</a>, <a title="ZeroMQ INPROC API" target="_blank" href="http://api.zeromq.org/zmq_inproc.html">INPROC</a> and <a title="ZeroMQ PGM API" target="_blank" href="http://api.zeromq.org/zmq_pgm.html">PGM</a> very easy. Being message-oriented ZeroMQ handles all the work for me (like load balancing messages) and leaves to me the choice of message pattern (<a title="REQUEST/REPLY pattern" target="_blank" href="http://api.zeromq.org/zmq_socket.html#_request_reply_pattern">REQUEST/REPLY</a>, <a title="PUBLISH/SUBSCRIBE pattern" target="_blank" href="http://api.zeromq.org/zmq_socket.html#_publish_subscribe_pattern">PUBLISH/SUBSCRIBE</a>, <a title="Pipeline pattern" target="_blank" href="http://api.zeromq.org/zmq_socket.html#_pipeline_pattern">Pipeline</a>, <a title="PAIR pattern" target="_blank" href="http://api.zeromq.org/zmq_socket.html#_exclusive_pair_pattern">PAIR</a>).</p>
+
+
+<p>&#13;</p>
+
+<h3>The series</h3>
+
+
+<p>&#13;</p>
+
+<p>I know there are a l1ot of buzzwords, but I'll try to explain them in the series:</p>
+
+
+<p>&#13;</p>
+
+<ul><li><a title="ZeroMQ: Messaging patterns" target="_self" href="http://fireinside.me/post/3551747763/zeromq-messaging-patterns">Infrastructure and messaging patterns</a></li>&#13;
+<li>Basic chat application</li>&#13;
+<li>Bindings and libraries using ZeroMQ</li>&#13;
+<li>Real world apps</li>&#13;
+<li>Links to guides, tutorials and articles</li>&#13;
+</ul>
+
+
+<h3>Installing ZeroMQ and zmq gem</h3>
+
+
+<p>&#13;</p>
+
+<p>The instructions how to get and compile ZeroMQ are on <a title="ZeroMQ Download" target="_blank" href="http://www.zeromq.com/page:get-the-software">their web site</a>.</p>
+
+
+<p>&#13;</p>
+
+<p>In the examples I'm using zmq gem:</p>
+
+
+<p>&#13;</p>
+
+<blockquote>&#13;
+<p>[sudo] gem install zmq</p>&#13;
+</blockquote>
+
+
+<p>&#13;</p>
+
+<h3>Feedback</h3>
+
+
+<p>&#13;</p>
+
+<p>Feel free to smack me in the face at mitko.kostov[at]gmail.com if you find some rubbish statement.</p>
+
+]]></content>
+  </entry>
+  
+</feed>
