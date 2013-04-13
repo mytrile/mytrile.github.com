@@ -4,7 +4,7 @@
   <title><![CDATA[Dimitar Kostov ramblings]]></title>
   <link href="http://mytrile.github.com/atom.xml" rel="self"/>
   <link href="http://mytrile.github.com/"/>
-  <updated>2013-04-09T14:49:10+03:00</updated>
+  <updated>2013-04-13T12:02:54+03:00</updated>
   <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Get HOME directory]]></title>
+    <link href="http://mytrile.github.com/blog/2013/04/13/get-home-dir/"/>
+    <updated>2013-04-13T11:45:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2013/04/13/get-home-dir</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;etc&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">login</span> <span class="o">=</span> <span class="no">Etc</span><span class="o">.</span><span class="n">getlogin</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">config_file</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">Dir</span><span class="o">.</span><span class="n">home</span><span class="p">(</span><span class="n">user</span><span class="p">),</span> <span class="s2">&quot;.zshrc&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Fixing Ruby build in Sublime Text 2]]></title>
@@ -646,15 +666,6 @@ $ rbenv install 1.9.3-p194</pre>
 <p>Aleph</p>&#13;
 <p>============================================<br />Time taken for tests:   11.202 seconds<br /><strong>Requests per second:    714.13 [#/sec] (mean)</strong><br />Time per request:       140.030 [ms] (mean)<strong><br /></strong>Time per request:       1.400 [ms] (mean, across all concurrent requests)</p>&#13;
 <p><img src="http://media.tumblr.com/tumblr_lx7th8FK6z1qcx25j.png" /></p> 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Cathode - cool terminal emulator for Mac OS X]]></title>
-    <link href="http://mytrile.github.com/blog/2011/11/27/cathode-cool-terminal-emulator-for-mac-os-x/"/>
-    <updated>2011-11-27T00:00:00+02:00</updated>
-    <id>http://mytrile.github.com/blog/2011/11/27/cathode-cool-terminal-emulator-for-mac-os-x</id>
-    <content type="html"><![CDATA[<p><img align="middle" height="313" src="http://i.imgur.com/4fzvG.jpg" width="500" /></p> 
 ]]></content>
   </entry>
   

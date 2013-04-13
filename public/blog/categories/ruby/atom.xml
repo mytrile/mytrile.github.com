@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | Dimitar Kostov ramblings]]></title>
   <link href="http://mytrile.github.com/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://mytrile.github.com/"/>
-  <updated>2013-04-09T14:49:10+03:00</updated>
+  <updated>2013-04-13T12:02:54+03:00</updated>
   <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Get HOME directory]]></title>
+    <link href="http://mytrile.github.com/blog/2013/04/13/get-home-dir/"/>
+    <updated>2013-04-13T11:45:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2013/04/13/get-home-dir</id>
+    <content type="html"><![CDATA[<p>``` ruby
+require 'etc'</p>
+
+<p>login = Etc.getlogin</p>
+
+<p>config_file = File.join(Dir.home(user), ".zshrc")
+```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Fixing Ruby build in Sublime Text 2]]></title>
@@ -246,16 +261,6 @@ $ cap deploy:setup
 <p><code>ruby config/deploy.rb
 set :shared_children, shared_children + %w{public/uploads}
 </code></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Start a Pry session on any unhandled exceptions]]></title>
-    <link href="http://mytrile.github.com/blog/2012/08/14/start-a-pry-session-on-any-unhandled-exceptions/"/>
-    <updated>2012-08-14T00:00:00+03:00</updated>
-    <id>http://mytrile.github.com/blog/2012/08/14/start-a-pry-session-on-any-unhandled-exceptions</id>
-    <content type="html"><![CDATA[<p> </p>
-
 ]]></content>
   </entry>
   
