@@ -4,7 +4,7 @@
   <title><![CDATA[Dimitar Kostov ramblings]]></title>
   <link href="http://mytrile.github.com/atom.xml" rel="self"/>
   <link href="http://mytrile.github.com/"/>
-  <updated>2013-04-13T12:02:54+03:00</updated>
+  <updated>2013-04-25T10:44:20+03:00</updated>
   <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Test autocomplete in Rails]]></title>
+    <link href="http://mytrile.github.com/blog/2013/04/25/test-autocomplete-in-rails/"/>
+    <updated>2013-04-25T10:28:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2013/04/25/test-autocomplete-in-rails</id>
+    <content type="html"><![CDATA[<p>Easy way to test autocomplete in RSpec request spec with Capybara</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">describe</span> <span class="s1">&#39;Description of the spec&#39;</span>
+</span><span class='line'>  <span class="n">it</span> <span class="s2">&quot;should autocomplete user name&quot;</span><span class="p">,</span> <span class="ss">js</span><span class="p">:</span> <span class="kp">true</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">visit</span> <span class="n">users_path</span>
+</span><span class='line'>    <span class="n">auto_complete_field</span> <span class="o">=</span> <span class="s1">&#39;user_name&#39;</span>
+</span><span class='line'>    <span class="n">fill_in</span> <span class="n">auto_complete_field</span><span class="p">,</span> <span class="ss">with</span><span class="p">:</span> <span class="s1">&#39;Dimitar&#39;</span>
+</span><span class='line'>    <span class="n">page</span><span class="o">.</span><span class="n">execute_script</span> <span class="sx">%Q{ $(&#39;#</span><span class="si">#{</span><span class="n">auto_complete_field</span><span class="si">}</span><span class="sx">&#39;).trigger(&quot;keydown&quot;) }</span>
+</span><span class='line'>    <span class="n">page</span><span class="o">.</span><span class="n">should</span> <span class="n">have_content</span><span class="p">(</span><span class="s1">&#39;Dimitar Kostov&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<blockquote>Notice: You should use <a href="https://github.com/thoughtbot/capybara-webkit" target="_new">capybara-webkit</a> driver to enable JavaScript interaction.</blockquote>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Get HOME directory]]></title>
@@ -649,23 +684,6 @@ $ cap deploy:setup
 $ export CPPFLAGS=-I/usr/local/Cellar/readline/6.2.4/include
 $ export LDFLAGS=-L/usr/local/Cellar/readline/6.2.4/lib/
 $ rbenv install 1.9.3-p194</pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[I love "Hello, World" benchmarks]]></title>
-    <link href="http://mytrile.github.com/blog/2012/01/03/i-love-hello-world-benchmarks/"/>
-    <updated>2012-01-03T00:00:00+02:00</updated>
-    <id>http://mytrile.github.com/blog/2012/01/03/i-love-hello-world-benchmarks</id>
-    <content type="html"><![CDATA[<p>I love &#8220;Hello, World&#8221; benchmarks. They are stupid and meaningless. I love it when someone shows how fast is his web server on the local machine. </p>&#13;
-<p>Let&#8217;s see a comparison between node.js, async-sinatra and aleph all running apps on heroku free plan.</p>&#13;
-<p>Node.js</p>&#13;
-<p>============================================<br />Time taken for tests:   11.359 seconds<br /><strong>Requests per second:   704.26 [#/sec] (mean)</strong><br />Time per request:        141.993 [ms] (mean)<strong><br /></strong>Time per request:        1.420 [ms] (mean, across all concurrent requests)</p>&#13;
-<p>async-sinatra</p>&#13;
-<p>============================================<br />Time taken for tests:   12.223 seconds<br /><strong>Requests per second:    654.50 [#/sec] (mean)</strong><br />Time per request:       152.789 [ms] (mean)<strong><br /></strong>Time per request:       1.528 [ms] (mean, across all concurrent requests)</p>&#13;
-<p>Aleph</p>&#13;
-<p>============================================<br />Time taken for tests:   11.202 seconds<br /><strong>Requests per second:    714.13 [#/sec] (mean)</strong><br />Time per request:       140.030 [ms] (mean)<strong><br /></strong>Time per request:       1.400 [ms] (mean, across all concurrent requests)</p>&#13;
-<p><img src="http://media.tumblr.com/tumblr_lx7th8FK6z1qcx25j.png" /></p> 
 ]]></content>
   </entry>
   

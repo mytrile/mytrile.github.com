@@ -9,12 +9,16 @@
   <meta name="author" content="Dimitar Kostov">
 
   
-  <meta name="description" content="1
+  <meta name="description" content="Easy way to test autocomplete in RSpec request spec with Capybara 1
 2
 3
 4
 5
-require &#39;etc&#39; login = Etc.getlogin config_file = File.join(Dir.home(user), &quot;.zshrc&quot;) ">
+6
+7
+8
+9
+describe &#39;Description of the spec&#39; it &quot;should &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +84,68 @@ require &#39;etc&#39; login = Etc.getlogin config_file = File.join(Dir.home(user
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/25/test-autocomplete-in-rails/">Test autocomplete in Rails</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-25T10:28:00+03:00" pubdate data-updated="true">Apr 25<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Easy way to test autocomplete in RSpec request spec with Capybara</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">describe</span> <span class="s1">&#39;Description of the spec&#39;</span>
+</span><span class='line'>  <span class="n">it</span> <span class="s2">&quot;should autocomplete user name&quot;</span><span class="p">,</span> <span class="ss">js</span><span class="p">:</span> <span class="kp">true</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">visit</span> <span class="n">users_path</span>
+</span><span class='line'>    <span class="n">auto_complete_field</span> <span class="o">=</span> <span class="s1">&#39;user_name&#39;</span>
+</span><span class='line'>    <span class="n">fill_in</span> <span class="n">auto_complete_field</span><span class="p">,</span> <span class="ss">with</span><span class="p">:</span> <span class="s1">&#39;Dimitar&#39;</span>
+</span><span class='line'>    <span class="n">page</span><span class="o">.</span><span class="n">execute_script</span> <span class="sx">%Q{ $(&#39;#</span><span class="si">#{</span><span class="n">auto_complete_field</span><span class="si">}</span><span class="sx">&#39;).trigger(&quot;keydown&quot;) }</span>
+</span><span class='line'>    <span class="n">page</span><span class="o">.</span><span class="n">should</span> <span class="n">have_content</span><span class="p">(</span><span class="s1">&#39;Dimitar Kostov&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<blockquote>Notice: You should use <a href="https://github.com/thoughtbot/capybara-webkit" target="_new">capybara-webkit</a> driver to enable JavaScript interaction.</blockquote>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -713,47 +779,6 @@ username=# \q</pre>
 </span><span class='line'><span class="cp">-# &lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39; ?&gt;</span>
 </span><span class='line'><span class="cp">-# &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/22/converting-video-clip-to-gif/">Converting video clip to gif</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-22T00:00:00+02:00" pubdate data-updated="true">Jan 22<span>nd</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><pre>
-# Borrowed from http://schneems.com/post/41104255619/use-gifs-in-your-pull-request-for-good-not-evil
-
-$ ffmpeg -i ScreenFlow.mov -pix_fmt rgb24 output.gif
-$ convert -layers Optimize output.gif output_optimized.gif
-</pre>
 </div>
   
   

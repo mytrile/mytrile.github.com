@@ -4,7 +4,7 @@
   <title><![CDATA[Category: rails | Dimitar Kostov ramblings]]></title>
   <link href="http://mytrile.github.com/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://mytrile.github.com/"/>
-  <updated>2013-04-13T12:02:54+03:00</updated>
+  <updated>2013-04-25T10:44:20+03:00</updated>
   <id>http://mytrile.github.com/</id>
   <author>
     <name><![CDATA[Dimitar Kostov]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Test autocomplete in Rails]]></title>
+    <link href="http://mytrile.github.com/blog/2013/04/25/test-autocomplete-in-rails/"/>
+    <updated>2013-04-25T10:28:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2013/04/25/test-autocomplete-in-rails</id>
+    <content type="html"><![CDATA[<p>Easy way to test autocomplete in RSpec request spec with Capybara</p>
+
+<p>``` ruby</p>
+
+<p>describe 'Description of the spec'
+  it "should autocomplete user name", js: true do</p>
+
+<pre><code>visit users_path
+auto_complete_field = 'user_name'
+fill_in auto_complete_field, with: 'Dimitar'
+page.execute_script %Q{ $('##{auto_complete_field}').trigger("keydown") }
+page.should have_content('Dimitar Kostov')
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<blockquote>Notice: You should use <a href="https://github.com/thoughtbot/capybara-webkit" target="_new">capybara-webkit</a> driver to enable JavaScript interaction.</blockquote>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Testing after_commit in rspec]]></title>
@@ -142,35 +170,6 @@ Haml::Template.options[:format] = :xhtml
 <p>-# &lt;?xml version='1.0' encoding='utf-8' ?>
 -# &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 ```</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Passing arguments to rake task]]></title>
-    <link href="http://mytrile.github.com/blog/2012/12/11/passing-arguments-to-rake-task/"/>
-    <updated>2012-12-11T00:00:00+02:00</updated>
-    <id>http://mytrile.github.com/blog/2012/12/11/passing-arguments-to-rake-task</id>
-    <content type="html"><![CDATA[<p>``` ruby Rakefile
-namespace :log do
-  desc 'Upload logfile to cloud-based server'
-  task :upload, [:filename] => [:environment] do |t, args|</p>
-
-<pre><code># upload logic
-# args[:filename] is the passed argument
-</code></pre>
-
-<p>  end
-end
-```</p>
-
-<pre>
-$ rake log:upload[development.log]
-
-# If the shell complains just escape the brackets
-
-$ rake log:upload\[development.log\]
-</pre>
-
 ]]></content>
   </entry>
   

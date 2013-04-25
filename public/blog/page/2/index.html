@@ -9,14 +9,7 @@
   <meta name="author" content="Dimitar Kostov">
 
   
-  <meta name="description" content="Rakefile1
-2
-3
-4
-5
-6
-7
-namespace :log do desc &#39;Upload logfile to cloud-based server&#39; task :upload, [:filename] =&gt; [:environment] do |t, &hellip;">
+  <meta name="description" content="# Borrowed from http://schneems.com/post/41104255619/use-gifs-in-your-pull-request-for-good-not-evil $ ffmpeg -i ScreenFlow.mov -pix_fmt rgb24 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +75,47 @@ namespace :log do desc &#39;Upload logfile to cloud-based server&#39; task :uplo
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/22/converting-video-clip-to-gif/">Converting video clip to gif</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-22T00:00:00+02:00" pubdate data-updated="true">Jan 22<span>nd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><pre>
+# Borrowed from http://schneems.com/post/41104255619/use-gifs-in-your-pull-request-for-good-not-evil
+
+$ ffmpeg -i ScreenFlow.mov -pix_fmt rgb24 output.gif
+$ convert -layers Optimize output.gif output_optimized.gif
+</pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -548,50 +582,6 @@ $ cap deploy:setup
 $ export CPPFLAGS=-I/usr/local/Cellar/readline/6.2.4/include
 $ export LDFLAGS=-L/usr/local/Cellar/readline/6.2.4/lib/
 $ rbenv install 1.9.3-p194</pre>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/03/i-love-hello-world-benchmarks/">I love &#8220;Hello, World&#8221; benchmarks</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-03T00:00:00+02:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I love &#8220;Hello, World&#8221; benchmarks. They are stupid and meaningless. I love it when someone shows how fast is his web server on the local machine. </p>&#13;
-<p>Let&#8217;s see a comparison between node.js, async-sinatra and aleph all running apps on heroku free plan.</p>&#13;
-<p>Node.js</p>&#13;
-<p>============================================<br />Time taken for tests:   11.359 seconds<br /><strong>Requests per second:   704.26 [#/sec] (mean)</strong><br />Time per request:        141.993 [ms] (mean)<strong><br /></strong>Time per request:        1.420 [ms] (mean, across all concurrent requests)</p>&#13;
-<p>async-sinatra</p>&#13;
-<p>============================================<br />Time taken for tests:   12.223 seconds<br /><strong>Requests per second:    654.50 [#/sec] (mean)</strong><br />Time per request:       152.789 [ms] (mean)<strong><br /></strong>Time per request:       1.528 [ms] (mean, across all concurrent requests)</p>&#13;
-<p>Aleph</p>&#13;
-<p>============================================<br />Time taken for tests:   11.202 seconds<br /><strong>Requests per second:    714.13 [#/sec] (mean)</strong><br />Time per request:       140.030 [ms] (mean)<strong><br /></strong>Time per request:       1.400 [ms] (mean, across all concurrent requests)</p>&#13;
-<p><img src="http://media.tumblr.com/tumblr_lx7th8FK6z1qcx25j.png" /></p> 
 </div>
   
   
