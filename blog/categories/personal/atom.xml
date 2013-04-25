@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: personal | Dimitar Kostov ramblings]]></title>
+  <link href="http://mytrile.github.com/blog/categories/personal/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-25T10:44:20+03:00</updated>
+  <id>http://mytrile.github.com/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Technical Mission Statement 2010]]></title>
+    <link href="http://mytrile.github.com/blog/2010/01/03/technical-mission-statement-2010/"/>
+    <updated>2010-01-03T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2010/01/03/technical-mission-statement-2010</id>
+    <content type="html"><![CDATA[<p>In a technical dimension I expect to get comfortable with:</p>
+
+
+<p>&#13;</p>
+
+<ul><li>Deep Ruby - Rails/Rack internals, JRuby/Rubinius, EventMachine/RabbitMQ, MongoDB/CouchDB/Redis, Unicorn/Rainbows/Sunshowers, RhoMobile</li>&#13;
+<li>JavaScript - Node.js, JQuery, CoffeeScript</li>&#13;
+<li>Clojure - <span class="caps">LISP</span> on the <span class="caps">JVM</span>, looks prety awesome</li>&#13;
+<li>Python - rich linux libraries</li>&#13;
+<li>Factor - stack-based approach</li>&#13;
+<li>Emacs - advanced usage</li>&#13;
+<li>Linux tools - bash/zsh, screen, grep/ack</li>&#13;
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[I Know]]></title>
+    <link href="http://mytrile.github.com/blog/2009/10/01/i-know/"/>
+    <updated>2009-10-01T00:00:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2009/10/01/i-know</id>
+    <content type="html"><![CDATA[<p><img src="http://media.tumblr.com/tumblr_l8oazwyUoh1qcx25j.jpg" /></p>
+
+
+<p></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: gif | Dimitar Kostov ramblings]]></title>
+  <link href="http://mytrile.github.com/blog/categories/gif/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-25T10:44:20+03:00</updated>
+  <id>http://mytrile.github.com/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Converting video clip to gif]]></title>
+    <link href="http://mytrile.github.com/blog/2013/01/22/converting-video-clip-to-gif/"/>
+    <updated>2013-01-22T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2013/01/22/converting-video-clip-to-gif</id>
+    <content type="html"><![CDATA[<pre>
+# Borrowed from http://schneems.com/post/41104255619/use-gifs-in-your-pull-request-for-good-not-evil
+
+$ ffmpeg -i ScreenFlow.mov -pix_fmt rgb24 output.gif
+$ convert -layers Optimize output.gif output_optimized.gif
+</pre>
+
+]]></content>
+  </entry>
+  
+</feed>

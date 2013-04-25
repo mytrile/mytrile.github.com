@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Dimitar Kostov ramblings]]></title>
+  <link href="http://mytrile.github.com/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-25T10:44:20+03:00</updated>
+  <id>http://mytrile.github.com/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Test autocomplete in Rails]]></title>
+    <link href="http://mytrile.github.com/blog/2013/04/25/test-autocomplete-in-rails/"/>
+    <updated>2013-04-25T10:28:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2013/04/25/test-autocomplete-in-rails</id>
+    <content type="html"><![CDATA[<p>Easy way to test autocomplete in RSpec request spec with Capybara</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">describe</span> <span class="s1">&#39;Description of the spec&#39;</span>
+</span><span class='line'>  <span class="n">it</span> <span class="s2">&quot;should autocomplete user name&quot;</span><span class="p">,</span> <span class="ss">js</span><span class="p">:</span> <span class="kp">true</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">visit</span> <span class="n">users_path</span>
+</span><span class='line'>    <span class="n">auto_complete_field</span> <span class="o">=</span> <span class="s1">&#39;user_name&#39;</span>
+</span><span class='line'>    <span class="n">fill_in</span> <span class="n">auto_complete_field</span><span class="p">,</span> <span class="ss">with</span><span class="p">:</span> <span class="s1">&#39;Dimitar&#39;</span>
+</span><span class='line'>    <span class="n">page</span><span class="o">.</span><span class="n">execute_script</span> <span class="sx">%Q{ $(&#39;#</span><span class="si">#{</span><span class="n">auto_complete_field</span><span class="si">}</span><span class="sx">&#39;).trigger(&quot;keydown&quot;) }</span>
+</span><span class='line'>    <span class="n">page</span><span class="o">.</span><span class="n">should</span> <span class="n">have_content</span><span class="p">(</span><span class="s1">&#39;Dimitar Kostov&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<blockquote>Notice: You should use <a href="https://github.com/thoughtbot/capybara-webkit" target="_new">capybara-webkit</a> driver to enable JavaScript interaction.</blockquote>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Get HOME directory]]></title>
+    <link href="http://mytrile.github.com/blog/2013/04/13/get-home-dir/"/>
+    <updated>2013-04-13T11:45:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2013/04/13/get-home-dir</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;etc&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">login</span> <span class="o">=</span> <span class="no">Etc</span><span class="o">.</span><span class="n">getlogin</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">config_file</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">Dir</span><span class="o">.</span><span class="n">home</span><span class="p">(</span><span class="n">user</span><span class="p">),</span> <span class="s2">&quot;.zshrc&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Fixing Ruby build in Sublime Text 2]]></title>
+    <link href="http://mytrile.github.com/blog/2013/04/09/fixing-ruby-build-in-sublime-texteditor-2/"/>
+    <updated>2013-04-09T14:35:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2013/04/09/fixing-ruby-build-in-sublime-texteditor-2</id>
+    <content type="html"><![CDATA[<p>If youre getting this error while trying to run ruby script, just replace the loop in <em>Packages/Default/exec.py</em> on line 44 with the snippet below:</p>
+
+<pre>UnicodeDecodeError: 'ascii' codec can't decode byte 0xe2 in position 60 ...</pre>
+
+
+
+
+<figure class='code'><figcaption><span>Packages/Default/exec.py:44</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">proc_env</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+</span><span class='line'>  <span class="n">path_vars</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expandvars</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path_vars</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">):</span>
+</span><span class='line'>      <span class="n">path_vars</span> <span class="o">=</span> <span class="n">path_vars</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getfilesystemencoding</span><span class="p">())</span>
+</span><span class='line'>  <span class="n">proc_env</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">path_vars</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Janky setup: Jenkins, Hubot, HipChat and Ruby]]></title>
+    <link href="http://mytrile.github.com/blog/2013/04/07/janky/"/>
+    <updated>2013-04-07T19:07:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2013/04/07/janky</id>
+    <content type="html"><![CDATA[<h2>Prerequisites</h2>
+
+<ul>
+<li>Linux/Mac OSX</li>
+<li><a href="http://heroku.com">Heroku</a> account</li>
+<li><a href="https://www.hipchat.com/">HipChat</a> account</li>
+<li>Hosting provider for Jenkins like <a href="https://www.digitalocean.com">DigitalOcean</a></li>
+<li><a href="http://nodejs.org/">Nodejs</a> for Hubot</li>
+<li><a href="https://toolbelt.heroku.com/">Heroku Toolbelt</a></li>
+</ul>
+
+
+<h2>Jenkins installation and setup</h2>
+
+<p>First of all, you need box to deploy Jenkins server. I would recommend <a href="http://digitalocean.com">DigitalOcean</a>, because they provide awesome service at really low cost. Here we go:</p>
+
+<pre><code>$ ssh root@111.222.333.444
+~# wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | apt-key add -
+~# sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ &gt; /etc/apt/sources.list.d/jenkins.list'
+~# apt-get update
+~# apt-get install jenkins
+</code></pre>
+
+<p>Change newly created jenkins user password:</p>
+
+<pre><code>~# passwd jenkins
+</code></pre>
+
+<p>Add jenkins to the sudoers (not necessary):</p>
+
+<pre><code>~# visdudo
+
+jenkins ALL=(ALL:ALL) ALL
+</code></pre>
+
+<p>Allow jenkins to connect through ssh and disable root login</p>
+
+<pre><code>~# nano /etc/ssh/sshd_config
+
+AllowUsers jenkins
+PermitRootLogin no
+
+~# reload ssh
+</code></pre>
+
+<p>Upload your ssh key for login without password:</p>
+
+<pre><code>$ scp ~/.ssh/id_rsa.pub jenkins@111.222.333.444:/var/lib/jenkins/.ssh/authorized_keys
+</code></pre>
+
+<p>Navigate to your server on port 8080 and install necessary plugins:</p>
+
+<ol>
+<li>Click on &#8216;Manage Jenkins&#8217;</li>
+<li>Click on &#8216;Manage Plugins&#8217;</li>
+<li>Click on &#8216;Available&#8217; tab</li>
+<li>Check &#8216;rbenv&#8217; and &#8216;Notification Plugin&#8217; and click &#8216;Install without restart&#8217;</li>
+</ol>
+
+
+<p>Install rbenv and ruby-build:</p>
+
+<pre><code>$ sudo apt-get -y install build-essential zlib1g-dev libssl-dev\
+libreadline-dev libyaml-dev libcurl4-openssl-dev curl git-core python-software-properties
+$ git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
+$ git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' &gt;&gt; ~/.bash_profile
+$ echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.bash_profile
+$ exec $SHELL -l
+$ rbenv install 2.0.0-p0
+$ rbenv global 2.0.0-p0
+$ rbenv rehash
+$ gem install bundler
+</code></pre>
+
+<h2>Janky installation and setup</h2>
+
+<pre><code>$ git clone git://gist.github.com/1497335 janky
+$ cd janky
+$ heroku create --stack cedar
+$ heroku rename our-janky-server
+  Add require "janky/chat_service/hipchat" to config/environment.rb file before the Janky.setup(ENV)
+$ echo 'gem "hipchat", "~&gt;0.4"' &gt;&gt; Gemfile
+$ bundle install
+$ git add Gemfile.lock
+$ git commit Gemfile.lock -m "lock bundle"
+$ git push heroku master
+$ heroku config:add JANKY_BASE_URL="http://our-janky-server.herokuapp.com/"
+$ heroku config:add JANKY_BUILDER_DEFAULT="Jenkins URL"
+$ heroku config:add JANKY_CONFIG_DIR="/app/config"
+$ heroku config:add JANKY_HUBOT_USER="hubot"
+$ heroku config:add JANKY_HUBOT_PASSWORD="hubot"
+$ heroku config:add JANKY_GITHUB_USER="mytrile"
+$ heroku config:add JANKY_GITHUB_PASSWORD="password"
+$ heroku config:add JANKY_GITHUB_HOOK_SECRET="..."
+$ heroku config:add JANKY_CHAT_DEFAULT_ROOM="room"
+$ heroku config:add JANKY_CHAT=hipchat
+$ heroku config:add JANKY_CHAT_HIPCHAT_TOKEN="..."
+
+$ heroku run rake db:migrate
+$ heroku ps:scale web=1
+</code></pre>
+
+<h2>Hubot installation and setup</h2>
+
+<pre><code>$ wget https://github.com/github/hubot/archive/master.zip
+$ unzip master.zip
+$ cd hubot-master
+$ npm install
+$ make package
+$ cd hubot
+$ wget -O scripts/janky.coffee https://raw.github.com/github/hubot-scripts/master/src/scripts/janky.coffee
+</code></pre>
+
+<p><em>Note: Remove redis-brain.coffee from hubot-script.json if you don&#8217;t to setup redis</em></p>
+
+<p>Add hubot-hipchat dependecy to package.json:</p>
+
+<pre><code>"dependencies": {
+  "hubot-hipchat": "&gt;= 2.4.5",
+  ...
+}
+</code></pre>
+
+<p>Edit the Procfile:</p>
+
+<pre><code>web: bin/hubot --adapter hipchat -n Hubot
+</code></pre>
+
+<p>Deploy Hubot:</p>
+
+<pre><code>$ git init
+$ git add .
+$ git commit -m 'initial commit'
+$ heroku create
+$ heroku rename our-company-hubot
+$ heroku config:add HEROKU_URL=http://our-company-hubot.herokuapp.com
+</code></pre>
+
+<p>Create account for your HipChat bot and configure it:</p>
+
+<pre><code>$ heroku config:add HUBOT_HIPCHAT_JID="12345_678901@chat.hipchat.com"
+$ heroku config:add HUBOT_HIPCHAT_PASSWORD="mypassword"
+$ heroku config:add HUBOT_HIPCHAT_TOKEN="…"
+$ heroku config:add HUBOT_JANKY_URL="http://hubot:hubot@our-janky-server.herokuapp.com/_hubot"
+$ heroku ps:scale web=1
+</code></pre>
+
+<p><em>Note: HUBOT_HIPCHAT_TOKEN should be the admin token, not the bot user token</em></p>
+
+<h2>Usage</h2>
+
+<p>We&#8217;re almost there. The last to do is to tweak Jenkins after the initial setup. In the HipChat room where your bot is:</p>
+
+<pre><code>&gt; hubot ci setup username/repo
+&gt; hubot ci build repo
+</code></pre>
+
+<p>There should be new job in your Jenkins server that can be configured accordingly your application.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HopChat - Custom color theme for Limechat IRC client]]></title>
+    <link href="http://mytrile.github.com/blog/2013/03/31/hopchat-custom-color-theme-for-limechat-irc-client/"/>
+    <updated>2013-03-31T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2013/03/31/hopchat-custom-color-theme-for-limechat-irc-client</id>
+    <content type="html"><![CDATA[<p><a href="http://mytrile.github.com/limechat-hopchat" title="HopChat - custom color theme for Limechat IRC client" target="_blank"><img src="http://media.tumblr.com/730976927df4d4d6428cc17166202bae/tumblr_inline_mkkpv1Nj1F1qz4rgp.png" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Testing after_commit in rspec]]></title>
+    <link href="http://mytrile.github.com/blog/2013/03/28/testing-after-commit-in-rspec/"/>
+    <updated>2013-03-28T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2013/03/28/testing-after-commit-in-rspec</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>mail_worker.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># app/workers/mail_worker.rb</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">MailWorker</span>
+</span><span class='line'>  <span class="kp">include</span> <span class="ss">Sidekiq</span><span class="p">:</span><span class="ss">:Worker</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">perform</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+</span><span class='line'>    <span class="c1"># send mail</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+<figure class='code'><figcaption><span>spec_helper.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># spec/spec_helper.rb</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">RSpec</span><span class="o">.</span><span class="n">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">use_transactional_fixtures</span> <span class="o">=</span> <span class="kp">false</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1"># rest of the configuration</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+<figure class='code'><figcaption><span>user.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># app/models/user.rb</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'>  <span class="n">after_commit</span> <span class="ss">:send_welcome_mail</span><span class="p">,</span> <span class="ss">on</span><span class="p">:</span> <span class="n">create</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kp">private</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">send_welcome_mail</span>
+</span><span class='line'>    <span class="no">MailWorker</span><span class="o">.</span><span class="n">perform_async</span><span class="p">(</span><span class="nb">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+<figure class='code'><figcaption><span>user_spec.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># spec/models/user_spec.rb</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;spec_helper&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">describe</span> <span class="no">AffiliateProgram</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">let</span><span class="p">(</span><span class="ss">:user</span><span class="p">)</span> <span class="p">{</span> <span class="no">FactoryGirl</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:user</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">it</span> <span class="s2">&quot;should queue sending mail for user&quot;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">expect</span> <span class="p">{</span> <span class="n">user</span><span class="o">.</span><span class="n">run_callbacks</span><span class="p">(</span><span class="ss">:commit</span><span class="p">)</span> <span class="p">}</span><span class="o">.</span><span class="n">to</span> <span class="n">change</span> <span class="p">{</span> <span class="no">AffiliateProgramOfferWorker</span><span class="o">.</span><span class="n">jobs</span><span class="o">.</span><span class="n">count</span> <span class="p">}</span><span class="o">.</span><span class="n">by</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Better rails errors and live console]]></title>
+    <link href="http://mytrile.github.com/blog/2013/02/21/better-rails-errors-and-live-console/"/>
+    <updated>2013-02-21T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2013/02/21/better-rails-errors-and-live-console</id>
+    <content type="html"><![CDATA[<p><a href="https://github.com/charliesome/better_errors" target="_blank"><img src="http://media.tumblr.com/3dcab8624b81f2fdaf50b1a122b2a379/tumblr_inline_mik9x4p11b1qz4rgp.png" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Active Admin toggle all function for batch actions]]></title>
+    <link href="http://mytrile.github.com/blog/2013/02/16/active-admin-toggle-all-function-for-batch-actions/"/>
+    <updated>2013-02-16T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2013/02/16/active-admin-toggle-all-function-for-batch-actions</id>
+    <content type="html"><![CDATA[<p>If you&#8217;re running into a problem toggling all checkboxes in index page for batch action in Active Admin you should:</p>
+<p></p>
+<p>1. Download <a href="https://github.com/jquery/jquery-migrate/" target="_blank">jquery-migrate</a></p>
+<p>2. Added it as asset and require it in active_admin.js manifest file</p>
+<blockquote>
+<p>//= require jquery-migrate</p>
+</blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Easy setup for Postgres.app and Rails]]></title>
+    <link href="http://mytrile.github.com/blog/2013/02/08/easy-setup-for-postgres-app-and-rails/"/>
+    <updated>2013-02-08T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2013/02/08/easy-setup-for-postgres-app-and-rails</id>
+    <content type="html"><![CDATA[<p>This is how you setup <a href="http://postgresapp.com/" target="_blank">Postgress.app</a> with Rails</p>
+
+<pre>~ psql
+username=# CREATE DATABASE myapp_development;
+username=# \q</pre>
+
+<figure class='code'><figcaption><span>.zshrc </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"&lt;/pre></span></code></pre></td></tr></table></div></figure>
+
+<figure class='code'><figcaption><span>database.yml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">development</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">adapter</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">postgresql</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">encoding</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">unicode</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">database</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">myapp_development</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">pool</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">5</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">host</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">localhost</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">username</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">username</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">password</span><span class="p-Indicator">:</span>
+</span></code></pre></td></tr></table></div></figure>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[XTHML in HAML view in Rails 3]]></title>
+    <link href="http://mytrile.github.com/blog/2013/02/04/xthml-in-haml-view-in-rails-3/"/>
+    <updated>2013-02-04T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2013/02/04/xthml-in-haml-view-in-rails-3</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>config/initializers/haml.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='haml'><span class='line'>Haml::Template.options[:format] = :xhtml
+</span></code></pre></td></tr></table></div></figure>
+
+<figure class='code'><figcaption><span>some_view.html.haml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='haml'><span class='line'><span class="nn">!!! XML</span>
+</span><span class='line'><span class="nn">!!!</span>
+</span><span class='line'>
+</span><span class='line'><span class="cp">-# &lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39; ?&gt;</span>
+</span><span class='line'><span class="cp">-# &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Converting video clip to gif]]></title>
+    <link href="http://mytrile.github.com/blog/2013/01/22/converting-video-clip-to-gif/"/>
+    <updated>2013-01-22T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2013/01/22/converting-video-clip-to-gif</id>
+    <content type="html"><![CDATA[<pre>
+# Borrowed from http://schneems.com/post/41104255619/use-gifs-in-your-pull-request-for-good-not-evil
+
+$ ffmpeg -i ScreenFlow.mov -pix_fmt rgb24 output.gif
+$ convert -layers Optimize output.gif output_optimized.gif
+</pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Passing arguments to rake task]]></title>
+    <link href="http://mytrile.github.com/blog/2012/12/11/passing-arguments-to-rake-task/"/>
+    <updated>2012-12-11T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2012/12/11/passing-arguments-to-rake-task</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Rakefile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">namespace</span> <span class="ss">:log</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">desc</span> <span class="s1">&#39;Upload logfile to cloud-based server&#39;</span>
+</span><span class='line'>  <span class="n">task</span> <span class="ss">:upload</span><span class="p">,</span> <span class="o">[</span><span class="ss">:filename</span><span class="o">]</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:environment</span><span class="o">]</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">|</span>
+</span><span class='line'>    <span class="c1"># upload logic</span>
+</span><span class='line'>    <span class="c1"># args[:filename] is the passed argument</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+<pre>
+$ rake log:upload[development.log]
+
+# If the shell complains just escape the brackets
+
+$ rake log:upload\[development.log\]
+</pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Setting signed cookie directly on the rack response object]]></title>
+    <link href="http://mytrile.github.com/blog/2012/12/07/setting-signed-cookie-directly-on-the-rack-response-object/"/>
+    <updated>2012-12-07T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2012/12/07/setting-signed-cookie-directly-on-the-rack-response-object</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">request</span><span class="o">.</span><span class="n">cookie_jar</span><span class="o">.</span><span class="n">signed</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;value&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ignore upload directory while using Capistrano]]></title>
+    <link href="http://mytrile.github.com/blog/2012/12/04/ignore-upload-directory-while-using-capistrano/"/>
+    <updated>2012-12-04T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2012/12/04/ignore-upload-directory-while-using-capistrano</id>
+    <content type="html"><![CDATA[<pre>
+$ git rm -r --cached public/uploads
+$ cap deploy:setup
+</pre>
+
+<figure class='code'><figcaption><span>config/deploy.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">set</span> <span class="ss">:shared_children</span><span class="p">,</span> <span class="n">shared_children</span> <span class="o">+</span> <span class="sx">%w{public/uploads}</span>
+</span></code></pre></td></tr></table></div></figure>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cookie based authentication strategy in Devise]]></title>
+    <link href="http://mytrile.github.com/blog/2012/11/09/cookie-based-authentication-strategy-in-devise/"/>
+    <updated>2012-11-09T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2012/11/09/cookie-based-authentication-strategy-in-devise</id>
+    <content type="html"><![CDATA[<p>This method assumes that you have token authentication strategy enabled and will use the token for the user for cookie authentication</p>&#13;
+
+<figure class='code'><figcaption><span>lib/devise/cookie_token_auth_strategy.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="ss">Warden</span><span class="p">:</span><span class="ss">:Strategies</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="ss">:token_cookie_strategy</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">valid?</span>
+</span><span class='line'>    <span class="n">token_from_cookie</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">authenticate!</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">token_from_cookie</span><span class="o">.</span><span class="n">present?</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">find_for_token_authentication</span><span class="p">(</span><span class="ss">:auth_token</span> <span class="o">=&gt;</span> <span class="n">token_from_cookie</span><span class="p">))</span><span class="o">.</span><span class="n">present?</span>
+</span><span class='line'>      <span class="n">delete_token_from_cookie</span>
+</span><span class='line'>      <span class="n">success!</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">else</span>
+</span><span class='line'>      <span class="nb">fail</span><span class="o">!</span><span class="p">(</span><span class="s2">&quot;Could not log in&quot;</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">token_from_cookie</span>
+</span><span class='line'>    <span class="n">cookies</span><span class="o">[</span><span class="ss">:authentication_token</span><span class="o">]</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">delete_token_from_cookie</span>
+</span><span class='line'>    <span class="n">cookies</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="ss">:authentication_token</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+<figure class='code'><figcaption><span>config/initializers/devise.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Devise</span><span class="o">.</span><span class="n">setup</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">warden</span> <span class="k">do</span> <span class="o">|</span><span class="n">manager</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">manager</span><span class="o">.</span><span class="n">default_strategies</span><span class="p">(</span><span class="ss">:scope</span> <span class="o">=&gt;</span> <span class="ss">:user</span><span class="p">)</span><span class="o">.</span><span class="n">unshift</span> <span class="ss">:token_cookie_strategy</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+<figure class='code'><figcaption><span>config/application.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">module</span> <span class="nn">YourApp</span>
+</span><span class='line'>  <span class="k">class</span> <span class="nc">Application</span> <span class="o">&lt;</span> <span class="ss">Rails</span><span class="p">:</span><span class="ss">:Application</span>
+</span><span class='line'>    <span class="n">config</span><span class="o">.</span><span class="n">autoload_paths</span> <span class="o">+=</span> <span class="sx">%W(</span><span class="si">#{</span><span class="n">config</span><span class="o">.</span><span class="n">root</span><span class="si">}</span><span class="sx">/lib/devise)</span>
+</span><span class='line'>    <span class="c1"># rest of the file</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to submit a form by clicking on autocomplete result]]></title>
+    <link href="http://mytrile.github.com/blog/2012/11/08/how-to-submit-a-form-by-clicking-on-autocomplete-result/"/>
+    <updated>2012-11-08T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2012/11/08/how-to-submit-a-form-by-clicking-on-autocomplete-result</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nx">jQuery</span> <span class="nf">-&gt;</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="s">&#39;#input_field&#39;</span><span class="p">).</span><span class="nx">autocomplete</span>
+</span><span class='line'>    <span class="nv">source: </span><span class="nx">$</span><span class="p">(</span><span class="s">&#39;#input_field&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s">&#39;autocomplete-source&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="nv">select: </span><span class="nf">(event, ui) -&gt;</span>
+</span><span class='line'>      <span class="nx">$</span><span class="p">(</span><span class="s">&quot;</span><span class="err">#</span><span class="s">input_field&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">ui</span><span class="p">.</span><span class="nx">item</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+</span><span class='line'>      <span class="nx">$</span><span class="p">(</span><span class="s">&#39;#form&#39;</span><span class="p">).</span><span class="nx">submit</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Preserve new lines in Rails i18n]]></title>
+    <link href="http://mytrile.github.com/blog/2012/10/25/preserve-new-lines-in-rails-i18n/"/>
+    <updated>2012-10-25T00:00:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2012/10/25/preserve-new-lines-in-rails-i18n</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">user</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">mailer</span><span class="p-Indicator">:</span>
+</span><span class='line'>    <span class="l-Scalar-Plain">footer</span><span class="p-Indicator">:</span> <span class="p-Indicator">|</span>
+</span><span class='line'>      <span class="no">Best regards,</span>
+</span><span class='line'>      <span class="no">Your Company.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='haml'><span class='line'><span class="nn">!!!</span>
+</span><span class='line'><span class="nt">%html</span>
+</span><span class='line'>  <span class="nt">%head</span>
+</span><span class='line'>    <span class="nt">%meta</span><span class="p">{</span><span class="ss">:content</span> <span class="o">=&gt;</span> <span class="s2">&quot;text/html; charset=UTF-8&quot;</span><span class="p">}</span>
+</span><span class='line'>  <span class="nt">%body</span>
+</span><span class='line'>    <span class="p">=</span> <span class="n">simple_format</span> <span class="no">I18n</span><span class="o">.</span><span class="n">t</span><span class="p">(</span><span class="s1">&#39;user.mailer.footer&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Start a Pry session on any unhandled exceptions]]></title>
+    <link href="http://mytrile.github.com/blog/2012/08/14/start-a-pry-session-on-any-unhandled-exceptions/"/>
+    <updated>2012-08-14T00:00:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2012/08/14/start-a-pry-session-on-any-unhandled-exceptions</id>
+    <content type="html"><![CDATA[<p> </p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[capybara-webkit on Mac OS X]]></title>
+    <link href="http://mytrile.github.com/blog/2012/08/09/capybara-webkit-on-mac-os-x/"/>
+    <updated>2012-08-09T00:00:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2012/08/09/capybara-webkit-on-mac-os-x</id>
+    <content type="html"><![CDATA[<p>If you&#8217;re having problems compiling capybara-webkit gem in Rails, just install qt via <a href="http://mxcl.github.com/homebrew/" target="_blank">Homebrew</a>:</p>
+
+<pre>$ brew install qt</pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Unicode in irb]]></title>
+    <link href="http://mytrile.github.com/blog/2012/08/08/unicode-in-irb/"/>
+    <updated>2012-08-08T00:00:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2012/08/08/unicode-in-irb</id>
+    <content type="html"><![CDATA[<p>If you&#8217;re having problems with unicode characters in IRB from ruby compiled with rbenv, do this:</p>
+
+<pre>$ brew install readline
+$ export CPPFLAGS=-I/usr/local/Cellar/readline/6.2.4/include
+$ export LDFLAGS=-L/usr/local/Cellar/readline/6.2.4/lib/
+$ rbenv install 1.9.3-p194</pre>
+]]></content>
+  </entry>
+  
+</feed>

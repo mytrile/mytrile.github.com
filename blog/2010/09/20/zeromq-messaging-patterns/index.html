@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Messaging patterns in ZeroMQ - Dimitar Kostov ramblings</title>
+  <meta name="author" content="Dimitar Kostov">
+
+  
+  <meta name="description" content="In the previous post I&#8217;ve outlined what to expect from ZeroMQ. In this is post I&#8217;ll focus on infrastructure and messaging patterns &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://mytrile.github.com/blog/2010/09/20/zeromq-messaging-patterns/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Dimitar Kostov ramblings" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39947425-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Dimitar Kostov ramblings</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:mytrile.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Messaging patterns in ZeroMQ</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-20T00:00:00+03:00" pubdate data-updated="true">Sep 20<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="http://fireinside.me/post/3551687394/zeromq-intro" title="ZeroMQ: Introduction" target="_self">In the previous post</a> I&#8217;ve outlined what to expect from ZeroMQ. In this is post I&#8217;ll focus on infrastructure and messaging patterns options ZeroMQ gives us to play with.</p>&#13;
+<h3>Infrastructure</h3>&#13;
+<p>ZeroMQ gives us the choice of how to organize your &#8220;network&#8221;. In the simple case it&#8217;s a &#8220;server&#8221; who binds to a socket and a &#8220;client&#8221; who connects to the &#8220;server&#8221;. The &#8220;client&#8221; sends a message and the &#8220;server&#8221; receives it.</p>&#13;
+<p><img align="middle" src="http://media.tumblr.com/tumblr_l8zr4dBhvj1qcx25j.png" /></p>&#13;
+<p>&#13;
+<script src="http://gist.github.com/586681.js"> </script></p>&#13;
+<p>It&#8217;s possible to bind a socket to an address and at the same time to connect to other end point. This means that we can use it as a forwarder:</p>&#13;
+<p><img src="http://media.tumblr.com/tumblr_l8zrmgo87a1qcx25j.png" /></p>&#13;
+<p>&#13;
+<script src="http://gist.github.com/586688.js"> </script></p>&#13;
+<p>Those examples use pipeline messaging pattern and it&#8217;s to time to explain how to handle the message flow.</p>&#13;
+<h3>Messaging patterns</h3>&#13;
+<p>ZeroMQ supports four messaging patterns:</p>&#13;
+<ol><li><strong><a href="http://api.zeromq.org/zmq_socket.html#_pipeline_pattern" title="Pipeline pattern" target="_blank">Pipeline</a></strong> - used for distributing data to nodes arranged in a pipeline</li>&#13;
+<li><strong><a href="http://api.zeromq.org/zmq_socket.html#_request_reply_pattern" title="Request-reply pattern" target="_blank">Request-Reply</a></strong> - used for sending requests from a client to one or more instances of a service, and receiving subsequent replies to each request sent</li>&#13;
+<li><strong><a href="http://api.zeromq.org/zmq_socket.html#_publish_subscribe_pattern" title="Publish-subscribe pattern" target="_blank">Publish-Subscribe</a></strong> - used for sending requests from a client to one or more instances of a service, and receiving subsequent replies to each request sent</li>&#13;
+<li><strong><a href="http://api.zeromq.org/zmq_socket.html#_exclusive_pair_pattern" title="Exclusive Pair pattern" target="_blank">Exclusive Pair</a></strong> - advanced pattern used for communicating exclusively between two peers</li>&#13;
+</ol><hr /><p><strong>Pipeline</strong></p>&#13;
+<p>We can see the usage of pipeline pattern in the previous example. ZMQ::UPSTREAM(ZMQ::PULL) socket only gets data, ZMQ::DOWNSTREAM(ZMQ::PUSH) socket pushes date.</p>&#13;
+<p>In more complicated manner, a pipeline stage can connect to multiple nodes. If so data is automatically load-balanced among all connected nodes.</p>&#13;
+<p><img src="http://media.tumblr.com/tumblr_l9054rwV851qcx25j.png" /></p>&#13;
+<p><strong><em>NOTICE:</em></strong> ZMQ::DOWNSTREAM/ZMQ::UPSTREAM are deprecated. The new names of the socket types are ZMQ::PUSH/ZMQ::PULL. Right now the names are not updated in zmq ruby gem, but in ffi version everything is working correctly.</p>&#13;
+<hr /><p><strong>Request-Reply</strong></p>&#13;
+<p>  Making request</p>&#13;
+<ol><li>create ZMQ::REQ socket and connect to server</li>&#13;
+<li>send a message using <strong>send</strong> method</li>&#13;
+<li>capture reply with <strong>recv</strong> method</li>&#13;
+</ol><p>  Accepting request and sending reply</p>&#13;
+<ol><li>create ZMQ::REP socket and bind on specific address/port</li>&#13;
+<li>receive message with <strong>recv</strong> method</li>&#13;
+<li>send a reply with <strong>send</strong> method</li>&#13;
+</ol><p>It&#8217;s also possible to make more than one request per socket. Just use <strong>connect</strong> on different addresses/ports.</p>&#13;
+<p><img src="http://media.tumblr.com/tumblr_l906sjM1qX1qcx25j.png" /></p>&#13;
+<p>In the following example we&#8217;re sending 10 numbers as 10 separate requests, the server get the request(the number), multiply it and then send it back to the client.</p>&#13;
+<script src="http://gist.github.com/586931.js"> </script><hr /><p><strong>Publish-Subscribe</strong></p>&#13;
+<p>It&#8217;s the well know pattern. And this is how it works in ZeroMQ</p>&#13;
+<p>Publisher</p>&#13;
+<ol><li>Create a ZMQ::PUB socket and bind it on address/port</li>&#13;
+<li>Publish data using <strong>send</strong></li>&#13;
+</ol><p>Subscriber</p>&#13;
+<ol><li>Create a ZMQ::SUB socket and connect it to the publisher</li>&#13;
+<li>Set the filter of the received messages</li>&#13;
+<li>Receive messages with <strong>recv</strong></li>&#13;
+</ol><p><img src="http://media.tumblr.com/tumblr_l90944r4tL1qcx25j.png" /></p>&#13;
+<p>Let assume that we have news for the revenue of Microsoft, Apple, Google and Oracle. Our publisher will broadcast news for all of these companies, but our subscriber is interested only in Google&#8217;s revenue:</p>&#13;
+<script src="http://gist.github.com/586964.js"> </script><p>Using setsockopt method we set the filter to get only news about Google. If we don&#8217;t provide filter, the subscriber wont&#8217; get any news. If we set the filter to empty string, the subscriber will get all the news form the publisher.</p>&#13;
+<hr /><p><strong>Exclusive Pair</strong></p>&#13;
+<p>Simple enough<strong> - </strong>bidirectional communication, no routing or filtering. Looks like regular socket. ZMQ::PAIR socket can only be connected to a single peer.</p>&#13;
+<hr /><p><strong>Wrapping up</strong></p>&#13;
+<p>In the next chapter I&#8217;ll use the knowledge of this one to write a simple Hello World app in Ruby - a chat server. Stay tuned.</p>&#13;
+<p>PS: Feel free to write me at mitko.kostov[at]gmail.com if you find some rubbish statement.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Dimitar Kostov</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-20T00:00:00+03:00" pubdate data-updated="true">Sep 20<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ruby/'>ruby</a>, <a class='category' href='/blog/categories/zeromq/'>zeromq</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://mytrile.github.com/blog/2010/09/20/zeromq-messaging-patterns/" data-via="mytrile" data-counturl="http://mytrile.github.com/blog/2010/09/20/zeromq-messaging-patterns/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/09/19/explain-ruby-ruby-syntax-explained/" title="Previous Post: Explain Ruby - Ruby syntax explained">&laquo; Explain Ruby - Ruby syntax explained</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/01/21/designer-friendly-templates-in-lift/" title="Next Post: Designer Friendly Templates in Lift">Designer Friendly Templates in Lift &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/mytrile">@mytrile</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'mytrile',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>My Pinboard</h1>
+  <ul id="pinboard_linkroll">Fetching linkroll...</ul>
+  <p><a href="http://pinboard.in/u:mytrile">My Pinboard Bookmarks &raquo;</a></p>
+</section>
+<script type="text/javascript">
+  var linkroll = 'pinboard_linkroll'; //id target for pinboard list
+  var pinboard_user = "mytrile"; //id target for pinboard list
+  var pinboard_count = 3; //id target for pinboard list
+  (function(){
+    var pinboardInit = document.createElement('script');
+    pinboardInit.type = 'text/javascript';
+    pinboardInit.async = true;
+    pinboardInit.src = '/javascripts/pinboard.js';
+    document.getElementsByTagName('head')[0].appendChild(pinboardInit);
+  })();
+</script>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Dimitar Kostov -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+  - <span class="credit">Theme by <a href="http://www.gehaxelt.in">Gehaxelt</a></span>
+  <span class="credit">and <a href="http://www.it-solutions-neef.de">IT Solutions Neef</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'fireinsideme';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://mytrile.github.com/blog/2010/09/20/zeromq-messaging-patterns/';
+        var disqus_url = 'http://mytrile.github.com/blog/2010/09/20/zeromq-messaging-patterns/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

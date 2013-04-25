@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: twitter | Dimitar Kostov ramblings]]></title>
+  <link href="http://mytrile.github.com/blog/categories/twitter/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-25T10:44:20+03:00</updated>
+  <id>http://mytrile.github.com/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Tweetlist]]></title>
+    <link href="http://mytrile.github.com/blog/2009/09/01/tweetlist/"/>
+    <updated>2009-09-01T00:00:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2009/09/01/tweetlist</id>
+    <content type="html"><![CDATA[<p><a href="http://tweetlist.heroku.com">Tweetlist</a> is on of those 30 minutes <span class="caps">DIY</span> things. It's a simple url shortening service for combining multiple links into one url ready to be tweeted.</p>
+
+
+<p>&#13;</p>
+
+<p><a title="Tweetlist" target="_blank" href="http://tweetlist.heroku.com"><img src="http://media.tumblr.com/tumblr_l8ob12q4G41qcx25j.jpg" /></a></p>
+
+
+<p></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Get links from tweets]]></title>
+    <link href="http://mytrile.github.com/blog/2009/05/25/get-links-from-tweets/"/>
+    <updated>2009-05-25T00:00:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2009/05/25/get-links-from-tweets</id>
+    <content type="html"><![CDATA[<p>&#13;
+<script src="http://gist.github.com/110609.js"></script></p>
+
+
+<p></p>
+]]></content>
+  </entry>
+  
+</feed>

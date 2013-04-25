@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: clojure | Dimitar Kostov ramblings]]></title>
+  <link href="http://mytrile.github.com/blog/categories/clojure/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-25T10:44:20+03:00</updated>
+  <id>http://mytrile.github.com/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Clojure to JS compiler]]></title>
+    <link href="http://mytrile.github.com/blog/2011/07/21/clojure-to-js-compiler/"/>
+    <updated>2011-07-21T00:00:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2011/07/21/clojure-to-js-compiler</id>
+    <content type="html"><![CDATA[<p> </p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ring - Rack for Clojure]]></title>
+    <link href="http://mytrile.github.com/blog/2010/03/01/ring-rack-for-clojure/"/>
+    <updated>2010-03-01T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2010/03/01/ring-rack-for-clojure</id>
+    <content type="html"><![CDATA[<p>If you're looking for something similar to Ruby's Rack or Python's <span class="caps">WSGI</span>, but for Clojure, take a look at <a href="http://github.com/mmcgrana/ring">Ring</a>. The simple unified <span class="caps">API</span> allows easily constructing web applications with modular architecture. At this moment two adapaters are supported: Jetty and Apache HttpCore webserver.</p>
+
+
+<p>&#13;</p>
+
+<script src="http://gist.github.com/318162.js"></script>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Clojure and Emacs on Ubuntu]]></title>
+    <link href="http://mytrile.github.com/blog/2009/12/08/clojure-and-emacs-on-ubuntu/"/>
+    <updated>2009-12-08T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2009/12/08/clojure-and-emacs-on-ubuntu</id>
+    <content type="html"><![CDATA[<p>&#13;
+<script src="http://gist.github.com/251590.js"></script></p>
+
+
+<p></p>
+]]></content>
+  </entry>
+  
+</feed>

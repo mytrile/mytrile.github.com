@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: nodejs | Dimitar Kostov ramblings]]></title>
+  <link href="http://mytrile.github.com/blog/categories/nodejs/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-25T10:44:20+03:00</updated>
+  <id>http://mytrile.github.com/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Express - Sinatra for Node.js]]></title>
+    <link href="http://mytrile.github.com/blog/2010/03/04/express-sinatra-for-node-js/"/>
+    <updated>2010-03-04T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2010/03/04/express-sinatra-for-node-js</id>
+    <content type="html"><![CDATA[<p>Almost from the first release <a href="http://www.sinatrarb.com/">Sinatra</a> has inspired lots of mini web frameworks in many programming languages with its simplicity. And if you're in the hype for Node.js like me, <a href="http://github.com/visionmedia/express">Express</a> may be the choice for creating simple service oriented web apps using JavaScript. Here is the "Hello World" example using Express:</p>
+
+
+<p>&#13;</p>
+
+<script src="http://gist.github.com/321542.js"></script>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Fresh cup of coffee]]></title>
+    <link href="http://mytrile.github.com/blog/2010/02/13/fresh-cup-of-coffee/"/>
+    <updated>2010-02-13T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2010/02/13/fresh-cup-of-coffee</id>
+    <content type="html"><![CDATA[<p>JavaScript: The platform of the future? With <a href="http://nodejs.org/">Node.js</a> on the hotspot everyone is looking back to using JavaScript as server-side language. And while Node.js is pretty awesome, I really don’t think c-like languages are expressive. <a href="http://github.com/jashkenas/coffee-script">CoffeeScript</a> is a Ruby inspired language that compiles to JavaScript. It has great syntax and cool features like interactive mode. Definately project to watch.</p>
+
+
+<p>&#13;</p>
+
+<script src="http://gist.github.com/303498.js?file=node.coffee"></script>
+
+]]></content>
+  </entry>
+  
+</feed>

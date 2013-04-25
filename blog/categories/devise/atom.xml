@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: devise | Dimitar Kostov ramblings]]></title>
+  <link href="http://mytrile.github.com/blog/categories/devise/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-25T10:44:20+03:00</updated>
+  <id>http://mytrile.github.com/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Cookie based authentication strategy in Devise]]></title>
+    <link href="http://mytrile.github.com/blog/2012/11/09/cookie-based-authentication-strategy-in-devise/"/>
+    <updated>2012-11-09T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2012/11/09/cookie-based-authentication-strategy-in-devise</id>
+    <content type="html"><![CDATA[<p>This method assumes that you have token authentication strategy enabled and will use the token for the user for cookie authentication</p>
+
+
+<p>&#13;</p>
+
+<p>``` ruby lib/devise/cookie_token_auth_strategy.rb
+Warden::Strategies.add(:token_cookie_strategy) do
+  def valid?</p>
+
+<pre><code>token_from_cookie
+</code></pre>
+
+<p>  end</p>
+
+<p>  def authenticate!</p>
+
+<pre><code>if token_from_cookie.present? &amp;&amp; (user = User.find_for_token_authentication(:auth_token =&gt; token_from_cookie)).present?
+  delete_token_from_cookie
+  success!(user)
+else
+  fail!("Could not log in")
+end
+</code></pre>
+
+<p>  end</p>
+
+<p>  def token_from_cookie</p>
+
+<pre><code>cookies[:authentication_token]
+</code></pre>
+
+<p>  end</p>
+
+<p>  def delete_token_from_cookie</p>
+
+<pre><code>cookies.delete(:authentication_token)
+</code></pre>
+
+<p>  end</p>
+
+<p>end
+```</p>
+
+<p>``` ruby config/initializers/devise.rb
+Devise.setup do |config|
+  config.warden do |manager|</p>
+
+<pre><code>manager.default_strategies(:scope =&gt; :user).unshift :token_cookie_strategy
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>``` ruby config/application.rb
+module YourApp
+  class Application &lt; Rails::Application</p>
+
+<pre><code>config.autoload_paths += %W(#{config.root}/lib/devise)
+# rest of the file
+</code></pre>
+
+<p>  end
+end
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

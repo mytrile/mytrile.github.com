@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: window manager | Dimitar Kostov ramblings]]></title>
+  <link href="http://mytrile.github.com/blog/categories/window-manager/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-25T10:44:20+03:00</updated>
+  <id>http://mytrile.github.com/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Awesome - fast and extensible window manager]]></title>
+    <link href="http://mytrile.github.com/blog/2010/09/17/awesome-fast-and-extensible-window-manager/"/>
+    <updated>2010-09-17T00:00:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2010/09/17/awesome-fast-and-extensible-window-manager</id>
+    <content type="html"><![CDATA[<p> </p>
+
+]]></content>
+  </entry>
+  
+</feed>

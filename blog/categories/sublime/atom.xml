@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: sublime | Dimitar Kostov ramblings]]></title>
+  <link href="http://mytrile.github.com/blog/categories/sublime/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-25T10:44:20+03:00</updated>
+  <id>http://mytrile.github.com/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Fixing Ruby build in Sublime Text 2]]></title>
+    <link href="http://mytrile.github.com/blog/2013/04/09/fixing-ruby-build-in-sublime-texteditor-2/"/>
+    <updated>2013-04-09T14:35:00+03:00</updated>
+    <id>http://mytrile.github.com/blog/2013/04/09/fixing-ruby-build-in-sublime-texteditor-2</id>
+    <content type="html"><![CDATA[<p>If youre getting this error while trying to run ruby script, just replace the loop in <em>Packages/Default/exec.py</em> on line 44 with the snippet below:</p>
+
+<pre>UnicodeDecodeError: 'ascii' codec can't decode byte 0xe2 in position 60 ...</pre>
+
+
+<p>``` python Packages/Default/exec.py:44
+for k, v in proc_env.iteritems():
+  path_vars = os.path.expandvars(v)
+  if isinstance(path_vars, unicode):</p>
+
+<pre><code>  path_vars = path_vars.encode(sys.getfilesystemencoding())
+</code></pre>
+
+<p>  proc_env[k] = path_vars
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: postgres | Dimitar Kostov ramblings]]></title>
+  <link href="http://mytrile.github.com/blog/categories/postgres/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-25T10:44:20+03:00</updated>
+  <id>http://mytrile.github.com/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Easy setup for Postgres.app and Rails]]></title>
+    <link href="http://mytrile.github.com/blog/2013/02/08/easy-setup-for-postgres-app-and-rails/"/>
+    <updated>2013-02-08T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2013/02/08/easy-setup-for-postgres-app-and-rails</id>
+    <content type="html"><![CDATA[<p>This is how you setup <a href="http://postgresapp.com/" target="_blank">Postgress.app</a> with Rails</p>
+
+
+
+
+<pre>~ psql
+username=# CREATE DATABASE myapp_development;
+username=# \q</pre>
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>.zshrc </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"&lt;/pre></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><code> yml database.yml
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: myapp_development
+  pool: 5
+  host: localhost
+  username: username
+  password:
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

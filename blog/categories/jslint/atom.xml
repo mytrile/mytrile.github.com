@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: jslint | Dimitar Kostov ramblings]]></title>
+  <link href="http://mytrile.github.com/blog/categories/jslint/atom.xml" rel="self"/>
+  <link href="http://mytrile.github.com/"/>
+  <updated>2013-04-25T10:44:20+03:00</updated>
+  <id>http://mytrile.github.com/</id>
+  <author>
+    <name><![CDATA[Dimitar Kostov]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[JQuery Lint - Catch incorrect JQuery use]]></title>
+    <link href="http://mytrile.github.com/blog/2010/02/25/jquery-lint-catch-incorrect-jquery-use/"/>
+    <updated>2010-02-25T00:00:00+02:00</updated>
+    <id>http://mytrile.github.com/blog/2010/02/25/jquery-lint-catch-incorrect-jquery-use</id>
+    <content type="html"><![CDATA[<p>I really hope you've heard about <a href="http://www.crockford.com/">Douglas Crockford's</a> <a href="http://www.jslint.com/">JSLint</a>, great tool for JavaScript code quality inspection. <a href="http://github.com/jamespadolsey/jQuery-Lint">JQuery Lint</a> uses common idea to report errors and any incorrect usage of jQuery.</p>
+
+
+<p>&#13;</p>
+
+<p>Screenshot from Firebug's console:</p>
+
+
+<p>&#13;</p>
+
+<p><img src="http://media.tumblr.com/tumblr_l8oawoTbQa1qcx25j.png" /></p>
+
+
+<p></p>
+]]></content>
+  </entry>
+  
+</feed>
