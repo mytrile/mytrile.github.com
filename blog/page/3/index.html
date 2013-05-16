@@ -9,7 +9,8 @@
   <meta name="author" content="Dimitar Kostov">
 
   
-  <meta name="description" content="I love &#8220;Hello, World&#8221; benchmarks. They are stupid and meaningless. I love it when someone shows how fast is his web server on the local &hellip;">
+  <meta name="description" content="If you&#8217;re having problems with unicode characters in IRB from ruby compiled with rbenv, do this: $ brew install readline
+$ export CPPFLAGS=-I/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +76,47 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/08/unicode-in-irb/">Unicode in irb</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-08T00:00:00+03:00" pubdate data-updated="true">Aug 8<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you&#8217;re having problems with unicode characters in IRB from ruby compiled with rbenv, do this:</p>
+
+<pre>$ brew install readline
+$ export CPPFLAGS=-I/usr/local/Cellar/readline/6.2.4/include
+$ export LDFLAGS=-L/usr/local/Cellar/readline/6.2.4/lib/
+$ rbenv install 1.9.3-p194</pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -402,42 +444,6 @@
 
 
   <div class="entry-content"><p></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/08/17/the-principles-of-good-programming/">The Principles of Good Programming</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-08-17T00:00:00+03:00" pubdate data-updated="true">Aug 17<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p> </p>
 </div>
   
   

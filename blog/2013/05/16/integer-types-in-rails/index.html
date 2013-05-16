@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Dimitar Kostov ramblings</title>
+  <title>Integer types in Rails - Dimitar Kostov ramblings</title>
   <meta name="author" content="Dimitar Kostov">
 
   
-  <meta name="description" content=" ">
+  <meta name="description" content="By default Rails will create INT(11) for integer type without limit. If you want to use different integer type like BIGINT you should use :limit. 1
+2 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://mytrile.github.com/blog/page/7/">
+  <link rel="canonical" href="http://mytrile.github.com/blog/2013/05/16/integer-types-in-rails/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -73,15 +74,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/03/24/tinyurl-in-40-lines/">TinyURL in 40 lines</a></h1>
+      <h1 class="entry-title">Integer types in Rails</h1>
     
     
       <p class="meta">
@@ -97,68 +95,57 @@
   
 
 
-<time datetime="2009-03-24T00:00:00+02:00" pubdate data-updated="true">Mar 24<span>th</span>, 2009</time>
+<time datetime="2013-05-16T10:41:00+03:00" pubdate data-updated="true">May 16<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a title="rsize.me" target="_blank" href="http://rsize.me"><img src="http://media.tumblr.com/tumblr_lj6evkcvRn1qcx25j.png" /></a></p> 
+<div class="entry-content"><p>By default Rails will create INT(11) for integer type without limit. If you want to use different integer type like BIGINT you should use :limit.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>+------------------------------------------------------------+
+</span><span class='line'>| :limit | Numeric Type  | Column Size |      Max Value      |
+</span><span class='line'>|--------+---------------+-------------+---------------------|
+</span><span class='line'>|    1   |    TINYINT    |   1 byte    | 127                 |
+</span><span class='line'>|    2   |    SMALLINT   |   2 bytes   | 32767               |
+</span><span class='line'>|    3   |    MEDIUMINT  |   3 bytes   | 8388607             |
+</span><span class='line'>|    4   |     INT(11)   |   4 bytes   | 2147483647          |
+</span><span class='line'>|    8   |     BIGINT    |   8 bytes   | 9223372036854775807 |
+</span><span class='line'>+------------------------------------------------------------+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Example in a migration file:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">add_column</span> <span class="ss">:users</span><span class="p">,</span> <span class="ss">:amount</span><span class="p">,</span> <span class="ss">:integer</span><span class="p">,</span> <span class="ss">limit</span><span class="p">:</span> <span class="mi">8</span> <span class="c1"># BIGINT</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<blockquote>Notice: If you don&#8217;t supply limit it defaults to 4 => INT(11). If your limit is 5..8 it will be BIGINT<blockquote>
+
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/09/10/extract-links-with-ruby/">Extract links with Ruby</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Dimitar Kostov</span></span>
 
-<time datetime="2008-09-10T00:00:00+03:00" pubdate data-updated="true">Sep 10<span>th</span>, 2008</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>&#13;
-<script src="http://gist.github.com/9419.js?file=links.rb"></script></p> 
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/08/03/gist-pastie-on-steroids/">Gist - pastie on steroids</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -170,72 +157,51 @@
   
 
 
-<time datetime="2008-08-03T00:00:00+03:00" pubdate data-updated="true">Aug 3<span>rd</span>, 2008</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p> </p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2013-05-16T10:41:00+03:00" pubdate data-updated="true">May 16<span>th</span>, 2013</time>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/07/19/learn-ruby-then-rails/">Learn  Ruby,  then Rails</a></h1>
-    
-    
-      <p class="meta">
-        
 
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/blog/categories/db/'>db</a>, <a class='category' href='/blog/categories/rails/'>rails</a>
+  
+</span>
 
 
-<time datetime="2008-07-19T00:00:00+03:00" pubdate data-updated="true">Jul 19<span>th</span>, 2008</time>
-        
-      </p>
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>Rails is awesome, but what makes it great is Ruby. I found myself  learning Rails without knowing Ruby. Don&#8217;t make my mistake. Some books:<br /><br />&#8220;The Ruby Programming Language&#8221; from O&#8217;Reilly<br />&#8220;The Ruby Way&#8221; and &#8220;Design Patterns in Ruby&#8221; from Addison-Wesley<br />&#8220;Ruby for Rails&#8221; from Manning</p> 
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://mytrile.github.com/blog/2013/05/16/integer-types-in-rails/" data-via="mytrile" data-counturl="http://mytrile.github.com/blog/2013/05/16/integer-types-in-rails/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/04/25/test-autocomplete-in-rails/" title="Previous Post: Test autocomplete in Rails">&laquo; Test autocomplete in Rails</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-    <a class="next" href="/blog/page/6/">Newer &rarr;</a>
-    
-  </div>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/mytrile">@mytrile</a> on GitHub
@@ -264,7 +230,7 @@
 
 <section>
   <h1>My Pinboard</h1>
-  <ul id="pinboard_linkroll">Fetching linkroll&#8230;</ul>
+  <ul id="pinboard_linkroll">Fetching linkroll...</ul>
   <p><a href="http://pinboard.in/u:mytrile">My Pinboard Bookmarks &raquo;</a></p>
 </section>
 <script type="text/javascript">
@@ -284,6 +250,7 @@
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -300,7 +267,10 @@
       var disqus_shortname = 'fireinsideme';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://mytrile.github.com/blog/2013/05/16/integer-types-in-rails/';
+        var disqus_url = 'http://mytrile.github.com/blog/2013/05/16/integer-types-in-rails/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

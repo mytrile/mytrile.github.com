@@ -9,16 +9,8 @@
   <meta name="author" content="Dimitar Kostov">
 
   
-  <meta name="description" content="Easy way to test autocomplete in RSpec request spec with Capybara 1
-2
-3
-4
-5
-6
-7
-8
-9
-describe &#39;Description of the spec&#39; it &quot;should &hellip;">
+  <meta name="description" content="By default Rails will create INT(11) for integer type without limit. If you want to use different integer type like BIGINT you should use :limit. 1
+2 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +76,74 @@ describe &#39;Description of the spec&#39; it &quot;should &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/16/integer-types-in-rails/">Integer types in Rails</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-16T10:41:00+03:00" pubdate data-updated="true">May 16<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>By default Rails will create INT(11) for integer type without limit. If you want to use different integer type like BIGINT you should use :limit.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>+------------------------------------------------------------+
+</span><span class='line'>| :limit | Numeric Type  | Column Size |      Max Value      |
+</span><span class='line'>|--------+---------------+-------------+---------------------|
+</span><span class='line'>|    1   |    TINYINT    |   1 byte    | 127                 |
+</span><span class='line'>|    2   |    SMALLINT   |   2 bytes   | 32767               |
+</span><span class='line'>|    3   |    MEDIUMINT  |   3 bytes   | 8388607             |
+</span><span class='line'>|    4   |     INT(11)   |   4 bytes   | 2147483647          |
+</span><span class='line'>|    8   |     BIGINT    |   8 bytes   | 9223372036854775807 |
+</span><span class='line'>+------------------------------------------------------------+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Example in a migration file:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">add_column</span> <span class="ss">:users</span><span class="p">,</span> <span class="ss">:amount</span><span class="p">,</span> <span class="ss">:integer</span><span class="p">,</span> <span class="ss">limit</span><span class="p">:</span> <span class="mi">8</span> <span class="c1"># BIGINT</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<blockquote>Notice: If you don&#8217;t supply limit it defaults to 4 => INT(11). If your limit is 5..8 it will be BIGINT<blockquote>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -728,56 +788,6 @@ username=# \q</pre>
 </span><span class='line'>  <span class="l-Scalar-Plain">host</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">localhost</span>
 </span><span class='line'>  <span class="l-Scalar-Plain">username</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">username</span>
 </span><span class='line'>  <span class="l-Scalar-Plain">password</span><span class="p-Indicator">:</span>
-</span></code></pre></td></tr></table></div></figure>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/04/xthml-in-haml-view-in-rails-3/">XTHML in HAML view in Rails 3</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-04T00:00:00+02:00" pubdate data-updated="true">Feb 4<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><figure class='code'><figcaption><span>config/initializers/haml.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='haml'><span class='line'>Haml::Template.options[:format] = :xhtml
-</span></code></pre></td></tr></table></div></figure>
-
-<figure class='code'><figcaption><span>some_view.html.haml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='haml'><span class='line'><span class="nn">!!! XML</span>
-</span><span class='line'><span class="nn">!!!</span>
-</span><span class='line'>
-</span><span class='line'><span class="cp">-# &lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39; ?&gt;</span>
-</span><span class='line'><span class="cp">-# &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 </div>
   
